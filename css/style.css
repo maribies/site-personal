@@ -1,0 +1,122 @@
+/* =============================================================================
+   Fonts
+   ============================================================================= */
+
+   /* INSERT YOUR FONT IMPORTS HERE */
+    @import url('https://fonts.googleapis.com/css?family=Karla|Vesper+Libre');
+/* =============================================================================
+   HTML5 CSS Reset
+   ============================================================================= */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+/* =============================================================================
+   My CSS
+   ============================================================================= */
+
+/*-------------------*/
+/* ---- General ---- */
+/*-------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+
+/*----hero page-----*/
+
+.navigation {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 74px 120px 4px 120px;
+}
+
+  .logo {
+    position: relative;
+    padding-bottom: 32px;
+    margin-right: auto;
+  }
+    .logo-sig-svg {
+      max-height: 92px;
+      max-width: 100%;
+    }
+
+  .nav-menu{
+    font-family: Karla;
+    font-size: 24px;
+    position: relative;
+  }
+
+      .nav-item {
+        display: inline;
+        padding-left: 32px;
+      }
+
+.hero {
+  position: relative;
+}
+
+  .background {
+    /*background-image: url("http://via.placeholder.com/350x350");
+    background-repeat: none;
+    background-position: center;*/
+    background: url("../images/background-sunset.jpg") center bottom no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(118,74,146,.25);
+    height: 100vh;
+    width: 100%;
+  }
+/*----about page-------*/
+.about{
+  display: inline-block;
+}
+
+.about-gradient {
+  font-family: karla;
+  font-size: 44px;
+  background: linear-gradient(to right, #5F4B8B, #F9F8FA);
+  width: 50%;
+}
+
+.about-content {
+  font-family: 'Vesper Libre', serif;
+  background: #f9f8fa;
+  width: 50%;
+}
+
+/*----media queries-------*/
+
+/*--where nav begins to break---*/
+@media (max-width: 960px){
+
+}
+
+/*---mobile---*/
+@media (max-width: 320px) {
+
+}
