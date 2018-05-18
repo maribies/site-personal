@@ -102,6 +102,7 @@ rect{
   .nav-menu{
     font-family: Karla;
     font-size: 24px;
+    color: #1B1B3A;
     display: inline;
     text-align: right;
   }
@@ -127,24 +128,45 @@ rect{
 
 /*----about page-------*/
 .about{
-  display: inline-block;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  /*for desktop*/
+  top: 605px;
 }
 
 .about-title{
   font-family: karla;
   font-size: 44px;
+  color: #1B1B3A;
   width: 50%;
+}
+
+.about-title-text{
+  padding-left: 30%;
+}
+
+.about-content-text, .about-title-text{
+  margin: 1em;
 }
 
 .about-content{
   font-family: 'Vesper Libre', serif;
   width: 50%;
+  color: #1B1B3A;
+}
+
+.about-content-text{
+  padding-right: 30%;
 }
 
 /*----media queries-------*/
 
-/*--where nav begins to break---*/
-@media (max-width: 960px){
+/*--where gradient & nav begin to break---*/
+@media (max-width: 865px){
 
 }
 
