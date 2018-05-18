@@ -46,7 +46,7 @@ li{list-style:none}
   animation: col2 30s linear infinite;
 }
 
-@keyframes col1 {
+@keyframes col1{
   0% {stop-color: #5F4B8B}
   25% {stop-color: #0078A7}
   50% {stop-color: #FF7913}
@@ -54,7 +54,7 @@ li{list-style:none}
   100% {stop-color: #5F4B8B}
 }
 
-@keyframes col2 {
+@keyframes col2{
   0% {stop-color: #D32E5E}
   25% {stop-color: #FF7913}
   50% {stop-color: #0078A7}
@@ -65,25 +65,33 @@ li{list-style:none}
 rect{
   width: 100%;
   height: 100%;
-  opacity: 0.75;
+  position: relative;
+}
+
+.page-background{
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /*----hero page-----*/
 
 .navigation{
-  position: fixed;
-  z-index: 999;
-  display: flex;
+  position: absolute;
+  top: 4em;
+  display: inline-flex;
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
-  padding: 74px 120px 4px 120px;
+  padding: 1em;
 }
 
   .logo{
-    position: relative;
-    padding-bottom: 32px;
-    margin-right: auto;
+    display: inline;
+    text-align: right;
   }
     .logo-sig-svg{
       max-height: 92px;
@@ -93,7 +101,8 @@ rect{
   .nav-menu{
     font-family: Karla;
     font-size: 24px;
-    position: relative;
+    display: inline;
+    text-align: right;
   }
 
       .nav-item{
