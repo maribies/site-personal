@@ -1,0 +1,19 @@
+{
+  "name": "site-personal",
+  "version": "1.0.0",
+  "description": "Personal website.",
+  "main": "index.js",
+  "repository": "https://github.com/maribies/site-personal.git",
+  "author": "<Marissa> <<marissa.biesecker@gmail.com>>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
