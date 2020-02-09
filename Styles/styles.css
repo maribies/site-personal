@@ -1,0 +1,16 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=Karla|Vesper+Libre');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', helvetica neue, Helvetica, sans-serif;
+  font-family: 'Vesper Libre', serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 21px;
+}
