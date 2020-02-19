@@ -1,4 +1,5 @@
 import { Background } from '../Components/Background';
+import { NavigationBar } from '../Components/NavigationBar';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
 
@@ -23,6 +24,8 @@ const Index = () => (
   <ThemeProvider theme={theme}>
     <>
       <Background />
+
+      <NavigationBar />
     </>
   </ThemeProvider>
 );

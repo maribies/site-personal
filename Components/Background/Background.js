@@ -14,7 +14,7 @@ const animationFadeOut = () =>
 
 const Container = styled.stop`
   animation: ${animationFadeIn};
-  offset-distance: 0%;
+  offset-distance: 50%;
   stop-opacity: 1;
 `;
 
@@ -22,13 +22,20 @@ const Fill = styled.rect`
   width: 100vw;
   height: 100vh;
   position: relative;
-  opacity: .75;
+  opacity: 1;
 `;
 
 const Overlay = styled.stop`
   animation: ${animationFadeOut};
-  offset-distance: 100%;
-  stop-opacity: 1;
+  offset-distance: 50%;
+  stop-opacity: .75;
+`;
+
+const Svg = styled.svg`
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 `;
 
 const fadeIn = keyframes`
@@ -68,7 +75,7 @@ const fadeOut = keyframes`
 
 export const Background = () => {
   return (
-    <svg viewBox="0 0 100 100">
+    <Svg viewBox="0 0 100 100">
       <defs>
         <linearGradient id="fill" x1="0%" y1="0%" x2="0%" y2="100%">
           <Container />
@@ -76,7 +83,7 @@ export const Background = () => {
         </linearGradient>
       </defs>
       <Fill fill="url(#fill)"  />
-    </svg>
+    </Svg>
   );
 }
 
