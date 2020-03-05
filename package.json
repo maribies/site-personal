@@ -12,11 +12,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@svgr/webpack": "5.2.0",
     "next": "9.2.1",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
+    "react-scripts": "2.0.0",
     "styled-components": "5.0.1"
   }
 }
