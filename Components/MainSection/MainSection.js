@@ -13,7 +13,7 @@ export const MainSection = () => {
     <Section column>
       <NavigationBar />
 
-        <LogoMenu />
+        <LogoMenu position={'fixed'} />
     </Section>
   );
 }
