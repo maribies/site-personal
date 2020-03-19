@@ -24,7 +24,7 @@ const SectionsContainer = styled.div`
 `;
 
 const Section = styled.div`
-  color: #1B1B3A;
+  color: #2E3138;
   font-family: 'Karla';
   font-size: 32px;
   line-height: 24px;

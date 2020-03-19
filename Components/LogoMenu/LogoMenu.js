@@ -3,20 +3,27 @@ import styled from 'styled-components';
 import SvgLogo from '../../images/Logo.svg';
 
 const Container = styled.div`
-  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   align-self: center;
-  height: 72px;
-  width: 200px;
   margin-top: 24px;
   margin-left: 24px;
   margin-right: 24px;
+  position: ${props => props.position};
+  bottom:  ${props => props.position === 'fixed' ? '0px': null};
+  padding-top: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 100%;
+
+  &:hover {
+    background-image: radial-gradient(rgb(46,49,56), rgb(46,49,56, .3), rgb(46,49,56, .01), rgb(46,49,56, .0001));
+  }
 `;
 
-export const LogoMenu = () => {
+export const LogoMenu = ({position}) => {
   return (
-    <Container>
+    <Container position={position}>
       <SvgLogo />
     </Container>
   )
