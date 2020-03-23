@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { H1, H3 } from '../Text';
+import { getColorValue } from '../Colors';
 
 const NavigationContainer = styled.div`
   display: flex;
@@ -12,42 +14,41 @@ const NavigationContainer = styled.div`
   margin-right: 120px;
 `;
 
-const Name= styled.div`
-  font-family: 'Karla';
-  font-size: 44px;
-  line-height: 64px;
-`;
-
 const SectionsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const Section = styled.div`
-  color: #2E3138;
-  font-family: 'Karla';
-  font-size: 32px;
-  line-height: 24px;
-  padding-right: 84px;
+const SectionLink = styled.button`
+  padding: 0 42px;
+  background: transparent;
+  border: none;
+`;
+
+const SectionTitle = styled(H3)`
   transition: color 1s steps(4, end);
   &:hover {
-    color: white
+    color: ${getColorValue('grey')}
   }
 `;
 
 export const NavigationBar = () => {
   return (
     <NavigationContainer>
-      <Name>{"MARISSA BIESECKER"}</Name>
+      <H1>{"MARISSA BIESECKER"}</H1>
 
       <SectionsContainer>
-        <Section>{"HOME"}</Section>
+        <SectionLink>
+          <SectionTitle>{"ABOUT"}</SectionTitle>
+        </SectionLink>
 
-        <Section>{"ABOUT"}</Section>
+        <SectionLink>
+          <SectionTitle>{"FACETS"}</SectionTitle>
+        </SectionLink>
 
-        <Section>{"FACETS"}</Section>
-
-        <Section>{"CONNECT"}</Section>
+        <SectionLink>
+          <SectionTitle>{"CONNECT"}</SectionTitle>
+        </SectionLink>
       </SectionsContainer>
     </NavigationContainer>
   )
