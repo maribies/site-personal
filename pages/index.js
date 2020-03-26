@@ -1,3 +1,4 @@
+import { NextHead } from '../Components/Head';
 import { Background } from '../Components/Background';
 import { MainSection } from '../Components/MainSection';
 import { AboutSection } from '../Components/AboutSection';
@@ -25,6 +26,8 @@ const theme = {
 const Index = () => (
   <ThemeProvider theme={theme}>
     <>
+      <NextHead />
+
       <Background />
 
       <MainSection />
