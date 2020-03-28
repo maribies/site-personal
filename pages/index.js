@@ -1,6 +1,7 @@
 import { Background } from '../Components/Background';
 import { MainSection } from '../Components/MainSection';
 import { AboutSection } from '../Components/AboutSection';
+import { FacetsSection } from '../Components/FacetsSection';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
 
@@ -29,6 +30,8 @@ const Index = () => (
       <MainSection />
 
       <AboutSection />
+
+      <FacetsSection />
     </>
   </ThemeProvider>
 );
