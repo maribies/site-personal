@@ -3,6 +3,7 @@ import { Background } from '../Components/Background';
 import { MainSection } from '../Components/MainSection';
 import { AboutSection } from '../Components/AboutSection';
 import { FacetsSection } from '../Components/FacetsSection';
+import { ConnectSection } from '../Components/ConnectSection';
 import { ThemeProvider } from 'styled-components';
 import React from 'react';
 
@@ -35,6 +36,8 @@ const Index = () => (
       <AboutSection />
 
       <FacetsSection />
+
+      <ConnectSection />
     </>
   </ThemeProvider>
 );
