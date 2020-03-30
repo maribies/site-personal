@@ -34,7 +34,7 @@ const Svg = styled.svg`
   position: absolute;
   top: 0;
   z-index: -1;
-  height: ${900*3}px; 
+  height: ${900*4}px; 
 `;
 
 const fadeIn = keyframes`
