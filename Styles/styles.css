@@ -10,4 +10,5 @@ body {
   font-size: 16px;
   font-weight: normal;
   line-height: 21px;
+  overflow-x: hidden;
 }
