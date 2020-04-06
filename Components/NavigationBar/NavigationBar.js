@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { H1, H3 } from '../Text';
-import { getColorValue } from '../Colors';
+import { Link } from '../Link';
+import { getColorValue } from '../CssHelpers';
 
 const NavigationContainer = styled.div`
   display: flex;
@@ -19,7 +20,7 @@ const SectionsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const SectionLink = styled.button`
+const SectionLink = styled(Link)`
   padding: 0 42px;
   background: transparent;
   border: none;
@@ -38,15 +39,15 @@ export const NavigationBar = () => {
       <H1>{"MARISSA BIESECKER"}</H1>
 
       <SectionsContainer>
-        <SectionLink>
+        <SectionLink href="#about">
           <SectionTitle>{"ABOUT"}</SectionTitle>
         </SectionLink>
 
-        <SectionLink>
+        <SectionLink href="#facets">
           <SectionTitle>{"FACETS"}</SectionTitle>
         </SectionLink>
 
-        <SectionLink>
+        <SectionLink href="#connect">
           <SectionTitle>{"CONNECT"}</SectionTitle>
         </SectionLink>
       </SectionsContainer>

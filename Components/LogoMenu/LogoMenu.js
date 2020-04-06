@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SvgLogo from '../../static/images/Logo.svg';
+import SvgLogo from '../../static/SVG/Logo.svg';
 
 const Container = styled.button`
   background: transparent;
@@ -17,6 +17,7 @@ const Container = styled.button`
   padding-right: 12px;
   border-radius: 100%;
   border: none;
+  z-index: 1;
 
   &:hover {
     background-image: radial-gradient(rgb(46,49,56), rgb(46,49,56, .3), rgb(46,49,56, .01), rgb(46,49,56, .0001));

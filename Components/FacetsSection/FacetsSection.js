@@ -1,7 +1,9 @@
 import { Section as BaseSection } from '../Section';
 import { H1, H3 } from '../Text';
-import { getColorValue } from '../Colors';
-import React from 'react';
+import { Link as BaseLink } from '../Link';
+import { Alert } from '../Alert';
+import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const ParentSection = styled(BaseSection)`
@@ -17,60 +19,72 @@ const ContentSection = styled(Section)`
   padding: 0 136px;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
-const FacetSection = styled.button`
-  background-color: transparent;
+const FacetSection = styled.div`
+  background-color: ${getColorValue('grey')};
   margin-bottom: 32px;
-  border-color: ${getColorValue('grey')};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const FacetImage = styled.img`
-  height: 150px;
-  width: 40%;
-  border: 2px solid ${getColorValue('grey')};
-  margin-top: 54px;
-  margin-bottom: 54px;
-  margin-left: 32px;
+  clip-path: ${props => props.clipPath};
 `;
 
 const FacetSectionTitle = styled(H3)`
   padding: 54px 32px;
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
+`;
+
+const Link = styled(BaseLink)`
   justify-content: center;
 `;
 
 const Title = styled(H1)`
   text-align: center;
-  
-`
+`;
 
 export const FacetsSection = () => {
+  const [isVisible, makeVisible] = useState(null);
+  const [top, setAlertTopValue] = useState(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      makeVisible(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isVisible]);
+
+  const showAlert = (e, topValue) => {
+    e.preventDefault();
+    makeVisible(true);
+    setAlertTopValue(topValue);
+  };
+  
   return (
-    <ParentSection>
+    <ParentSection id="facets">
       <ContentSection>
-        <FacetSection>
-          <FacetImage src={'https://via.placeholder.com/150'} />
-          
-          <FacetSectionTitle>{'Portfolio, Experiences, and Skills'}</FacetSectionTitle>
-        </FacetSection>
+        <Wrapper>
+          <FacetSection clipPath={'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'}>
+            <Link href="#" onClick={e => showAlert(e, '5%')}>
+              <FacetSectionTitle>{'Portfolio, Experiences, & Skills'}</FacetSectionTitle>
+            </Link>
+          </FacetSection>
+        </Wrapper>
 
-        <FacetSection>
-          <FacetImage src={'https://via.placeholder.com/150'} />
+        <Wrapper>
+          <FacetSection clipPath={'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'}>
+            <Link href="#" onClick={e => showAlert(e, '35%')}>
+              <FacetSectionTitle>{'Travel and Photography'}</FacetSectionTitle>
+            </Link>
+          </FacetSection>
+        </Wrapper>
 
-          <FacetSectionTitle>{'Travel and Photography'}</FacetSectionTitle>
-        </FacetSection>
+        <Wrapper>
+          <FacetSection clipPath={'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'}>
+            <Link href="#" onClick={e => showAlert(e, '65%')}>
+              <FacetSectionTitle>{'Grilled Cheese, Food, & Crafts'}</FacetSectionTitle>
+            </Link>
+          </FacetSection>
+        </Wrapper>
 
-        <FacetSection>
-          <FacetImage src={'https://via.placeholder.com/150'} />
-
-          <FacetSectionTitle>{'Grilled Cheese'}</FacetSectionTitle>
-        </FacetSection>
+        <Alert isVisible={isVisible} top={top} left={'70%'} message={`This link doesn't go anywhere yet.`} />
       </ContentSection>
 
       <Section>

@@ -1,6 +1,6 @@
 import { Section as BaseSection } from '../Section';
 import { H1, P } from '../Text';
-import { getColorValue } from '../Colors';
+import { Link } from '../Link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -21,25 +21,13 @@ const Title = styled(H1)`
   text-align: center;
 `;
 
-const Link = styled.a`
-  text-decoration: none;
-  color: ${getColorValue('black')};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-content: center;
-  &:clicked {
-    color: ${getColorValue('grey')}
-  }
-`;
-
 const LinkInfo = styled(P)`
   padding-left: 24px;
 `;
 
 export const ConnectSection = () => {
   return (
-    <ParentSection>
+    <ParentSection id="connect">
       <Section>
         <Title>{'Connect'}</Title>
       </Section>
