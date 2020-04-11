@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { getColorValue } from '../Colors';
+import { getColorValue } from '../CssHelpers';
 
 
 const baseStyles = css`
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
-  color: ${getColorValue('black')};
+  color: ${getColorValue('white')};
 `;
 
 export const H1 = styled.h1`
