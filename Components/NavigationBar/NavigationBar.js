@@ -4,7 +4,7 @@ import { H1, H3 } from '../Text';
 import { Link } from '../Link';
 import { getColorValue } from '../CssHelpers';
 
-const NavigationContainer = styled.div`
+const NavigationContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;

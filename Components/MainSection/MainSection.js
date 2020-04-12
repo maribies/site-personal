@@ -14,8 +14,6 @@ export const MainSection = () => {
     <Section column>
       <NavigationBar />
 
-      <LogoMenu position={'fixed'} />
-
       <Alert isVisible={true} top={'70%'} left={'5%'}/>
     </Section>
   );
