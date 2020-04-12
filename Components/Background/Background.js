@@ -1,18 +1,16 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 
-const HEIGHT = `${900*4+65}px`;
-const WIDTH = `${1700}px`;
+const HEIGHT = `${900*4+65}`;
+const WIDTH = `${1700}`;
 
-const animationFadeIn = () =>
-  css`
-    ${fadeIn} 30s linear infinite;
-  `
+const animationFadeIn = () => css`
+  ${fadeIn} 30s linear infinite;
+`;
 
-const animationFadeOut = () =>
-  css`
-    ${fadeOut} 30s linear infinite;
-  `
+const animationFadeOut = () => css`
+  ${fadeOut} 30s linear infinite;
+`;
 
 const Container = styled.stop`
   animation: ${animationFadeIn};
@@ -36,8 +34,8 @@ const Svg = styled.svg`
   position: absolute;
   top: 0;
   z-index: -1;
-  height: ${HEIGHT};
-  width: ${WIDTH};
+  height: ${HEIGHT}px;
+  width: ${WIDTH}px;
 `;
 
 const fadeIn = keyframes`
@@ -77,7 +75,7 @@ const fadeOut = keyframes`
 
 export const Background = () => {
   return (
-    <Svg viewBox={`0 0 ${HEIGHT} ${WIDTH}`}>
+    <Svg>
       <defs>
         <linearGradient id="fill" x1="0%" y1="0%" x2="0%" y2="50%">
           <Container offset="0%" />
