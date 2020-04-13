@@ -1,13 +1,13 @@
-import { NextHead } from '../Components/Head';
-import { Background } from '../Components/Background';
-import { MainSection } from '../Components/MainSection';
-import { AboutSection } from '../Components/AboutSection';
-import { FacetsSection } from '../Components/FacetsSection';
-import { ConnectSection } from '../Components/ConnectSection';
-import { LogoMenu } from '../Components/LogoMenu';
-import { Footer } from '../Components/Footer';
-import { ThemeProvider } from 'styled-components';
-import React from 'react';
+import { NextHead } from '../Components/Head'
+import { Background } from '../Components/Background'
+import { MainSection } from '../Components/MainSection'
+import { AboutSection } from '../Components/AboutSection'
+import { FacetsSection } from '../Components/FacetsSection'
+import { ConnectSection } from '../Components/ConnectSection'
+import { LogoMenu } from '../Components/LogoMenu'
+import { Footer } from '../Components/Footer'
+import { ThemeProvider } from 'styled-components'
+import React from 'react'
 
 const theme = {
   flexboxgrid: {
@@ -24,7 +24,7 @@ const theme = {
     },
     gutterWidth: 1.875
   }
-};
+}
 
 const Index = () => (
   <ThemeProvider theme={theme}>
@@ -41,11 +41,11 @@ const Index = () => (
 
       <ConnectSection />
 
-      <LogoMenu position={'fixed'} />
+      <LogoMenu position='fixed' />
 
       <Footer />
     </>
   </ThemeProvider>
-);
+)
 
-export default Index;
+export default Index

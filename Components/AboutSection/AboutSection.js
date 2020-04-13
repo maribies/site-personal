@@ -1,17 +1,17 @@
-import { Section as BaseSection } from '../Section';
-import { H1, P } from '../Text';
-import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers';
-import React from 'react';
-import styled from 'styled-components';
+import { Section as BaseSection } from '../Section'
+import { H1, P } from '../Text'
+import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers'
+import React from 'react'
+import styled from 'styled-components'
 
 const ParentSection = styled(BaseSection)`
   flex-direction: column;
-`;
+`
 
 const Section = styled.div`
   width: 50%;
   align-self: center;
-`;
+`
 
 const Content = styled.div`
   background: ${getColorValue('grey')};
@@ -21,33 +21,33 @@ const Content = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-`;
+`
 
 const Text = styled(P)`
   padding-left: 120px;
   padding-right: 120px;
-`;
+`
 
 const Title = styled(H1)`
   text-align: center;
-`;
+`
 
 export const AboutSection = () => {
   return (
-    <ParentSection id="about">
+    <ParentSection id='about'>
       <Section>
-        <Title>{'ABOUT'}</Title>
+        <Title>ABOUT</Title>
       </Section>
-      
+
       <Section>
         <Wrapper>
           <Content>
             <Text>
-              {`This website is meant to be a reflection of me. It is the place for me to express myself and show off my passions.`}
+              {'This website is meant to be a reflection of me. It is the place for me to express myself and show off my passions.'}
             </Text>
 
             <Text>
-              {`I’ve always been a bit different. Born in the country, moved to the city, and eventually kept moving around the world.`}
+              {'I’ve always been a bit different. Born in the country, moved to the city, and eventually kept moving around the world.'}
             </Text>
 
             <Text>
@@ -59,5 +59,5 @@ export const AboutSection = () => {
         </Wrapper>
       </Section>
     </ParentSection>
-  );
+  )
 }

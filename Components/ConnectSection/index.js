@@ -1,1 +1,1 @@
-export * from './ConnectSection';
+export * from './ConnectSection'

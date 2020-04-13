@@ -1,1 +1,1 @@
-export * from './FacetsSection';
+export * from './FacetsSection'
