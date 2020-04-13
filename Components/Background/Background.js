@@ -1,33 +1,33 @@
-import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import React from 'react'
+import styled, { css, keyframes } from 'styled-components'
 
-const HEIGHT = `${900*4+65}`;
-const WIDTH = `${1700}`;
+const HEIGHT = `${900 * 4 + 65}`
+const WIDTH = `${1700}`
 
 const animationFadeIn = () => css`
   ${fadeIn} 30s linear infinite;
-`;
+`
 
 const animationFadeOut = () => css`
   ${fadeOut} 30s linear infinite;
-`;
+`
 
 const Container = styled.stop`
   animation: ${animationFadeIn};
   stop-opacity: 1;
-`;
+`
 
 const Fill = styled.rect`
   width: 100%;
   height: 100%;
   position: relative;
   opacity: 1;
-`;
+`
 
 const Overlay = styled.stop`
   animation: ${animationFadeOut};
   stop-opacity: .75;
-`;
+`
 
 const Svg = styled.svg`
   left: 0;
@@ -36,7 +36,7 @@ const Svg = styled.svg`
   z-index: -1;
   height: ${HEIGHT}px;
   width: ${WIDTH}px;
-`;
+`
 
 const fadeIn = keyframes`
   0% {
@@ -71,21 +71,18 @@ const fadeOut = keyframes`
   100% {
     stop-color: #FF7913
   }
-`;
+`
 
 export const Background = () => {
   return (
     <Svg>
       <defs>
-        <linearGradient id="fill" x1="0%" y1="0%" x2="0%" y2="50%">
-          <Container offset="0%" />
-          <Overlay offset="100%"/>
+        <linearGradient id='fill' x1='0%' y1='0%' x2='0%' y2='50%'>
+          <Container offset='0%' />
+          <Overlay offset='100%' />
         </linearGradient>
       </defs>
-      <Fill fill="url(#fill)"  />
+      <Fill fill='url(#fill)' />
     </Svg>
-  );
+  )
 }
-
-
-

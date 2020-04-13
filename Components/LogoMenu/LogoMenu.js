@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import SvgLogo from '../../static/SVG/Logo.svg';
+import React from 'react'
+import styled from 'styled-components'
+import SvgLogo from '../../static/SVG/Logo.svg'
 
 const Container = styled.button`
   background: transparent;
@@ -8,7 +8,7 @@ const Container = styled.button`
   background-position: center;
   align-self: center;
   position: ${props => props.position};
-  bottom:  ${props => props.position === 'fixed' ? '0px': null};
+  bottom:  ${props => props.position === 'fixed' ? '0px' : null};
   padding-top: 32px;
   padding-left: 12px;
   padding-right: 12px;
@@ -21,9 +21,9 @@ const Container = styled.button`
   &:hover {
     background-image: radial-gradient(rgb(46,49,56), rgb(46,49,56, .3), rgb(46,49,56, .01), rgb(46,49,56, .0001));
   }
-`;
+`
 
-export const LogoMenu = ({position}) => {
+export const LogoMenu = ({ position }) => {
   return (
     <Container position={position}>
       <SvgLogo />

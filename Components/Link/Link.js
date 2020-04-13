@@ -1,5 +1,5 @@
-import { getColorValue } from '../CssHelpers';
-import styled from 'styled-components';
+import { getColorValue } from '../CssHelpers'
+import styled from 'styled-components'
 
 export const Link = styled.a`
   text-decoration: none;
@@ -11,4 +11,4 @@ export const Link = styled.a`
   &:clicked {
     color: ${getColorValue('grey')}
   }
-`;
+`
