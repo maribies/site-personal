@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 
 const HEIGHT = `${900 * 4 + 65}`
-const WIDTH = `${1700}`
 
 const animationFadeIn = () => css`
   ${fadeIn} 30s linear infinite;
@@ -35,7 +34,11 @@ const Svg = styled.svg`
   top: 0;
   z-index: -1;
   height: ${HEIGHT}px;
-  width: ${WIDTH}px;
+  width: ${props => props.theme.flexboxgrid.container.xs}rem;
+
+  @media (min-width: 768px) {
+    width: ${props => props.theme.flexboxgrid.container.xl}rem;
+  }
 `
 
 const fadeIn = keyframes`
