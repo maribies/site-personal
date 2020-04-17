@@ -1,21 +1,8 @@
-import { Section as BaseSection } from '../Section'
+import { Section, SubSection } from '../Section'
 import { H1, P } from '../Text'
 import { Link } from '../Link'
 import React from 'react'
 import styled from 'styled-components'
-
-const ParentSection = styled(BaseSection)`
-  flex-direction: column;
-`
-
-const Section = styled.div`
-  width: 50%;
-  align-self: center;
-`
-
-const ContentSection = styled(Section)`
-  padding: 0 136px;
-`
 
 const Title = styled(H1)`
   text-align: center;
@@ -27,12 +14,12 @@ const LinkInfo = styled(P)`
 
 export const ConnectSection = () => {
   return (
-    <ParentSection id='connect'>
-      <Section>
+    <Section id='connect'>
+      <SubSection>
         <Title>Connect</Title>
-      </Section>
+      </SubSection>
 
-      <ContentSection>
+      <SubSection>
         <Link href='mailto:marissa.biesecker@gmail.com' className='fa fa-envelope'>
           <LinkInfo>marissa.biesecker@gmail.com</LinkInfo>
         </Link>
@@ -56,7 +43,7 @@ export const ConnectSection = () => {
         <Link href='https://www.linkedin.com/in/marissabiesecker/' className='fa fa-linkedin'>
           <LinkInfo>marissabiesecker</LinkInfo>
         </Link>
-      </ContentSection>
-    </ParentSection>
+      </SubSection>
+    </Section>
   )
 }

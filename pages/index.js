@@ -9,18 +9,21 @@ import { Footer } from '../Components/Footer'
 import { ThemeProvider } from 'styled-components'
 import React from 'react'
 
+// rem base is 16px.
 const theme = {
   flexboxgrid: {
     breakpoints: {
-      lg: 75,
-      md: 62,
-      sm: 48,
+      lg: 75, // 1200px
+      md: 62, // 992px
+      sm: 48, // 768px
       xs: 0
     },
     container: {
-      lg: 69.25,
-      md: 62,
-      sm: 48
+      xl: 106.25, // 1700px
+      lg: 69.25, // 1108px
+      md: 62, // 992px
+      sm: 48, // 768px
+      xs: 25 // 400px
     },
     gutterWidth: 1.875
   }

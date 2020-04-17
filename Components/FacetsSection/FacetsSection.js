@@ -1,4 +1,4 @@
-import { Section as BaseSection } from '../Section'
+import { Section, SubSection } from '../Section'
 import { H1, H3 } from '../Text'
 import { Link as BaseLink } from '../Link'
 import { Alert } from '../Alert'
@@ -6,16 +6,7 @@ import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const ParentSection = styled(BaseSection)`
-  flex-direction: column;
-`
-
-const Section = styled.div`
-  width: 50%;
-  align-self: center;
-`
-
-const ContentSection = styled(Section)`
+const ContentSection = styled(SubSection)`
   padding: 0 136px;
   display: flex;
   flex-direction: column;
@@ -58,7 +49,7 @@ export const FacetsSection = () => {
   }
 
   return (
-    <ParentSection id='facets'>
+    <Section id='facets'>
       <ContentSection>
         <Wrapper>
           <FacetSection clipPath='polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'>
@@ -87,9 +78,9 @@ export const FacetsSection = () => {
         <Alert isVisible={isVisible} top={top} left='70%' message={'This link doesn\'t go anywhere yet.'} />
       </ContentSection>
 
-      <Section>
+      <SubSection>
         <Title>FACETS</Title>
-      </Section>
-    </ParentSection>
+      </SubSection>
+    </Section>
   )
 }

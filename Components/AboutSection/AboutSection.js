@@ -1,17 +1,8 @@
-import { Section as BaseSection } from '../Section'
+import { Section as BaseSection, SubSection as BaseSubSection } from '../Section'
 import { H1, P } from '../Text'
 import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers'
 import React from 'react'
 import styled from 'styled-components'
-
-const ParentSection = styled(BaseSection)`
-  flex-direction: column;
-`
-
-const Section = styled.div`
-  width: 50%;
-  align-self: center;
-`
 
 const Content = styled.div`
   background: ${getColorValue('grey')};
@@ -28,18 +19,28 @@ const Text = styled(P)`
   padding-right: 120px;
 `
 
+const SubSection = styled(BaseSubSection)`
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+`
+
 const Title = styled(H1)`
   text-align: center;
 `
 
 export const AboutSection = () => {
   return (
-    <ParentSection id='about'>
-      <Section>
+    <BaseSection id='about'>
+      <SubSection>
         <Title>ABOUT</Title>
-      </Section>
+      </SubSection>
 
-      <Section>
+      <SubSection>
         <Wrapper>
           <Content>
             <Text>
@@ -57,7 +58,7 @@ export const AboutSection = () => {
             </Text>
           </Content>
         </Wrapper>
-      </Section>
-    </ParentSection>
+      </SubSection>
+    </BaseSection>
   )
 }

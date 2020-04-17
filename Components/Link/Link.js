@@ -8,6 +8,7 @@ export const Link = styled.a`
   flex-direction: row;
   align-items: center;
   align-content: center;
+  justify-content: center;
   &:clicked {
     color: ${getColorValue('grey')}
   }
