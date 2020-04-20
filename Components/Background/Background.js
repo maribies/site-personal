@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 
-const HEIGHT = `${900 * 4 + 65}`
+const HEIGHT = `${900 * 4 + 90}`
 
 const animationFadeIn = () => css`
   ${fadeIn} 30s linear infinite;
@@ -36,11 +36,26 @@ const Svg = styled.svg`
   height: ${HEIGHT}px;
   width: ${props => props.theme.flexboxgrid.container.xs}rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 23.5) {
+    width: ${props => props.theme.flexboxgrid.container.shm}rem;
+  }
+
+  @media (min-width: 25.875rem) {
+    width: ${props => props.theme.flexboxgrid.container.sm}rem;
+  }
+
+  @media (min-width: 48rem) {
+    width: ${props => props.theme.flexboxgrid.container.md}rem;
+  }
+
+  @media (min-width: 75rem) {
+    width: ${props => props.theme.flexboxgrid.container.lg}rem;
+  }
+
+  @media (min-width: 90rem) {
     width: ${props => props.theme.flexboxgrid.container.xl}rem;
   }
 `
-
 const fadeIn = keyframes`
   0% {
     stop-color: #5F4B8B;
@@ -76,16 +91,23 @@ const fadeOut = keyframes`
   }
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export const Background = () => {
   return (
-    <Svg>
-      <defs>
-        <linearGradient id='fill' x1='0%' y1='0%' x2='0%' y2='50%'>
-          <Container offset='0%' />
-          <Overlay offset='100%' />
-        </linearGradient>
-      </defs>
-      <Fill fill='url(#fill)' />
-    </Svg>
+    <Wrapper>
+      <Svg>
+        <defs>
+          <linearGradient id='fill' x1='0%' y1='0%' x2='0%' y2='50%'>
+            <Container offset='0%' />
+            <Overlay offset='100%' />
+          </linearGradient>
+        </defs>
+        <Fill fill='url(#fill)' />
+      </Svg>
+    </Wrapper>
   )
 }

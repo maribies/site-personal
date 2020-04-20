@@ -1,21 +1,58 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Container = styled.div`
+const base = css`
   align-self: center;
   flex-basis: auto;
-  width: 100%;
+  width: ${props => props.width ? props.width : 100}%;
   justify-content: center;
+`
 
-  @media (min-width: 768px) {
-    width: 50%;
+const Container = styled.div`
+  ${base}
+
+  @media (min-width: 48rem) {
+    width: ${props => props.width ? props.width : 50}%;
+  }
+`
+
+const TitleContainer = styled.div`
+  ${base}
+
+  @media (min-width: 48rem) {
+    width: ${props => props.width ? props.width : 30}%;
+  }
+`
+
+const ContentContainer = styled.div`
+  ${base}
+  position: ${props => props.position};
+
+  @media (min-width: 48rem) {
+    width: ${props => props.width ? props.width : 70}%;
   }
 `
 
 export const SubSection = props => {
   return (
-    <Container>
+    <Container width={props.width}>
       {props.children}
     </Container>
+  )
+}
+
+export const SubSectionTitle = props => {
+  return (
+    <TitleContainer width={props.width}>
+      {props.children}
+    </TitleContainer>
+  )
+}
+
+export const SubSectionContent = props => {
+  return (
+    <ContentContainer position={props.position} width={props.width}>
+      {props.children}
+    </ContentContainer>
   )
 }

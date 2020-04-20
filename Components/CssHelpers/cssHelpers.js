@@ -15,7 +15,7 @@ const colors = {
 }
 
 export const getColorValue = (color, opacity = 1, isHex) => {
-  if (Object.keys(colors).forEach(key => { if (key != color) { return true } })) {
+  if (Object.keys(colors).forEach(key => { if (key !== color) { return true } })) {
     return colors.grey.hex
   }
 

@@ -1,6 +1,5 @@
 import { Section as BaseSection } from '../Section'
 import { NavigationBar } from '../NavigationBar'
-import { LogoMenu } from '../LogoMenu'
 import { Alert } from '../Alert'
 import React from 'react'
 import styled from 'styled-components'

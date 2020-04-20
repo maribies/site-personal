@@ -13,19 +13,21 @@ import React from 'react'
 const theme = {
   flexboxgrid: {
     breakpoints: {
+      xl: 90, // 1440px
       lg: 75, // 1200px
-      md: 62, // 992px
-      sm: 48, // 768px
+      md: 48, // 768px
+      sm: 25.875, // 414px
       xs: 0
     },
     container: {
-      xl: 106.25, // 1700px
-      lg: 69.25, // 1108px
-      md: 62, // 992px
-      sm: 48, // 768px
-      xs: 25 // 400px
+      xl: 105, // 1680px
+      lg: 90, // 1440px
+      md: 52.125, // 834px
+      sm: 25.875, // 414px
+      shm: 23.4375, // 375px
+      xs: 22.5 // 360px
     },
-    gutterWidth: 1.875
+    gutterWidth: 1.5 // 24px
   }
 }
 

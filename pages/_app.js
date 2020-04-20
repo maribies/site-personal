@@ -1,4 +1,3 @@
-import App from 'next/app'
 import '../Styles/styles.css'
 
 const MyApp = ({ Component, pageProps }) => (
