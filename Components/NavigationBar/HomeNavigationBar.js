@@ -3,17 +3,7 @@ import styled from 'styled-components'
 import { H1, H3 } from '../Text'
 import { Link } from '../Link'
 import { getColorValue } from '../CssHelpers'
-
-const NavigationContainer = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  height: 120px;
-  margin-top: 48px;
-  margin-left: 120px;
-  margin-right: 120px;
-`
+import { NavigationContainer } from './NavigationContainer'
 
 const SectionsContainer = styled.div`
   display: flex;
@@ -33,7 +23,7 @@ const SectionTitle = styled(H3)`
   }
 `
 
-export const NavigationBar = () => {
+export const HomeNavigationBar = () => {
   return (
     <NavigationContainer>
       <H1>MARISSA BIESECKER</H1>

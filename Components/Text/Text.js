@@ -12,7 +12,7 @@ const baseStyles = css`
 export const H1 = styled.h1`
   ${baseStyles}
   font-size: 44px;
-  line-height: 72px;
+  line-height: 64px;
 `
 
 export const H2 = styled.h2`

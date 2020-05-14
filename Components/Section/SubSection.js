@@ -10,6 +10,7 @@ const base = css`
 
 const Container = styled.div`
   ${base}
+  display: flex;
 
   @media (min-width: 48rem) {
     width: ${props => props.width ? props.width : 50}%;

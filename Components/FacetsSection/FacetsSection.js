@@ -61,7 +61,7 @@ export const FacetsSection = () => {
         <ContentSection>
           <Wrapper>
             <FacetSection clipPath='polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'>
-              <Link href='#' onClick={e => showAlert(e, '5%')}>
+              <Link href='/experiences'>
                 <FacetSectionTitle>Portfolio, Experiences, & Skills</FacetSectionTitle>
               </Link>
             </FacetSection>
