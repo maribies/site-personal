@@ -1,6 +1,7 @@
 import { Section, SubSection } from '../Section'
 import { H1, P } from '../Text'
 import { Link } from '../Link'
+import { Links } from '../../api/Links'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -19,30 +20,14 @@ export const ConnectSection = () => {
         <Title>Connect</Title>
       </SubSection>
 
-      <SubSection>
-        <Link href='mailto:marissa.biesecker@gmail.com' className='fa fa-envelope'>
-          <LinkInfo>marissa.biesecker@gmail.com</LinkInfo>
-        </Link>
-
-        <Link href='https://twitter.com/maribies' className='fa fa-twitter'>
-          <LinkInfo>@maribies</LinkInfo>
-        </Link>
-
-        <Link href='https://www.instagram.com/maribies' className='fa fa-instagram'>
-          <LinkInfo>@maribies</LinkInfo>
-        </Link>
-
-        <Link href='https://github.com/maribies/' className='fa fa-github'>
-          <LinkInfo>@maribies</LinkInfo>
-        </Link>
-
-        <Link href='https://medium.com/@marissa.biesecker' className='fa fa-medium'>
-          <LinkInfo>@marissa.biesecker</LinkInfo>
-        </Link>
-
-        <Link href='https://www.linkedin.com/in/marissabiesecker/' className='fa fa-linkedin'>
-          <LinkInfo>marissabiesecker</LinkInfo>
-        </Link>
+      <SubSection direction="column">
+        {Links.map((item, index) => {
+          return (
+            <Link key={index} href={item.link} className={item.icon}>
+              <LinkInfo>{item.name}</LinkInfo>
+            </Link>
+          )
+        })}
       </SubSection>
     </Section>
   )
