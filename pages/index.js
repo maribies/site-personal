@@ -1,5 +1,5 @@
 import { NextHead } from '../Components/Head'
-import { Background } from '../Components/Background'
+import { BackgroundGradient } from '../Components/Background'
 import { MainSection } from '../Components/MainSection'
 import { AboutSection } from '../Components/AboutSection'
 import { FacetsSection } from '../Components/FacetsSection'
@@ -31,12 +31,12 @@ const theme = {
   }
 }
 
-const Index = () => (
+const Home = () => (
   <ThemeProvider theme={theme}>
     <>
       <NextHead />
 
-      <Background />
+      <BackgroundGradient />
 
       <MainSection />
 
@@ -53,4 +53,4 @@ const Index = () => (
   </ThemeProvider>
 )
 
-export default Index
+export default Home
