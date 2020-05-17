@@ -4,13 +4,13 @@ import styled, { css } from 'styled-components'
 const base = css`
   align-self: center;
   flex-basis: auto;
-  width: ${props => props.width ? props.width : 100}%;
   justify-content: center;
 `
 
 const Container = styled.div`
   ${base}
   display: flex;
+  flex-direction: ${props => props.direction ? props.direction : 'row'};
 
   @media (min-width: 48rem) {
     width: ${props => props.width ? props.width : 50}%;
@@ -36,7 +36,7 @@ const ContentContainer = styled.div`
 
 export const SubSection = props => {
   return (
-    <Container width={props.width}>
+    <Container width={props.width} direction={props.direction}>
       {props.children}
     </Container>
   )
