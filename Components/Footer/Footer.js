@@ -9,11 +9,13 @@ const Container = styled.footer`
   flex-wrap: wrap;
   padding-left: 80px;
   padding-right: 80px;
+  margin-top: 80px;
 
   @media (min-width: 48rem) {
     justify-content: space-between;
     padding-left: 120px;
     padding-right: 120px;
+    margin-top: 0;
   }
 `
 

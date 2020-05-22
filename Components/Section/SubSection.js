@@ -11,6 +11,7 @@ const Container = styled.div`
   ${base}
   display: flex;
   flex-direction: ${props => props.direction ? props.direction : 'row'};
+  flex-grow: 2;
 
   @media (min-width: 48rem) {
     width: ${props => props.width ? props.width : 50}%;
