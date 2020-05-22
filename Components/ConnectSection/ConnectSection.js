@@ -20,7 +20,7 @@ export const ConnectSection = () => {
         <Title>Connect</Title>
       </SubSection>
 
-      <SubSection direction="column">
+      <SubSection direction='column'>
         {Links.map((item, index) => {
           return (
             <Link key={index} href={item.link} className={item.icon}>

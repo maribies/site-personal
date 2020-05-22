@@ -29,4 +29,4 @@ export const Links = [
     icon: 'fa fa-linkedin',
     name: 'marissabiesecker'
   }
-];
+]

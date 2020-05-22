@@ -3,10 +3,6 @@ import styled from 'styled-components'
 import { P } from '../Text'
 import { getColorValue } from '../CssHelpers'
 
-const UnorderedList = styled.ul`
-
-`
-
 const ListItem = styled.li`
   color: ${getColorValue('white')};
 `
@@ -25,8 +21,8 @@ const renderListItems = listData => {
 
 export const UnorderedListComponent = props => {
   return (
-    <UnorderedList>
+    <ul>
       {renderListItems(props.listData)}
-    </UnorderedList>
+    </ul>
   )
 }

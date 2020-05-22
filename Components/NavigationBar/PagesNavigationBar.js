@@ -50,15 +50,15 @@ export const PagesNavigationBar = () => {
       </MainLink>
 
       <SectionsContainer>
-        <SectionLink href='/#'>
+        <SectionLink href='#tech'>
           <SectionTitle>TECH</SectionTitle>
         </SectionLink>
 
-        <SectionLink href='/#'>
+        <SectionLink href='#retail'>
           <SectionTitle>RETAIL</SectionTitle>
         </SectionLink>
 
-        <SectionLink href='/#'>
+        <SectionLink href='#life'>
           <SectionTitle>LIFE</SectionTitle>
         </SectionLink>
       </SectionsContainer>
