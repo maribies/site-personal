@@ -9,7 +9,8 @@ export const Link = styled.a`
   align-items: center;
   align-content: center;
   justify-content: center;
+
   &:clicked {
-    color: ${getColorValue('grey')}
+    color: ${getColorValue('purple')}
   }
 `

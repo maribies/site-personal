@@ -2,8 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { H1, H3 } from '../Text'
 import { Link } from '../Link'
-import { getColorValue } from '../CssHelpers'
+import { shineAnimationEffect } from '../CssHelpers'
 import { NavigationContainer } from './NavigationContainer'
+
+const NameTitle = styled(H1)`
+${shineAnimationEffect}
+`
 
 const SectionsContainer = styled.div`
   display: flex;
@@ -17,16 +21,15 @@ const SectionLink = styled(Link)`
 `
 
 const SectionTitle = styled(H3)`
-  transition: color 1s steps(4, end);
-  &:hover {
-    color: ${getColorValue('grey')}
-  }
+&:hover{
+  ${shineAnimationEffect}
+}
 `
 
 export const HomeNavigationBar = () => {
   return (
     <NavigationContainer>
-      <H1>MARISSA BIESECKER</H1>
+      <NameTitle>MARISSA BIESECKER</NameTitle>
 
       <SectionsContainer>
         <SectionLink href='#about'>
