@@ -1,3 +1,2 @@
-export { HomeNavigationBar } from './HomeNavigationBar'
-export { PagesNavigationBar } from './PagesNavigationBar'
+export { NavigationBar } from './NavigationBar'
 export { NavigationContainer } from './NavigationContainer'
