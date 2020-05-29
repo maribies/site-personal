@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 const colors = {
   purple: { hex: '#5F4B8B', rgb: { r: 95, g: 75, b: 139 } },
@@ -28,4 +28,35 @@ export const getColorValue = (color, opacity = 1, isHex) => {
 
 export const dropShadowWrapper = styled.div`
   filter: drop-shadow(0 0 12px ${getColorValue('grey')});
+`
+
+export const gradients = {
+  one: '#5F4B8B, #0078A7, #FF7913, #D32E5E, #5F4B8B',
+  two: '#FF7913, #D32E5, #5F4B8B, #0078A7, #FF7913'
+}
+
+const shineEffect = keyframes`
+  0%, 10% {
+    background-position: -100px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 100px;
+  }
+`
+
+export const shineAnimationEffect = () => css`
+  color: ${getColorValue('white', 0.8)};
+  background: ${getColorValue('purple')} -webkit-gradient(linear, left top, right top, from(${getColorValue('pink')}), to(${getColorValue('blue')}), color-stop(0.5, #fff)) 0 0 no-repeat;
+  background-image: linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation-name: ${shineEffect};
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 `

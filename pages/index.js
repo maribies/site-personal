@@ -1,5 +1,5 @@
 import { NextHead } from '../Components/Head'
-import { BackgroundGradient } from '../Components/Background'
+import { NavigationBar } from '../Components/NavigationBar'
 import { MainSection } from '../Components/MainSection'
 import { AboutSection } from '../Components/AboutSection'
 import { FacetsSection } from '../Components/FacetsSection'
@@ -36,7 +36,7 @@ const Home = () => (
     <>
       <NextHead />
 
-      <BackgroundGradient />
+      <NavigationBar isHome />
 
       <MainSection />
 
