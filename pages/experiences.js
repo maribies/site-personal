@@ -3,6 +3,7 @@ import React from 'react'
 import { Footer } from '../Components/Footer'
 import { ExperienceSection } from '../Components/ExperienceSection'
 import { NavigationBar } from '../Components/NavigationBar'
+import { NextHead } from '../Components/Head'
 
 // rem base is 16px.
 const theme = {
@@ -29,6 +30,8 @@ const theme = {
 const Experiences = () => (
   <ThemeProvider theme={theme}>
     <>
+      <NextHead />
+
       <NavigationBar />
 
       <ExperienceSection />

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import SvgLogo from '../../static/SVG/Logo.svg'
+import SvgLogo from '../../public/static/SVG/Logo.svg'
 
 const Container = styled.button`
   background: transparent;

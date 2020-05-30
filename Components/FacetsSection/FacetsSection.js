@@ -2,10 +2,8 @@ import { Section, SubSection } from '../Section'
 import { H1, H3 } from '../Text'
 import { Link as BaseLink } from '../Link'
 import { Alert } from '../Alert'
-import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { render } from 'react-dom'
 
 const ContentSection = styled.div`
   display: flex;
@@ -38,11 +36,11 @@ const Title = styled(H1)`
 `
 
 const renderFacetSection = showAlert => {
-  const sections = [ 
-    { alert: false, link: '/experiences', title: 'Portfolio, Experiences, & Skills'},
-    { alert: '35%', link: '/', title: 'Travel and Photography'},
-    { alert: '65%', link: '/', title: 'Grilled Cheese, Food, & Crafts'}
-  ];
+  const sections = [
+    { alert: false, link: '/experiences', title: 'Portfolio, Experiences, & Skills' },
+    { alert: '35%', link: '/', title: 'Travel and Photography' },
+    { alert: '65%', link: '/', title: 'Grilled Cheese, Food, & Crafts' }
+  ]
 
   return sections.map((section, index) => {
     return (
