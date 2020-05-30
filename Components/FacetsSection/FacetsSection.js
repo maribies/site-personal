@@ -1,10 +1,11 @@
-import { Section, SubSectionTitle, SubSectionContent } from '../Section'
+import { Section, SubSection } from '../Section'
 import { H1, H3 } from '../Text'
 import { Link as BaseLink } from '../Link'
 import { Alert } from '../Alert'
 import { dropShadowWrapper as Wrapper, getColorValue } from '../CssHelpers'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { render } from 'react-dom'
 
 const ContentSection = styled.div`
   display: flex;
@@ -21,9 +22,7 @@ const ContentSection = styled.div`
 `
 
 const FacetSection = styled.div`
-  background-color: ${getColorValue('grey')};
   margin-bottom: 32px;
-  clip-path: ${props => props.clipPath};
 `
 
 const FacetSectionTitle = styled(H3)`
@@ -37,6 +36,24 @@ const Link = styled(BaseLink)`
 const Title = styled(H1)`
   text-align: center;
 `
+
+const renderFacetSection = showAlert => {
+  const sections = [ 
+    { alert: false, link: '/experiences', title: 'Portfolio, Experiences, & Skills'},
+    { alert: '35%', link: '/', title: 'Travel and Photography'},
+    { alert: '65%', link: '/', title: 'Grilled Cheese, Food, & Crafts'}
+  ];
+
+  return sections.map((section, index) => {
+    return (
+      <FacetSection key={index}>
+        <Link href={section.link} onClick={event => !!section.alert && showAlert(event, section.alert)}>
+          <FacetSectionTitle>{section.title}</FacetSectionTitle>
+        </Link>
+      </FacetSection>
+    )
+  })
+}
 
 export const FacetsSection = () => {
   const [isVisible, makeVisible] = useState(null)
@@ -57,39 +74,17 @@ export const FacetsSection = () => {
 
   return (
     <Section id='facets' wrap='wrap-reverse'>
-      <SubSectionContent position='relative'>
+      <SubSection position='relative'>
         <ContentSection>
-          <Wrapper>
-            <FacetSection clipPath='polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'>
-              <Link href='/experiences'>
-                <FacetSectionTitle>Portfolio, Experiences, & Skills</FacetSectionTitle>
-              </Link>
-            </FacetSection>
-          </Wrapper>
-
-          <Wrapper>
-            <FacetSection clipPath='polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'>
-              <Link href='#' onClick={e => showAlert(e, '35%')}>
-                <FacetSectionTitle>Travel and Photography</FacetSectionTitle>
-              </Link>
-            </FacetSection>
-          </Wrapper>
-
-          <Wrapper>
-            <FacetSection clipPath='polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'>
-              <Link href='#' onClick={e => showAlert(e, '65%')}>
-                <FacetSectionTitle>Grilled Cheese, Food, & Crafts</FacetSectionTitle>
-              </Link>
-            </FacetSection>
-          </Wrapper>
+          {renderFacetSection(showAlert)}
 
           <Alert isVisible={isVisible} top={top} left='70%' message={'This link doesn\'t go anywhere yet.'} />
         </ContentSection>
-      </SubSectionContent>
+      </SubSection>
 
-      <SubSectionTitle>
+      <SubSection>
         <Title>FACETS</Title>
-      </SubSectionTitle>
+      </SubSection>
     </Section>
   )
 }
