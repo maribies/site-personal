@@ -58,10 +58,10 @@ export const Experiences = [
         timeFrame: 'All the time',
         skills: [
           'I set goals, achieve them, and then set new ones.',
-          'Athelete: marathon runner, soccer player for Portuguese women\'s league, beginner surfer...',
+          'Athlete: marathon runner, soccer player for Portuguese women\'s league, beginner surfer...',
           'Traveler: 30+ countries and counting...',
           'Crafter: crochet, knitting, cross stitching... countless (baby) gifts created...',
-          'Cook: baker and experimental chef, creating bonding expereinces for friends and coworkers over food...',
+          'Cook: baker and experimental chef, creating bonding experiences for friends and coworkers over food...',
           'Student: AU undergrad, TNDS UX course, Udacity Nanodegree, Self-teaching, Life-taught, and still learning...'
         ],
         links: {

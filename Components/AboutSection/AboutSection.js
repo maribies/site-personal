@@ -42,17 +42,15 @@ export const AboutSection = () => {
         <ShapeDiv clipPath='0 100%, 100% 75%, 100% 35%, 65% 0, 25% 0'>
           <TextWrapper>
             <P>
-              {'This website is meant to be a reflection of me. It is the place for me to express myself and show off my passions.'}
+              {'This website is meant to be a reflection of me- all my sides and facets.'}
             </P>
 
             <P>
-              {'I’ve always been a bit different. Born in the country, moved to the city, and eventually kept moving around the world.'}
+              {'Like other minerals and gems, we are all rare and unique, born under pressure, given lots of grades, classes, colors, and with lots of uses and values. There is beauty in the natural and raw as well as the polished and shaped.'}
             </P>
 
             <Text>
-              {`I’ve discovered so much more to myself and life, which I’d like to share. I’m finally making a life in which I do what I love and love what I do.
-                It’s also a place for me to connect- in whatever way that may be- travel, design, or even grilled cheese!
-                Keep scrolling to discover more.`}
+              {`I’d like to show both the rough and the polished- of me and the world as I move through it; how I was formed under pressure; how I seek and find other brilliant, precious and semi-precious gems of experience, and the myriad of ways I bring and seek value in life.`}
             </Text>
           </TextWrapper>
         </ShapeDiv>
@@ -60,9 +58,7 @@ export const AboutSection = () => {
         <ShapeDiv clipPath='100% 0, 75% 100%, 35% 100%, 0 65%, 0 25%' mobile>
           <TextWrapper>
             <P>
-              {`I’ve discovered so much more to myself and life, which I’d like to share. I’m finally making a life in which I do what I love and love what I do.
-              It’s also a place for me to connect- in whatever way that may be- travel, design, or even grilled cheese!
-              Keep scrolling to discover more.`}
+              {`I’d like to show both the rough and the polished- of me and the world as I move through it; how I was formed under pressure; how I seek and find other brilliant, precious and semi-precious gems of experience, and the myriad of ways I bring and seek value in life.`}
             </P>
           </TextWrapper>
         </ShapeDiv>
