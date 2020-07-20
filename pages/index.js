@@ -7,50 +7,46 @@ import { ConnectSection } from '../Components/ConnectSection'
 import { LogoMenu } from '../Components/LogoMenu'
 import { Footer } from '../Components/Footer'
 import { ThemeProvider } from 'styled-components'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import theme from '../Styles/themes'
+import { useSpring, animated } from 'react-spring';
 
-// rem base is 16px.
-const theme = {
-  flexboxgrid: {
-    breakpoints: {
-      xl: 90, // 1440px
-      lg: 75, // 1200px
-      md: 48, // 768px
-      sm: 25.875, // 414px
-      xs: 0
-    },
-    container: {
-      xl: 105, // 1680px
-      lg: 90, // 1440px
-      md: 52.125, // 834px
-      sm: 25.875, // 414px
-      shm: 23.4375, // 375px
-      xs: 22.5 // 360px
-    },
-    gutterWidth: 1.5 // 24px
-  }
-}
+const Home = () => {
+  const [contentStatus, displayContent] = React.useState(false);
 
-const Home = () => (
+  const loadingProps = useSpring({
+    opacity: contentStatus ? 1 : 0,
+  })
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      displayContent(true)
+    }, 500)
+    return () => clearTimeout(timer)
+  })
+  
+  return(
   <ThemeProvider theme={theme}>
-    <>
+    {!!contentStatus && <>
       <NextHead />
 
-      <NavigationBar isHome />
+      <animated.div style={loadingProps}>
+        <NavigationBar isHome />
 
-      <MainSection />
+        <MainSection />
 
-      <AboutSection />
+        <AboutSection />
 
-      <FacetsSection />
+        <FacetsSection />
 
-      <ConnectSection />
+        <ConnectSection />
 
-      <LogoMenu position='fixed' />
+        <LogoMenu position='fixed' />
 
-      <Footer />
-    </>
+        <Footer />
+      </ animated.div>
+    </>}
   </ThemeProvider>
-)
+)}
 
 export default Home
