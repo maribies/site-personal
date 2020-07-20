@@ -1,9 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+const dimensions = () => css`
+  width: 464px;
+  height: 244px;
+  margin: 1em;
+`
 
 const View = styled.iframe`
-  max-width: 464px;
-  height: 244px;
+  ${dimensions}
 `
 
 const Image = styled.div`
@@ -11,13 +16,23 @@ const Image = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 464px;
-  height: 244px; 
+  ${dimensions}
 `
 
-export const PreviewSection = ({ info }) => {
-  const Component = info.video ? <View src={info.path} frameborder='0' />
-    : <Image path={info.path} url={info.path} />
+const componentType = (info) => {
+  if (info.type === 'video' || info.type === 'site') {
+    return (
+      <View src={info.path} frameborder='0' title={info.path}/>
+    )
+  }
 
-  return Component
+  if (info.type === 'image') {
+    return (
+      <Image path={info.path} url={info.path} />
+    )
+  }
+}
+
+export const PreviewSection = ({ info }) => {
+  return componentType(info);
 }
