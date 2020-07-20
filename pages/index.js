@@ -7,27 +7,19 @@ import { ConnectSection } from '../Components/ConnectSection'
 import { LogoMenu } from '../Components/LogoMenu'
 import { Footer } from '../Components/Footer'
 import { ThemeProvider } from 'styled-components'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import theme from '../Styles/themes'
-import { useSpring, animated } from 'react-spring';
+import {  animated } from 'react-spring'
+import { basicLoading } from '../Components/Loading'
 
 const Home = () => {
-  const [contentStatus, displayContent] = React.useState(false);
+  const [status, loading] = useState(false)
 
-  const loadingProps = useSpring({
-    opacity: contentStatus ? 1 : 0,
-  })
+  const loadingProps = basicLoading(status, loading);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      displayContent(true)
-    }, 500)
-    return () => clearTimeout(timer)
-  })
-  
   return(
   <ThemeProvider theme={theme}>
-    {!!contentStatus && <>
+    {!!status && <>
       <NextHead />
 
       <animated.div style={loadingProps}>
