@@ -1,44 +1,32 @@
 import { ThemeProvider } from 'styled-components'
-import React from 'react'
 import { Footer } from '../Components/Footer'
 import { ExperienceSection } from '../Components/ExperienceSection'
 import { NavigationBar } from '../Components/NavigationBar'
 import { NextHead } from '../Components/Head'
+import theme from '../Styles/themes'
+import React, { useState } from 'react'
+import {  animated } from 'react-spring'
+import { basicLoading } from '../Components/Loading'
 
-// rem base is 16px.
-const theme = {
-  flexboxgrid: {
-    breakpoints: {
-      xl: 90, // 1440px
-      lg: 75, // 1200px
-      md: 48, // 768px
-      sm: 25.875, // 414px
-      xs: 0
-    },
-    container: {
-      xl: 105, // 1680px
-      lg: 90, // 1440px
-      md: 52.125, // 834px
-      sm: 25.875, // 414px
-      shm: 23.4375, // 375px
-      xs: 22.5 // 360px
-    },
-    gutterWidth: 1.5 // 24px
-  }
-}
+const Experiences = () => {
+  const [status, loading] = useState(false)
 
-const Experiences = () => (
+  const loadingProps = basicLoading(status, loading);
+
+  return (
   <ThemeProvider theme={theme}>
-    <>
+    {!!status && <>
       <NextHead />
 
-      <NavigationBar />
+      <animated.div style={loadingProps}>
+        <NavigationBar />
 
-      <ExperienceSection />
+        <ExperienceSection />
 
-      <Footer />
-    </>
+        <Footer />
+      </ animated.div>
+    </>}
   </ThemeProvider>
-)
+)}
 
 export default Experiences
