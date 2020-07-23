@@ -10,7 +10,7 @@ const Section = styled(BaseSection)`
 export const MainSection = () => {
   return (
     <Section column setHeight>
-      <Alert isVisible top='70%' left='5%' />
+      <Alert isVisible top='70%' left='5%' defaultMessage={true} />
     </Section>
   )
 }

@@ -1,9 +1,10 @@
 import { Section, SubSection } from '../Section'
 import { H1, H3 } from '../Text'
 import { Link as BaseLink } from '../Link'
-import { Alert } from '../Alert'
+import { Alert, Message } from '../Alert'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { getColorValue } from '../CssHelpers'
 
 const ContentSection = styled.div`
   display: flex;
@@ -31,6 +32,12 @@ const Link = styled(BaseLink)`
   justify-content: center;
 `
 
+const MessageLink = styled(BaseLink)`
+  color: ${getColorValue('pink')};
+  font-weight: bold;
+  text-decoration: underline;
+`
+
 const Title = styled(H1)`
   text-align: center;
 `
@@ -38,14 +45,16 @@ const Title = styled(H1)`
 const renderFacetSection = showAlert => {
   const sections = [
     { alert: false, link: '/experiences', title: 'Portfolio, Experiences, & Skills' },
-    { alert: '35%', link: '/', title: 'Travel and Photography' },
-    { alert: '65%', link: '/', title: 'Grilled Cheese, Food, & Crafts' }
+    { alert: '35%', link: '/', title: 'Travel and Photography', message: renderAlertLink('travel')},
+    { alert: '65%', link: '/', title: 'Grilled Cheese, Food, & Crafts', message: renderAlertLink() }
   ]
 
   return sections.map((section, index) => {
+    const { link, alert, message } = section;
+  
     return (
       <FacetSection key={index} setHeight>
-        <Link href={section.link} onClick={event => !!section.alert && showAlert(event, section.alert)}>
+        <Link href={link} onClick={event => !!alert && showAlert(event, alert, message)}>
           <FacetSectionTitle>{section.title}</FacetSectionTitle>
         </Link>
       </FacetSection>
@@ -53,21 +62,41 @@ const renderFacetSection = showAlert => {
   })
 }
 
+const renderAlert = (isVisible, top, message) => {
+  return (
+    <Alert isVisible={isVisible} top={top} left='70%' message={message} defaultMessage={false} />
+  )
+}
+
+const renderAlertLink = type => {
+  let redirect = { name: 'Instagram', link: 'https://www.instagram.com/maribies/' };
+
+  if (type === 'travel') {
+    redirect = { name: 'WixSite', link: 'https://maribies.wixsite.com/marissabiesecker/galleries'}
+  }
+
+  return (
+  <Message>Redirect to my <MessageLink href={redirect.link}>{redirect.name}</MessageLink> while customization is still in progress?</Message>
+  )
+}
+
 export const FacetsSection = () => {
   const [isVisible, makeVisible] = useState(null)
   const [top, setAlertTopValue] = useState(null)
+  const [message, setMessage] = useState('This link doesn\'t go anywhere yet.');
 
   useEffect(() => {
     const timer = setTimeout(() => {
       makeVisible(false)
-    }, 3000)
+    }, 5000)
     return () => clearTimeout(timer)
   }, [isVisible])
 
-  const showAlert = (e, topValue) => {
+  const showAlert = (e, topValue, message) => {
     e.preventDefault()
     makeVisible(true)
     setAlertTopValue(topValue)
+    setMessage(message)
   }
 
   return (
@@ -76,7 +105,7 @@ export const FacetsSection = () => {
         <ContentSection>
           {renderFacetSection(showAlert)}
 
-          <Alert isVisible={isVisible} top={top} left='70%' message={'This link doesn\'t go anywhere yet.'} />
+          {renderAlert(isVisible, top, message)}
         </ContentSection>
       </SubSection>
 
