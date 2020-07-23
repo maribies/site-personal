@@ -6,19 +6,42 @@ export const Experiences = [
       {
         icon: '../../static/images/uphold.jpeg',
         iconAlt: 'Uphold Icon',
-        title: 'Junior Developer',
+        title: 'Developer',
         company: 'Uphold',
         companyLink: 'https://www.uphold.com',
-        timeFrame: 'Jan 2018 - Present',
+        timeFrame: 'Jan 2019 - Present',
         skills: [
-          'Focused on continuous development and automated testing of mobile app',
+          'Automated REST ask/bid requests from potential exchange API',
+          'Voice of “how to” product instructional and promotional videos',
+          'Contributor to development, analytics, and testing of mobile app',
+          'Automated +80% of end to end regression tests for core suite',
+          'Deprecated REST API in favor of GraphQL for app entry flows',
+          'Automated CLI tool for translations services API',
+          'App stabilization- bug fixing and  refactoring code',
+          'Hired from internship after developing new landing page',
           'Experience with: React, React Native, GraphQL, styled-components, Redux, REST, Node.js, Next.js, i18next, CLI, analytics events with Datadog, testing with Jest, Detox, and Cypress'
         ],
         links: {
-          main: { path: 'https://www.youtube.com/embed/UpvIJLUizB8', video: 'video' },
-          secondary1: '',
-          secondary2: '',
-          secondary3: ''
+          main: { path: 'https://www.youtube.com/embed/UpvIJLUizB8', type: 'video' },
+          second: { path: 'https://www.youtube.com/embed/negLouj_oj0', type: 'video' },
+          third: { path: 'https://docs.google.com/presentation/d/e/2PACX-1vSYiWV2UtnnDzcFHhFmPLL8LNEzjaeLi3ASKZMLR2cF6qBhoyFnbV2BWqHhfbr9eeSmEoUJtX95TruS/embed?start=false&loop=false&delayms=3000', type: 'site' }
+        }
+      },
+      {
+        icon: '../../static/images/oneliners.png',
+        iconAlt: 'Oneliners Icon',
+        title: 'Developer',
+        company: 'Oneliners.co',
+        companyLink: 'https://oneliners.co/',
+        timeFrame: 'Present',
+        skills: [
+          'Entrepreneurial project with friends & colleauges- business, design, and development',
+          'Refresh business idea',
+          'Refactoring legacy code to use React',
+          'Implemented Grid & Flexbox layout for responsiveness'
+        ],
+        links: {
+          main: { path: 'https://oneliners.co/', type: 'site' }
         }
       }
     ]
@@ -38,10 +61,7 @@ export const Experiences = [
           'Developed and implemented categories’ strategic business plans, forecasts, risk management strategies, and performance reviews'
         ],
         links: {
-          main: { path: 'https://www.youtube.com/embed/hV-8yVFvjnc', video: 'video' },
-          secondary1: '',
-          secondary2: '',
-          secondary3: ''
+          main: { path: 'https://www.youtube.com/embed/hV-8yVFvjnc', type: 'video' }
         }
       }
     ]
@@ -55,7 +75,7 @@ export const Experiences = [
         title: 'Determined',
         company: 'Adaptable',
         companyLink: '/',
-        timeFrame: 'All the time',
+        timeFrame: 'Present',
         skills: [
           'I set goals, achieve them, and then set new ones.',
           'Athlete: marathon runner, soccer player for Portuguese women\'s league, beginner surfer...',
@@ -65,10 +85,7 @@ export const Experiences = [
           'Student: AU undergrad, TNDS UX course, Udacity Nanodegree, Self-teaching, Life-taught, and still learning...'
         ],
         links: {
-          main: { path: '../../static/images/me.jpeg', image: 'image' },
-          secondary1: '',
-          secondary2: '',
-          secondary3: ''
+          main: { path: '../../static/images/me.jpeg', type: 'image' }
         }
       }
     ]

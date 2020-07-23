@@ -15,7 +15,7 @@ const LinkInfo = styled(P)`
 
 export const ConnectSection = () => {
   return (
-    <Section id='connect'>
+    <Section id='connect' setHeight>
       <SubSection>
         <Title>Connect</Title>
       </SubSection>

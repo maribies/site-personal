@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.section`
-  height: 900px;
+  min-height: ${props => props.props.setHeight ? '900px' : 'auto'};
   display: flex;
   flex-direction: ${props => props.props.column ? 'column' : 'row'};
   flex-wrap: ${props => props.props.wrap ? props.props.wrap : 'wrap'};

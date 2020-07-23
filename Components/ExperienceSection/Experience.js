@@ -47,6 +47,7 @@ const DescriptonSection = styled.div`
 const Section = styled.div`
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 `
 
 export const Experience = ({ experience, index }) => {
@@ -68,13 +69,14 @@ export const Experience = ({ experience, index }) => {
           </ContentSection>
         </SubSection>
 
-        <SubSection>
+        <SubSection direction="column">
           <PreviewSection info={experience.links.main} />
+
+          {!!experience.links.second && <PreviewSection info={experience.links.second} />}
+
+          {!!experience.links.third && <PreviewSection info={experience.links.third} /> }
         </SubSection>
-
       </Section>
-
-      <SubSection />
     </>
   )
 }

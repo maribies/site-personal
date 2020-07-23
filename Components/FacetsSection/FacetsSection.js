@@ -44,7 +44,7 @@ const renderFacetSection = showAlert => {
 
   return sections.map((section, index) => {
     return (
-      <FacetSection key={index}>
+      <FacetSection key={index} setHeight>
         <Link href={section.link} onClick={event => !!section.alert && showAlert(event, section.alert)}>
           <FacetSectionTitle>{section.title}</FacetSectionTitle>
         </Link>
