@@ -38,7 +38,7 @@ const SectionTitle = styled(H3)`
 `
 
 const renderName = isHome => {
-  return isHome ? <NameTitle>MARISSA BIESECKER</NameTitle> : (
+  return isHome ? <NameTitle id="home">MARISSA BIESECKER</NameTitle> : (
     <MainLink href='/'>
       <NameTitle>MARISSA BIESECKER</NameTitle>
     </MainLink>

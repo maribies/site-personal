@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import SvgLogo from '../../public/static/SVG/Logo.svg'
+import { LogoSvg } from '../../public/static/SVG/svgs.js'
+import { Link } from '../Link'
 
 const Container = styled.button`
   background: transparent;
@@ -19,14 +20,29 @@ const Container = styled.button`
   margin-left: -74px;
 
   &:hover {
-    background-image: radial-gradient(rgb(46,49,56), rgb(46,49,56, .3), rgb(46,49,56, .01), rgb(46,49,56, .0001));
+    background-image: radial-gradient(rgb(46,49,56), rgb(46,49,56, .3), rgb(46,49,56, .01), rgb(46,49,56, .01));
   }
 `
 
+const NavigationContainer = styled.div`
+  display: ${props => props.isVisible === true ? 'block' : 'none'};
+`;
+
 export const LogoMenu = ({ position }) => {
+  const [isVisible, makeVisible] = useState(false);
+
+  const toggle = () => makeVisible(!isVisible)
+
   return (
-    <Container position={position}>
-      <SvgLogo />
+    <Container position={position} onClick={toggle}>
+      <NavigationContainer isVisible={isVisible}>
+        <Link href="#home">Home</Link>
+        <Link href="#about">About</Link>
+        <Link href="#facets">Facets</Link>
+        <Link href="#connect">Connect</Link>
+      </NavigationContainer>
+
+      <LogoSvg width={'50%'} viewbox={'-3 -18 50 50'} id="logo" />
     </Container>
   )
 }
