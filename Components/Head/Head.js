@@ -13,7 +13,7 @@ export const NextHead = () => {
       <link rel='mask-icon' href='.../../static/images/favicon/safari-pinned-tab.svg' color='#5f4b8b' />
       <meta name='msapplication-TileColor' content='#5f4b8b' />
       <meta name='theme-color' content='#5f4b8b' />
-      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' />
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' />
       <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Karla|Vesper+Libre' />
     </Head>
