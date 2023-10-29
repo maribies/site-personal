@@ -36,9 +36,8 @@ const Text = styled(P)`
 export const Footer = () => {
   return (
     <Container>
-      <Text>Designed and developed with  💜 by me</Text>
-
-      <Text>copyright 2018-2020</Text>
+      <Text>Designed and developed by me with 💜</Text>
+      <Text>copyright 2018 - <p class="fa fa-infinity"></p></Text>
     </Container>
   )
 }
