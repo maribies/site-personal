@@ -1,5 +1,6 @@
 import { NextHead } from '../Components/Head'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+
 import React, { useState } from 'react'
 import theme from '../Styles/themes'
 import {  animated } from 'react-spring'
@@ -15,6 +16,11 @@ import { ConnectSection } from '../Components/ConnectSection'
 import { LogoMenu } from '../Components/LogoMenu'
 import { Footer } from '../Components/Footer'
 
+const Layout = styled.div`
+  padding-left: 2rem;
+  padding-right: 2rem;
+`
+
 const Home = () => {
   const [status, loading] = useState(false)
 
@@ -25,11 +31,13 @@ const Home = () => {
     {!!status && <>
       <NextHead />
 
-      <animated.div style={loadingProps}>
-        <Hero />
-        <ConnectSection />
-        <Footer />
-      </ animated.div>
+      <Layout>
+        <animated.div style={loadingProps}>
+          <Hero />
+          <ConnectSection />
+          <Footer />
+        </ animated.div>
+      </Layout>
     </>}
   </ThemeProvider>
 )}

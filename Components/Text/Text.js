@@ -71,6 +71,11 @@ export const SecondaryH2 = styled(H2)`
   font-weight: 100;
 `
 
+export const H2Outline = styled(H2)`
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+`
+
 export const H3 = styled.h3`
   ${baseStyles}
   font-size: 2.25rem;
