@@ -36,11 +36,10 @@ const colorChange = css`
 
 // Perfect Fifth
 export const Title = styled.h1`
-  font-family: 'Dela Gothic One';
   ${baseStyles}
+  font-family: 'Dela Gothic One';
   font-size: 5.063rem;
   line-height: 6.063rem;
-  
   margin: 0;
 
   @media (min-width: 48rem) {
