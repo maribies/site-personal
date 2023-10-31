@@ -16,7 +16,7 @@ export const Footer = () => {
   return (
     <Container>
       <Text>Designed and developed by me with 💜</Text>
-      <Text><i class="fa-regular fa-copyright" /> 2018 - <i class="fa fa-infinity" /></Text>
+      <Text><i className="fa-regular fa-copyright" /> 2018 - <i className="fa fa-infinity" /></Text>
     </Container>
   )
 }
