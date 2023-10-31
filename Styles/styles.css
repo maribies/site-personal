@@ -11,4 +11,5 @@ body {
   font-weight: normal;
   line-height: 21px;
   overflow-x: hidden;
+  cursor: url('/static/SVG/arrow.svg'), auto;
 }
