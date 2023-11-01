@@ -5,6 +5,8 @@ import { Title, TitleOutline, H2, H3Outline, H4, P } from '../Text'
 import { Link } from '../Link'
 import { getColorValue } from '../CssHelpers'
 
+import { SoccerBallAnimation } from './SoccerBallAnimation'
+
 const NavLink = styled(Link)`
   justify-content: right;
   &:hover {
@@ -46,57 +48,7 @@ const FlexGrow = styled(Flex)`
   flex-grow: 2;
   height: 3.25rem; 
   align-self: end;
-`
-
-const BallArc = styled.div`
-  display: flex;
-  width: 30%;
-  transition: ${({ isActive }) => isActive ?
-    `transform-origin 5s ease-in-out,
-    transform 5s ease-in-out,
-    opacity 5s linear 1s` : ""};
-
-  transform-origin: ${({ isActive }) => isActive ? "50% 50%" : ""};
-  transform: ${({ isActive }) => isActive ? "rotate(180deg)" : ""};
-  opacity: ${({ isActive }) => isActive ? 0 : 1};
-`
-
-const BallArc2 = styled(BallArc)`
-  margin-left: -32px;
-  width: 20%;
-  transition: ${({ isActive }) => isActive ?
-    `transform-origin 2s ease-in-out 5s,
-    transform 2s ease-in-out 5s,
-    opacity 2s linear 5s` : ""};
-  opacity: ${({ isActive }) => isActive ? 1 : 0};
-`
-
-const BallArc3 = styled(BallArc2)`
-  margin-left: -32px;
-  width: 10%;
-  transition: ${({ isActive }) => isActive ?
-    `transform-origin 2s ease-in-out 7s,
-    transform 2s ease-in-out 7s,
-    opacity 2s linear 7s` : ""};
-  opacity: ${({ isActive }) => isActive ? 1 : 0 };
-`
-
-const SoccerBall = styled.i`
-  display: ${({ isActive }) => isActive ? "flex" : "none"};
-  align-self: center;
-  color: #5f4b8b;
-  transition: ${({ isActive }) => isActive ? "transform 5s" : ""};
-  transform: ${({ isActive }) => isActive ? "rotate(-180deg)" : ""};
-`
-
-const SoccerBall2 = styled(SoccerBall)`
-  display: flex;
-  transition: ${({ isActive }) => isActive ? "color 3s ease-in-out 6s, transform 2s ease-in-out 5s" : ""};
-  color: ${({ isActive }) => isActive ? "#2E3138" : "#5f4b8b"};
-`
-
-const SoccerBall3 = styled(SoccerBall)`
-  transition: ${({ isActive }) => isActive ? "transform 2s ease-in-out 7s" : ""};
+  min-width: 50%;
 `
 
 export const Hero = () => {
@@ -116,15 +68,7 @@ export const Hero = () => {
         <ExplainTitle>aka Utility Player</ExplainTitle>
       </ExplainLink>
       <FlexGrow>
-        <BallArc isActive={isExplainLinkClicked}>
-          <SoccerBall className="fa-solid fa-futbol fa-2xl" isActive={isExplainLinkClicked} />
-        </BallArc>
-        <BallArc2 isActive={isExplainLinkClicked}>
-          <SoccerBall2 className="fa-solid fa-futbol fa-2xl" isActive={isExplainLinkClicked} />
-        </BallArc2>
-        <BallArc3 isActive={isExplainLinkClicked}>
-          <SoccerBall3 className="fa-solid fa-futbol fa-2xl" isActive={isExplainLinkClicked} />
-        </BallArc3>
+        <SoccerBallAnimation isActive={isExplainLinkClicked} />
       </FlexGrow>
     </Flex>
     
