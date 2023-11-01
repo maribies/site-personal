@@ -11,9 +11,9 @@ body {
   font-weight: normal;
   line-height: 21px;
   overflow-x: hidden;
-  cursor:  url('/static/SVG/arrow.svg'), auto;
+  cursor:  url('/static/SVG/cursors/arrow.svg'), auto;
 }
 
 a:-webkit-any-link {
-  cursor: url('/static/SVG/pointer.svg'), pointer;
+  cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
 }
