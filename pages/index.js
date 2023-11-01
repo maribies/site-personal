@@ -17,8 +17,13 @@ import { LogoMenu } from '../Components/LogoMenu'
 import { Footer } from '../Components/Footer'
 
 const Layout = styled.div`
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 48rem) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 `
 
 const Home = () => {

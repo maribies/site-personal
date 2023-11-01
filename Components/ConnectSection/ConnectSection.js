@@ -17,6 +17,7 @@ const LinksContainer = styled.div`
   display: flex;
   justify-content: end;
   flex-grow: 2;
+  flex-wrap: wrap;
 `
 
 export const ConnectSection = () => {

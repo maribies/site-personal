@@ -38,11 +38,16 @@ const colorChange = css`
 export const Title = styled.h1`
   ${baseStyles}
   font-family: 'Dela Gothic One';
-  font-size: 5.063rem;
-  line-height: 6.063rem;
+  font-size: 3.375rem;
+  line-height: 4.375rem;
   margin: 0;
 
   @media (min-width: 48rem) {
+    font-size: 5.063rem;
+    line-height: 6.063rem;
+  }
+
+  @media (min-width: 75rem) {
     font-size: 7.594rem;
     line-height: 8.594rem;
   }
@@ -56,14 +61,25 @@ export const TitleOutline = styled(Title)`
 
 export const H1 = styled.h1`
   ${baseStyles}
-  font-size: 5.063rem;
-  line-height: 6.063rem;
+  font-size: 3.375rem;
+  line-height: 4.375rem;
+
+  @media (min-width: 48rem) {
+    font-size: 5.063rem;
+    line-height: 6.063rem;
+  }
 `
 
 export const H2 = styled.h2`
   ${baseStyles}
-  font-size: 3.375rem;
-  line-height: 4.375rem;
+
+  font-size: 2.25rem;
+  line-height: 3.25rem;
+
+  @media (min-width: 48rem) {
+    font-size: 3.375rem;
+    line-height: 4.375rem;
+  }
 `
 
 export const SecondaryH2 = styled(H2)`
@@ -77,8 +93,13 @@ export const H2Outline = styled(H2)`
 
 export const H3 = styled.h3`
   ${baseStyles}
-  font-size: 2.25rem;
-  line-height: 3.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  @media (min-width: 48rem) {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+  }
 `
 
 export const SecondaryH3 = styled.h3`

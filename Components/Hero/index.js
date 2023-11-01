@@ -9,8 +9,13 @@ import { SoccerBallAnimation } from './SoccerBallAnimation'
 
 const NavLink = styled(Link)`
   justify-content: right;
-  &:hover {
-    border-bottom: 1px solid ${getColorValue('purple')};
+  border-bottom: 1px solid ${getColorValue('purple')};
+
+  @media (min-width: 48rem) {
+    border-bottom: none;
+    &:hover {
+      border-bottom: 1px solid ${getColorValue('purple')};
+    }
   }
   animation: fadeIn 5s;
 
@@ -33,22 +38,25 @@ const ExplainTitle = styled(H3Outline)`
   margin-bottom: 0;
 `
 
+// TODO: Maybe this becomes a popout instead... depending on how the progressing layout goes.
 const ExplainText = styled(P)`
   visibility: ${({ isActive }) => isActive ? "visible" : "hidden"};
   margin: 0;  
-  transition: ${({ isActive }) => isActive ? "opacity 5s linear 1s" : ""};
+  transition: ${({ isActive }) => isActive ? "all 5s linear 1s" : ""};
   opacity: ${({ isActive }) => isActive ? 1 : 0};
+  height: ${({ isActive }) => isActive ? "auto" : "3rem"};
 `
 
 const Flex = styled.div`
   display: flex;
+  width: 100%;
+  flex-direction: column;
 `
 
 const FlexGrow = styled(Flex)`
-  flex-grow: 2;
   height: 3.25rem; 
   align-self: end;
-  min-width: 50%;
+  flex-direction: row;
 `
 
 export const Hero = () => {
