@@ -67,7 +67,9 @@ export const Hero = () => {
       <NameWrapper><Title>Mari</Title><TitleOutline>ssa</TitleOutline></NameWrapper>
       <NameWrapper><Title>Bies</Title><TitleOutline>ecker</TitleOutline></NameWrapper>
     </NameWrapper>
+
     <NavLink href="#connect">Connect</NavLink>
+
     <H2>Creative Problem Solver</H2>
     <H4>with experience through the entire product lifecycle- where business, design, user experience, and technology intersect.</H4>
     

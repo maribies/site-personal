@@ -1,4 +1,3 @@
-import { NextHead } from '../Components/Head'
 import styled, { ThemeProvider } from 'styled-components'
 
 import React, { useState } from 'react'
@@ -7,13 +6,7 @@ import {  animated } from 'react-spring'
 import { basicLoading } from '../Components/Loading'
 
 import { Hero } from '../Components'
-
-import { NavigationBar } from '../Components/NavigationBar'
-import { MainSection } from '../Components/MainSection'
-import { AboutSection } from '../Components/AboutSection'
-import { FacetsSection } from '../Components/FacetsSection'
 import { ConnectSection } from '../Components/ConnectSection'
-import { LogoMenu } from '../Components/LogoMenu'
 import { Footer } from '../Components/Footer'
 
 const Layout = styled.div`
@@ -34,8 +27,6 @@ const Home = () => {
   return(
   <ThemeProvider theme={theme}>
     {!!status && <>
-      <NextHead />
-
       <Layout>
         <animated.div style={loadingProps}>
           <Hero />
