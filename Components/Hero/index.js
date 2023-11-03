@@ -9,12 +9,12 @@ import { SoccerBallAnimation } from './SoccerBallAnimation'
 
 const NavLink = styled(Link)`
   justify-content: right;
-  border-bottom: 1px solid ${getColorValue('purple')};
+  border-bottom: ${({ color }) => `1px solid ${getColorValue(color)}`};
 
   @media (min-width: 48rem) {
     border-bottom: none;
     &:hover {
-      border-bottom: 1px solid ${getColorValue('purple')};
+      border-bottom: ${({ color }) => `1px solid ${getColorValue(color)}`};
     }
   }
   animation: fadeIn 5s;
@@ -68,7 +68,8 @@ export const Hero = () => {
       <NameWrapper><Title>Bies</Title><TitleOutline>ecker</TitleOutline></NameWrapper>
     </NameWrapper>
 
-    <NavLink href="#connect">Connect</NavLink>
+    <NavLink href="#info" color="purple">Info</NavLink>
+    <NavLink href="#connect" color="blue">Connect</NavLink>
 
     <H2>Creative Problem Solver</H2>
     <H4>with experience through the entire product lifecycle- where business, design, user experience, and technology intersect.</H4>

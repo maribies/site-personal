@@ -1,9 +1,21 @@
-import { Section, SubSection } from '../Section'
-import { H1, P, H2Outline } from '../Text'
+import { P, H2Outline } from '../Text'
+// import { Section } from '../Section'
 import { Link } from '../Link'
 import { Links } from '../../api/Links'
 import React from 'react'
 import styled from 'styled-components'
+
+const Section = styled.div`
+  border-top: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`
 
 const ContactLink = styled(Link)`
   padding-left: 1rem;
