@@ -23,7 +23,7 @@ export const getColorValue = (color, opacity = 1, isHex) => {
     return colors[color].hex
   }
 
-  return `rgba(${colors[color].rgb.r}, ${colors[color].rgb.g}, ${colors[color].rgb.b}, ${opacity})`
+  return `rgba(${colors[color].rgb?.r}, ${colors[color].rgb?.g}, ${colors[color].rgb?.b}, ${opacity})`
 }
 
 export const dropShadowWrapper = styled.div`

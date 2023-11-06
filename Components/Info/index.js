@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { H4, P } from '../Text'
 import { Link } from '../Link'
 
+import { getColorValue } from '../CssHelpers'
+
 const Section = styled.div`
   border-top: 1px solid purple;
   display: flex;
@@ -40,19 +42,19 @@ const ImageWrapper = styled.div`
 
   @keyframes colors {
     0% {
-      background: #FF7913
+      background: ${getColorValue('orange')}
     }
     20% {
-      background: #D32E5E
+      background: ${getColorValue('pink')}
     }
     40% {
-      background: #F9AC2F
+      background: ${getColorValue('yellow')}
     }
     60% {
-      background: #0078A7
+      background: ${getColorValue('blue')}
     }
     100% {
-      background: #5F4B8B
+      background: ${getColorValue('purple')};
   }
 `
 
@@ -61,15 +63,36 @@ const Image = styled.img`
   width: -webkit-fill-available;
 `
 
+const TextContainer = styled.div`
+  margin-bottom: 1em;
+`
+
+const InlineP = styled(P)`
+  display: inline;
+`
+
+const StrikeP = styled(InlineP)`
+  text-decoration: line-through ${getColorValue('purple')};
+  padding-right: .5rem;
+
+  &:nth-child(2) {
+    text-decoration: line-through ${getColorValue('blue')}
+  }
+
+  &:nth-child(3) {
+    text-decoration: line-through ${getColorValue('yellow')}
+  }
+`
+
 export const Info = () => {
   return (
     <Section id="info">
       <Title>Hi! I'm Marissa, a full stack developer, currently working with <InlineLink href="https://redsquirrel.com/">Red Squirrel Technologies.</InlineLink></Title>
       <InlineTextImg>
-        <div>
+        <TextContainer>
           <P>I'm also a core teammate for <InlineLink href="https://quickbeam.xyz/">Quickbeam</InlineLink>, a technical education platform.</P>
-          <P>Always keen for new experiences, I am frequently traveling  and currently based in Porto, Portugal.</P>
-        </div>
+          <InlineP>Always keen for new experiences, I am frequently traveling and currently based in </InlineP><StrikeP>PA,</StrikeP><StrikeP>DC,</StrikeP><StrikeP>New Zealand,</StrikeP><InlineP>Portugal.</InlineP>
+        </TextContainer>
         <ImageWrapper>
           <Image src="../static/images/me.jpeg" />
         </ImageWrapper>
