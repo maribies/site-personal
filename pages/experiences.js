@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import { Footer } from '../Components/Footer'
 import { ExperienceSection } from '../Components/ExperienceSection'
-import { NavigationBar } from '../Components/NavigationBar'
 import theme from '../Styles/themes'
 import React, { useState } from 'react'
 import {  animated } from 'react-spring'
@@ -17,8 +16,6 @@ const Experiences = () => {
     {!!status && <>
 
       <animated.div style={loadingProps}>
-        <NavigationBar />
-
         <ExperienceSection />
 
         <Footer />
