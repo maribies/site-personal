@@ -69,7 +69,8 @@ export const Hero = () => {
     </NameWrapper>
 
     <NavLink href="#info" color="purple">Info</NavLink>
-    <NavLink href="#connect" color="blue">Connect</NavLink>
+    <NavLink href="#work" color="blue"></NavLink>
+    <NavLink href="#connect" color="yellow">Connect</NavLink>
 
     <H2>Creative Problem Solver</H2>
     <H4>with experience through the entire product lifecycle- where business, design, user experience, and technology intersect.</H4>

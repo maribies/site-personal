@@ -5,7 +5,7 @@ import theme from '../Styles/themes'
 import {  animated } from 'react-spring'
 import { basicLoading } from '../Components/Loading'
 
-import { Hero, Info } from '../Components'
+import { Hero, Info, Work } from '../Components'
 import { ConnectSection } from '../Components/ConnectSection'
 import { Footer } from '../Components/Footer'
 
@@ -31,6 +31,7 @@ const Home = () => {
         <animated.div style={loadingProps}>
           <Hero />
           <Info />
+          <Work />
           <ConnectSection />
           <Footer />
         </ animated.div>
