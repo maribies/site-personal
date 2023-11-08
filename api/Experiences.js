@@ -1,15 +1,54 @@
 export const Experiences = [
   {
-    title: 'tech',
-    subtitle: 'Making and breaking. Creative problem solving. Self teaching. Continuous learning. Design thinking.',
+    type: 'tech',
     experiences: [
       {
+        icon: '../../static/images/quickbeam.png',
+        iconAlt: 'Quickbeam Logo',
+        title: 'Full Stack Developer, Researcher, Technical Instructional Writer',
+        company: 'Quickbeam',
+        companyLink: 'https://quickbeam.xyz/',
+        timeFrame: 'June 2022 - Present',
+        tools: ['React', 'Vite', 'Cypress', 'Tailwind', 'GraphQL', 'Apollo', 'Golang', 'Docker', 'PostgreSQL', 'MetaMask', 'Ethereum', 'Rust', 'Solana', 'Alchemy'],
+        skills: [
+          "Lead the implementation of the frontend working closely with UX and design teams using Vite, React, Cypress, Apollo, with MetaMask and minting connectivity",
+          "Supported infrastructure in Digital Ocean, Terraform, and Docker",
+          "Aided in design and implementation of a backend server, database, and API with Go, Graphql, PostgreSQL, and Alchemy",
+          "Contributed to the curriculum with technical instructions, proofing, and editing",
+          "Helped build out a Rust compiler and IDE prototype, focused on the Solana environment",
+          "Conducted market research, competitive analysis, executive summaries of chains and protocols, technical research on tools like code editors and Integrated Development Environments (IDE)",
+        ],
+        links: {
+          main: { path: 'https://www.quickbeam.xyz', type: 'site' },
+        }
+      },
+      {
+        icon: '../../static/images/redSquirrelTechnologies.jpeg',
+        iconAlt: 'Red Squirrel Logo',
+        title: 'Full Stack Developer and Consultant',
+        company: 'Red Squirrel Technologies',
+        companyLink: 'https://www.redsquirrel.com/',
+        timeFrame: 'September 2020 - Present',
+        tools: ['React', 'React Native', 'Cypress', 'Tailwind', 'REST', 'GraphQL', 'Apollo', 'Node.js', 'Ruby', 'Rails', 'Golang', 'CLI scripting', 'Docker', 'PostgreSQL', 'Infura'],
+        skills: [
+          "Worked closely with UX designer on app design and flows for a wallet and social mobile app focused on Polygon and the new Ethereum account abstraction (ERC-4337), using React Native and Node.js",
+          "Supported a Chrome extension in React for an internal data capturing tool for a startup in food service delivery",
+          "Implemented a feature NFT project using the Go SDK from the Flow blockchain and Ruby on Rails for the APIs, JavaScript and Infura for NFT creation, and React for the client side web app",
+          "Developed internal and external web based tools using Ruby on Rails, PostgreSQL, JavaScript, React for a logistics startup",
+          "Refactored a Ruby on Rails website for a new educational startup, PostgreSQL, JavaScript, React, SASS/SCSS"
+        ],
+        links: {
+          main: { path: 'https://www.redsquirrel.com/case-studies', type: 'site' },
+        }
+      },
+      {
         icon: '../../static/images/uphold.jpeg',
-        iconAlt: 'Uphold Icon',
-        title: 'Developer',
+        iconAlt: 'Uphold Logo',
+        title: 'Junior Developer',
         company: 'Uphold',
         companyLink: 'https://www.uphold.com',
-        timeFrame: 'Jan 2019 - Present',
+        timeFrame: 'January 2019 - September 2020',
+        tools: ['React', 'React Native', 'Detox', 'Jest', 'Cypress', 'Styled Components', 'REST', 'GraphQL', 'i18next', 'Redux', 'Next.js', 'Datadog', 'Node.js', 'CLI scripting'],
         skills: [
           'Automated REST ask/bid requests from potential exchange API',
           'Voice of “how to” product instructional and promotional videos',
@@ -19,7 +58,6 @@ export const Experiences = [
           'Automated CLI tool for translations services API',
           'App stabilization- bug fixing and  refactoring code',
           'Hired from internship after developing new landing page',
-          'Experience with: React, React Native, GraphQL, styled-components, Redux, REST, Node.js, Next.js, i18next, CLI, analytics events with Datadog, testing with Jest, Detox, and Cypress'
         ],
         links: {
           main: { path: 'https://www.youtube.com/embed/UpvIJLUizB8', type: 'video' },
@@ -46,12 +84,11 @@ export const Experiences = [
       }
     ]
   }, {
-    title: 'retail',
-    subtitle: 'Creative and analytic. Rapid growth. Business strategy.',
+    type: 'business',
     experiences: [
       {
         icon: '../../static/images/wdfg.png',
-        iconAlt: 'WDFG Icon',
+        iconAlt: 'WDFG',
         title: 'Buyer',
         company: 'World Duty Free Group',
         companyLink: 'http://www.worlddutyfreegroup.com/',
@@ -65,29 +102,5 @@ export const Experiences = [
         }
       }
     ]
-  }, {
-    title: 'life',
-    subtitle: 'As my brilliant professor put it- I try to live my life according to the following: “The essence of life is creating options, making choices and living consequences.” -R. V. Sicina',
-    experiences: [
-      {
-        icon: '../../static/SVG/Logo.svg',
-        iconAlt: 'logo',
-        title: 'Determined',
-        company: 'Adaptable',
-        companyLink: '/',
-        timeFrame: 'Present',
-        skills: [
-          'I set goals, achieve them, and then set new ones.',
-          'Athlete: marathon runner, soccer player for Portuguese women\'s league, beginner surfer...',
-          'Traveler: 30+ countries and counting...',
-          'Crafter: crochet, knitting, cross stitching... countless (baby) gifts created...',
-          'Cook: baker and experimental chef, creating bonding experiences for friends and coworkers over food...',
-          'Student: AU undergrad, TNDS UX course, Udacity Nanodegree, Self-teaching, Life-taught, and still learning...'
-        ],
-        links: {
-          main: { path: '../../static/images/me.jpeg', type: 'image' }
-        }
-      }
-    ]
-  }
+  },
 ]

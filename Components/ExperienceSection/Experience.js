@@ -1,82 +1,59 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SubSection } from '../Section'
-import { H3 } from '../Text'
-import { UnorderedListComponent as List } from '../List'
-import { PreviewSection } from './PreviewSection'
+import { H3, P } from '../Text'
+import { Link } from '../Link'
 
-const Info = styled.div`
-  display: inline-block;
-`
-
-const InfoDetails = styled(H3)`
+const CompanyLink = styled(Link)`
   margin: 0;
+  text-decoration: underline;
+  display: inline;
 `
 
-const InfoDetailsLink = styled.a`
-  text-decoration: none;
-  margin: 0;
-`
-
-const ContentSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex-wrap: wrap;
-
-  @media (min-width: 48rem) {
-    padding: 0 84px;
-  }
-
-  @media (min-width: 75rem) {
-    padding: 0 120px;
-  }
-`
-
-const Icon = styled.img`
-  height: 100px;
-  width: 100px;
-  display: inline-block;
-  margin-right: 30px;
-`
-
-const DescriptonSection = styled.div`
-  display: flex;
-`
-
-const Section = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const Wrapper = styled.div`
   width: 100%;
+`
+
+const ScrollingWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  overflow: hidden;
+`
+
+const Scroller = styled.div`
+  animation: scrolling 20s linear infinite;
+  position: absolute;
+
+  @keyframes scrolling {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  };
+`
+
+const ScrollContainer = styled.div`
+  display: flex;
+`
+
+const ScrollWord = styled(P)`
+  margin: 0 0.2em;
+  width: 100%;
+  white-space: nowrap;
 `
 
 export const Experience = ({ experience, index }) => {
   return (
-    <>
-      <Section key={index}>
-        <SubSection key={index}>
-          <ContentSection>
-            <DescriptonSection>
-              <Icon src={experience.icon} alt={experience.iconAlt} />
-              <Info>
-                <InfoDetails>{experience.title}</InfoDetails>
-                <InfoDetailsLink href={experience.companyLink}><InfoDetails>{experience.company}</InfoDetails></InfoDetailsLink>
-                <InfoDetails>{experience.timeFrame}</InfoDetails>
-              </Info>
-            </DescriptonSection>
+    <Wrapper key={index}>
+      <CompanyLink href={experience.companyLink}><H3>{experience.company}</H3></CompanyLink>
+      <P>{experience.title}</P>
 
-            <List listData={experience.skills} />
-          </ContentSection>
-        </SubSection>
-
-        <SubSection direction="column">
-          <PreviewSection info={experience.links.main} />
-
-          {!!experience.links.second && <PreviewSection info={experience.links.second} />}
-
-          {!!experience.links.third && <PreviewSection info={experience.links.third} /> }
-        </SubSection>
-      </Section>
-    </>
+      <ScrollingWrapper>
+        <Scroller>
+          <ScrollContainer>
+            {experience.tools && experience.tools.map(tool =>  <ScrollWord>{tool}</ScrollWord>)}
+            {experience.tools && experience.tools.map(tool =>  <ScrollWord>{tool}</ScrollWord>)}
+          </ScrollContainer>
+        </Scroller>
+      </ScrollingWrapper>
+    </Wrapper>
   )
 }
