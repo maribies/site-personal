@@ -6,7 +6,7 @@ import { Link } from '../Link'
 import { getColorValue } from '../CssHelpers'
 
 const Section = styled.div`
-  border-top: 1px solid purple;
+  border-top: 1px solid ${getColorValue('purple')};
   display: flex;
   flex-direction: column;
 `

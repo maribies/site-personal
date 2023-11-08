@@ -22,7 +22,7 @@ const Image = styled.div`
 const componentType = (info) => {
   if (info.type === 'video' || info.type === 'site') {
     return (
-      <View src={info.path} frameborder='0' title={info.path}/>
+      <View src={info.path} title={info.path}/>
     )
   }
 

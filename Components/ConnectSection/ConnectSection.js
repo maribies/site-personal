@@ -1,12 +1,13 @@
-import { P, H2Outline } from '../Text'
-// import { Section } from '../Section'
-import { Link } from '../Link'
-import { Links } from '../../api/Links'
-import React from 'react'
 import styled from 'styled-components'
 
+import { P, H2Outline } from '../Text'
+import { Link } from '../Link'
+
+import { Links } from '../../api/Links'
+import { getColorValue } from '../CssHelpers'
+
 const Section = styled.div`
-  border-top: 1px solid blue;
+  border-top: 1px solid ${getColorValue('blue')};
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
