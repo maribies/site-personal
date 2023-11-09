@@ -69,7 +69,7 @@ export const Hero = () => {
     </NameWrapper>
 
     <NavLink href="#info" color="purple">Info</NavLink>
-    <NavLink href="#work" color="blue"></NavLink>
+    <NavLink href="#work" color="blue">Work</NavLink>
     <NavLink href="#connect" color="yellow">Connect</NavLink>
 
     <H2>Creative Problem Solver</H2>
