@@ -88,10 +88,14 @@ const InfoBubbleTail = styled.div`
   background: ${getColorValue('grey')};
   width: 3rem;
   height: 3rem;
-  margin-left: 75%;
+  margin-left: 50%;
   border-left: 1px solid ${getColorValue('white')};
   border-top: 1px solid ${getColorValue('white')};
   transform: translate(0px, 1.5rem) rotate(45deg);
+
+  @media (min-width: 48rem) {
+    margin-left: 75%;
+  }
 `
 
 const InfoBubbleBody = styled.div`
