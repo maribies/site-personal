@@ -5,6 +5,7 @@ import { getColorValue } from '../CssHelpers'
 
 const ListItem = styled.li`
   color: ${getColorValue('white')};
+  list-style-type: circle;
 `
 
 const renderListItems = listData => {
