@@ -40,11 +40,11 @@ const ExplainTitle = styled(H3Outline)`
 
 // TODO: Maybe this becomes a popout instead... depending on how the progressing layout goes.
 const ExplainText = styled(P)`
-  visibility: ${({ isActive }) => isActive ? "visible" : "hidden"};
+  visibility: ${({ $isActive }) => $isActive ? "visible" : "hidden"};
   margin: 0;  
-  transition: ${({ isActive }) => isActive ? "all 5s linear 1s" : ""};
-  opacity: ${({ isActive }) => isActive ? 1 : 0};
-  height: ${({ isActive }) => isActive ? "auto" : "3rem"};
+  transition: ${({ $isActive }) => $isActive ? "all 5s linear 1s" : ""};
+  opacity: ${({ $isActive }) => $isActive ? 1 : 0};
+  height: ${({ $isActive }) => $isActive ? "auto" : "3rem"};
 `
 
 const Flex = styled.div`
@@ -76,14 +76,14 @@ export const Hero = () => {
     <H4>with experience through the entire product lifecycle- where business, design, user experience, and technology intersect.</H4>
     
     <Flex>
-      <ExplainLink isActive={isExplainLinkClicked} onClick={() => setExplainLinkClicked(!isExplainLinkClicked)}>
+      <ExplainLink $isActive={isExplainLinkClicked} onClick={() => setExplainLinkClicked(!isExplainLinkClicked)}>
         <ExplainTitle>aka Utility Player</ExplainTitle>
       </ExplainLink>
       <FlexGrow>
-        <SoccerBallAnimation isActive={isExplainLinkClicked} />
+        <SoccerBallAnimation $isActive={isExplainLinkClicked} />
       </FlexGrow>
     </Flex>
     
-    <ExplainText isActive={isExplainLinkClicked}>This title was given to me by one of my youth soccer coaches for my ability to play any position on the pitch, but excelling in defense. I have applied a similar strategy to my career talents, being proficient at technologies across the stacks and Web3, but shining on the client side.</ExplainText>
+    <ExplainText $isActive={isExplainLinkClicked}>This title was given to me by one of my youth soccer coaches for my ability to play any position on the pitch, but excelling in defense. I have applied a similar strategy to my career talents, being proficient at technologies across the stacks and Web3, but shining on the client side.</ExplainText>
   </>
 }

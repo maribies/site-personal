@@ -55,7 +55,7 @@ const More = styled(Link)`
 `
 
 const InfoBubble = styled.div`
-  display: ${({ props }) => props.showInfo ? "block" : "none"};
+  display: ${({ $showInfo }) => $showInfo ? "block" : "none"};
   margin-bottom: 1rem;
 `
 
@@ -102,7 +102,7 @@ export const Experience = ({ experience, index }) => {
       <P>{experience.title}</P>
 
       {/* TODO: slide down effect */}
-      <InfoBubble props={{showInfo}}>
+      <InfoBubble $showInfo={showInfo}>
         <InfoBubbleTail />
         <InfoBubbleBody>
           <List listData={experience.skills} />
