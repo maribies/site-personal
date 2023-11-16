@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H1, SecondaryH3 } from '../Text'
-import { getColorValue } from '../CssHelpers'
+import { H1 } from '../Text'
 import { Experiences } from '../../api/Experiences'
 import { Experience } from './Experience'
 

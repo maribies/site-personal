@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { H4, P } from '../Text'
 import { Link } from '../Link'
 
-import { getColorValue } from '../CssHelpers'
+import { getColorValue, changingIconColors } from '../CssHelpers'
 
 const Section = styled.div`
   border-top: 1px solid ${getColorValue('purple')};
@@ -30,31 +30,15 @@ const InlineTextImg = styled.div`
   }
 `
 
+// TODO: Make clickable and flip to reveal a fun fact
 const ImageWrapper = styled.div`
-  animation: 8s infinite alternate-reverse colors;
   padding: 10px;
   width: 80%;
   align-self: center;
+  ${changingIconColors({property: "background"})};
 
   @media (min-width: 48rem) {
     width: 20%;
-  }
-
-  @keyframes colors {
-    0% {
-      background: ${getColorValue('orange')}
-    }
-    20% {
-      background: ${getColorValue('pink')}
-    }
-    40% {
-      background: ${getColorValue('yellow')}
-    }
-    60% {
-      background: ${getColorValue('blue')}
-    }
-    100% {
-      background: ${getColorValue('purple')};
   }
 `
 
