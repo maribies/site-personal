@@ -9,6 +9,7 @@ export const Link = styled.a`
   align-items: center;
   align-content: center;
   justify-content: center;
+  cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
 
   &:clicked {
     color: ${getColorValue('purple')}

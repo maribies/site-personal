@@ -1,34 +1,52 @@
-import { Section, SubSection } from '../Section'
-import { H1, P } from '../Text'
-import { Link } from '../Link'
-import { Links } from '../../api/Links'
-import React from 'react'
 import styled from 'styled-components'
 
-const Title = styled(H1)`
-  text-align: center;
+import { P, H2Outline } from '../Text'
+import { Link } from '../Link'
+
+import { Links } from '../../api/Links'
+import { getColorValue } from '../CssHelpers'
+
+const Section = styled.div`
+  border-top: 1px solid ${getColorValue('blue')};
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`
+
+const ContactLink = styled(Link)`
+  padding-left: 1rem;
 `
 
 const LinkInfo = styled(P)`
-  padding-left: 24px;
+  padding-left: 0.5rem;
+`
+
+const LinksContainer = styled.div`
+  display: flex;
+  justify-content: end;
+  flex-grow: 2;
+  flex-wrap: wrap;
 `
 
 export const ConnectSection = () => {
   return (
-    <Section id='connect' setHeight>
-      <SubSection>
-        <Title>Connect</Title>
-      </SubSection>
+    <Section id='connect'>
+      <H2Outline>Connect</H2Outline>
 
-      <SubSection direction='column'>
+      <LinksContainer>
         {Links.map((item, index) => {
           return (
-            <Link key={index} href={item.link} className={item.icon}>
+            <ContactLink key={index} href={item.link} target="_blank" className={item.icon}>
               <LinkInfo>{item.name}</LinkInfo>
-            </Link>
+            </ContactLink>
           )
         })}
-      </SubSection>
+      </LinksContainer>
     </Section>
   )
 }

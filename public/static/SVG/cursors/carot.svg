@@ -1,0 +1,31 @@
+<!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.-->
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="48" height="48">
+  <style>
+    .cursor {
+      fill: transparent;
+      stroke: white;
+      stroke-width: 10px;
+      animation: 8s infinite alternate-reverse cursor;
+    }
+
+    @keyframes cursor {
+      0% {
+        fill: #FF7913
+      }
+      20% {
+        fill: #D32E5E
+      }
+      40% {
+        fill: #F9AC2F
+      }
+      60% {
+        fill: #0078A7
+      }
+      100% {
+        fill: #5F4B8B
+      }
+    }
+  </style>
+  <path class="cursor" d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/>
+</svg>

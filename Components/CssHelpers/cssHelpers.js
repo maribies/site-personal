@@ -23,7 +23,7 @@ export const getColorValue = (color, opacity = 1, isHex) => {
     return colors[color].hex
   }
 
-  return `rgba(${colors[color].rgb.r}, ${colors[color].rgb.g}, ${colors[color].rgb.b}, ${opacity})`
+  return `rgba(${colors[color].rgb?.r}, ${colors[color].rgb?.g}, ${colors[color].rgb?.b}, ${opacity})`
 }
 
 export const dropShadowWrapper = styled.div`
@@ -33,6 +33,54 @@ export const dropShadowWrapper = styled.div`
 export const gradients = {
   one: '#5F4B8B, #0078A7, #FF7913, #D32E5E, #5F4B8B',
   two: '#FF7913, #D32E5, #5F4B8B, #0078A7, #FF7913'
+}
+
+const iconColors = ({ property }) => {
+  let valueOne = getColorValue('orange');
+  let valueTwo = getColorValue('pink');
+  let valueThree = getColorValue('yellow');
+  let valueFour = getColorValue('blue');
+  let valueFive = getColorValue('purple');
+
+  if (property === 'border-bottom') {
+    valueOne = `10px solid ${getColorValue('orange')}`;
+    valueTwo = `10px solid ${getColorValue('pink')}`;
+    valueThree = `10px solid ${getColorValue('yellow')}`;
+    valueFour = `10px solid ${getColorValue('blue')}`;
+    valueFive = `10px solid ${getColorValue('purple')}`;
+  }
+
+  return keyframes`
+    0% {
+      ${property}: ${valueOne};
+    }
+    20% {
+      ${property}: ${valueTwo};
+    }
+    40% {
+      ${property}: ${valueThree};
+    }
+    60% {
+      ${property}: ${valueFour};
+    }
+    100% {
+      ${property}: ${valueFive};
+    }
+  `
+}
+
+export const changingIconColors = ({ property, cursor }) => {
+  if (!property) {
+    return new Error('No property provided to changingIconColors');    
+  }
+  
+  return css`
+  fill: transparent;
+  stroke: white;
+  stroke-width: 10px;
+  animation: 8s infinite alternate-reverse ${iconColors({property})};
+  cursor: ${cursor ? cursor : "inherit"};
+`
 }
 
 const shineEffect = keyframes`

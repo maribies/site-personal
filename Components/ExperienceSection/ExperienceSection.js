@@ -1,45 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Section } from '../Section'
-import { H1, SecondaryH3 } from '../Text'
-import { getColorValue } from '../CssHelpers'
+import { H1 } from '../Text'
 import { Experiences } from '../../api/Experiences'
 import { Experience } from './Experience'
 
 const Header = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0 24px;
-  flex-wrap: wrap;
-
-  @media (min-width: 48rem) {
-    flex-direction: column;
-    padding: 0 84px;
-  }
-
-  @media (min-width: 75rem) {
-    padding: 0 120px;
-  }
+  width: 100%;
 `
 
-const Title = styled(H1)`
-  margin-bottom: 0;
-`
-
-const Subtitle = styled(SecondaryH3)`
-  color: ${getColorValue('white')};
+const Section = styled.div`
+  margin: 0 1em;
 `
 
 export const ExperienceSection = () => {
   const ExperiencesComponent = Experiences.map((section, index) => {
-    const { experiences, title, subtitle } = section
+    const { experiences, type } = section
 
     return (
-      <Section id={title} key={index}>
+      <Section id={type} key={index}>
         <Header>
-          <Title>{title.toUpperCase()}</Title>
-          <Subtitle>{subtitle}</Subtitle>
+          <H1>{type?.toUpperCase()}</H1>
         </Header>
 
         {experiences.map((experience, index) => {

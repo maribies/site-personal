@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.section`
-  min-height: ${props => props.props.setHeight ? '900px' : 'auto'};
+  min-height: ${props => props.setHeight ? '900px' : 'auto'};
   display: flex;
-  flex-direction: ${props => props.props.column ? 'column' : 'row'};
-  flex-wrap: ${props => props.props.wrap ? props.props.wrap : 'wrap'};
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+  flex-wrap: ${props => props.wrap ? props.props.wrap : 'wrap'};
 
   @media (min-width: 48rem) {
     flex-wrap: wrap;
@@ -13,9 +13,11 @@ const Container = styled.section`
 `
 
 export const Section = props => {
+  const { id, children } = props;
+
   return (
-    <Container props={props} id={props.id}>
-      {props.children}
+    <Container id={id}>
+      {children}
     </Container>
   )
 }
