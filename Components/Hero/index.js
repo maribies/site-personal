@@ -10,12 +10,12 @@ import { getColorValue, changingIconColors } from '../CssHelpers'
 
 const NavLink = styled(Link)`
   justify-content: right;
-  border-bottom: ${({ color }) => `1px solid ${getColorValue(color)}`};
+  border-bottom: ${({ $color }) => `1px solid ${getColorValue($color)}`};
 
   @media (min-width: 48rem) {
     border-bottom: none;
     &:hover {
-      border-bottom: ${({ color }) => `1px solid ${getColorValue(color)}`};
+      border-bottom: ${({ $color }) => `1px solid ${getColorValue($color)}`};
     }
   }
   animation: fadeIn 5s;
@@ -34,7 +34,7 @@ const NameWrapper = styled.div`
 const ExplainLink = styled.a`
   display: flex;
   align-items: center;
-  cursor:  ${({ isActive }) => isActive ? "url('/static/SVG/cursors/collapse.svg'), pointer" : "url('/static/SVG/cursors/question.svg'), pointer" };
+  cursor:  ${({ $isActive }) => $isActive ? "url('/static/SVG/cursors/collapse.svg'), pointer" : "url('/static/SVG/cursors/question.svg'), pointer" };
 `
 
 const ExplainTitle = styled(H3Outline)`
@@ -75,9 +75,9 @@ export const Hero = () => {
       <NameWrapper><Title>Bies</Title><TitleOutline>ecker</TitleOutline></NameWrapper>
     </NameWrapper>
 
-    <NavLink href="#info" color="purple">Info</NavLink>
-    <NavLink href="#work" color="blue">Work</NavLink>
-    <NavLink href="#connect" color="yellow">Connect</NavLink>
+    <NavLink href="#info" $color="purple">Info</NavLink>
+    <NavLink href="#work" $color="blue">Work</NavLink>
+    <NavLink href="#connect" $color="yellow">Connect</NavLink>
 
     <H2>Creative Problem Solver</H2>
     <H4>with experience through the entire product lifecycle- where business, design, user experience, and technology intersect.</H4>
