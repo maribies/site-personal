@@ -1,9 +1,15 @@
 import styled from 'styled-components'
+import { 
+  useSpring,
+  useChain,
+  config,
+  animated,
+  useSpringRef
+} from "@react-spring/web"
 
 import { getColorValue, changingIconColors } from '../CssHelpers'
 
-const Container = styled.div`
-  display: ${({ $showInfo }) => $showInfo ? "block" : "none"};
+const Container = styled(animated.div)`
   margin-bottom: 1rem;
 `
 const InfoBubbleTail = styled.div`
@@ -28,13 +34,27 @@ const InfoBubbleBody = styled.div`
   ${changingIconColors({property: "border-bottom"})};
 `
 
-{/* TODO: slide down effect */}
 export const InfoBubble = ({ children, showInfo }) => {
+  const springApi = useSpringRef();
+  const { y, ...rest } = useSpring({
+    ref: springApi,
+    config: config.stiff,
+    from: { opacity: 0, height: "0%", y: 0, display: 'none' },
+    to: {
+      opacity: showInfo ? 1 : 0,
+      height: showInfo ? "100%" : "0%",
+      y: showInfo ? 0 : 20,
+      display: showInfo ? 'block' : 'none',
+    }
+  });
+
+  useChain(showInfo ? [springApi] : [springApi], [0, showInfo ? 0.1 : 0.6]);
+
   return (
-    <Container $showInfo={showInfo}>
+     <Container $showInfo={showInfo} style={{ ...rest }}>
       <InfoBubbleTail />
-      <InfoBubbleBody>
-        {children}
+      <InfoBubbleBody $showInfo={showInfo}>
+        <animated.div style={{ y }} children={children} />
       </InfoBubbleBody>
     </Container>
   )
