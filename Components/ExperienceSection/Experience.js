@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { H3, P } from '../Text'
 import { Link } from '../Link'
 import { UnorderedListComponent as List } from '../List'
+import { InfoBubble } from '../InfoBubble'
 
-import { getColorValue, changingIconColors } from '../CssHelpers'
+import { changingIconColors } from '../CssHelpers'
 
 const CompanyLink = styled(Link)`
   margin: 0;
@@ -54,33 +55,6 @@ const More = styled(Link)`
   position: relative;
 `
 
-const InfoBubble = styled.div`
-  display: ${({ $showInfo }) => $showInfo ? "block" : "none"};
-  margin-bottom: 1rem;
-`
-
-const InfoBubbleTail = styled.div`
-  position: relative;
-  background: ${getColorValue('grey')};
-  width: 3rem;
-  height: 3rem;
-  margin-left: 50%;
-  border-left: 1px solid ${getColorValue('white')};
-  border-top: 1px solid ${getColorValue('white')};
-  transform: translate(0px, 1.5rem) rotate(45deg);
-
-  @media (min-width: 48rem) {
-    margin-left: 75%;
-  }
-`
-
-const InfoBubbleBody = styled.div`
-  border-radius: 3rem;
-  outline: 1px solid ${getColorValue('white')};
-  padding: 1rem;
-  ${changingIconColors({property: "border-bottom"})};
-`
-
 export const Experience = ({ experience, index }) => {
   const [showInfo, setShowInfo] = useState(false);
 
@@ -101,12 +75,8 @@ export const Experience = ({ experience, index }) => {
 
       <P>{experience.title}</P>
 
-      {/* TODO: slide down effect */}
-      <InfoBubble $showInfo={showInfo}>
-        <InfoBubbleTail />
-        <InfoBubbleBody>
-          <List listData={experience.skills} />
-        </InfoBubbleBody>
+      <InfoBubble showInfo={showInfo}>
+        <List listData={experience.skills} />
       </InfoBubble>
 
       <ScrollingWrapper>
