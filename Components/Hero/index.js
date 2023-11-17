@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Title, TitleOutline, H2, H3Outline, H4, P } from '../Text'
 import { Link } from '../Link'
+import { InfoBubble } from '../InfoBubble'
 import { SoccerBallAnimation } from './SoccerBallAnimation'
 
 import { getColorValue, changingIconColors } from '../CssHelpers'
@@ -41,13 +42,9 @@ const ExplainTitle = styled(H3Outline)`
   margin-bottom: 0;
 `
 
-// TODO: Maybe this becomes a popout instead... depending on how the progressing layout goes.
 const ExplainText = styled(P)`
-  visibility: ${({ $isActive }) => $isActive ? "visible" : "hidden"};
-  margin: 0;  
-  transition: ${({ $isActive }) => $isActive ? "all 5s linear 1s" : ""};
-  opacity: ${({ $isActive }) => $isActive ? 1 : 0};
-  height: ${({ $isActive }) => $isActive ? "auto" : "3rem"};
+  position: relative;
+  z-index: 1;
 `
 
 const Flex = styled.div`
@@ -94,6 +91,8 @@ export const Hero = () => {
       </FlexGrow>
     </Flex>
     
-    <ExplainText $isActive={isExplainLinkClicked}>This title was given to me by one of my youth soccer coaches for my ability to play any position on the pitch, but excelling in defense. I have applied a similar strategy to my career talents, being proficient at technologies across the stacks and Web3, but shining on the client side.</ExplainText>
+    <InfoBubble showInfo={isExplainLinkClicked}>
+      <ExplainText $isActive={isExplainLinkClicked}>This title was given to me by one of my youth soccer coaches for my ability to play any position on the pitch, but excelling in defense. I have applied a similar strategy to my career talents, being proficient at technologies across the stacks and Web3, but shining on the client side.</ExplainText>
+    </InfoBubble>
   </>
 }
