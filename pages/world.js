@@ -13,7 +13,7 @@ const World = () => {
   return (
   <ThemeProvider theme={theme}>
     {!!status && <>
-        <animated.div style={loadingProps}>
+      <animated.div style={loadingProps}>
         <Map />
         <Footer />
       </ animated.div>

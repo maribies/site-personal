@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-
 import { Map as BaseMap, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
+import {StadiaMaps, Vector as VectorSource} from 'ol/source';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import {Style} from 'ol/style';
 
 const MapContainer = styled.div`
   position: absolute;
@@ -12,22 +14,40 @@ const MapContainer = styled.div`
   bottom: 0;
   width: 100%;
 `
+const style = new Style({});
+
+const iconFeature = new Feature({
+  geometry: new Point([0, 0]),
+});
+
+const vectorSource = new VectorSource({
+  features: [iconFeature],
+  wrapX: false,
+});
+
+const vectorLayer = new VectorLayer({
+  source: vectorSource,
+  style,
+});
+
+const tileLayer = new TileLayer({
+  source: new StadiaMaps({
+    layer: 'stamen_toner',
+  }),
+});
 
 export const Map = () => {
   useEffect(() => {
     new BaseMap({
       target: 'map',
-      layers: [
-        new TileLayer({
-          source: new OSM(),
-        }),
-      ],
+      layers: [tileLayer, vectorLayer],
       view: new View({
         center: [0, 0],
         zoom: 2,
+        projection: "EPSG:4326"
       }),
     });
-  });
+  }, []);
 
   return (
     <MapContainer id="map" />
