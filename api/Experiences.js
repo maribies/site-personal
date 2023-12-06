@@ -11,7 +11,7 @@ export const Experiences = [
         timeFrame: 'June 2022 - Present',
         tools: ['React', 'Vite', 'Cypress', 'Tailwind', 'GraphQL', 'Apollo', 'Golang', 'Docker', 'PostgreSQL', 'MetaMask', 'Ethereum', 'Rust', 'Solana', 'Alchemy'],
         skills: [
-          "Lead the implementation of the frontend working closely with UX and design teams using Vite, React, Cypress, Apollo, with MetaMask and minting connectivity",
+          "Led the implementation of the frontend working closely with UX and design teams using Vite, React, Cypress, Apollo, with MetaMask and minting connectivity",
           "Supported infrastructure in Digital Ocean, Terraform, and Docker",
           "Aided in design and implementation of a backend server, database, and API with Go, Graphql, PostgreSQL, and Alchemy",
           "Contributed to the curriculum with technical instructions, proofing, and editing",
@@ -95,7 +95,8 @@ export const Experiences = [
         timeFrame: 'Feb 2013 - July 2016',
         skills: [
           'Focused on meeting a $14 million sales goal for the Adult Souvenir Apparel and Licensed categories',
-          'Developed and implemented categories’ strategic business plans, forecasts, risk management strategies, and performance reviews'
+          'Developed and implemented categories’ strategic business plans, forecasts, risk management strategies, and performance reviews',
+          'Promoted from temporary assistant to assistant buyer to buyer and category manager',
         ],
         links: {
           main: { path: 'https://www.youtube.com/embed/hV-8yVFvjnc', type: 'video' }
@@ -104,3 +105,22 @@ export const Experiences = [
     ]
   },
 ]
+
+// TODO: Add some case study/experiments to this data
+// Might need to create a different kind of structure to give more details to problem and solution... example
+// below forces it into the current experiment data structure
+// {
+//   type: 'experiments',
+//   experiences: [
+//     {
+//       title: 'React Router and Data Loading', // short problem title for the experiment or could be wombatchain for example
+//       // a more detailed problem description
+//       company: 'Too many data requests and and redirects based on data at different points in the app, which is also breaking our tests',
+//       companyLink: '', // normally a link github repo (this one isn't pushed yet), but could maybe also be an article or figma design
+//       tools: ['React Router', 'Cypress'],
+//       skills: [
+//         'Set up a minimum reproduction'
+//       ]
+//     }
+//   ]
+// }
