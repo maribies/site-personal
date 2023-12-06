@@ -2,22 +2,24 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Map as BaseMap, View } from 'ol';
-import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import {StadiaMaps, Vector as VectorSource} from 'ol/source';
+import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import { StadiaMaps, Vector as VectorSource } from 'ol/source';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
-import {Style} from 'ol/style';
+import { fromLonLat } from 'ol/proj';
 
 const MapContainer = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
+  height: 100%;
 `
-const style = new Style({});
+
+const point = new Point(fromLonLat([-8.61099, 41.14961]));
 
 const iconFeature = new Feature({
-  geometry: new Point([0, 0]),
+  geometry: point,
 });
 
 const vectorSource = new VectorSource({
@@ -27,7 +29,6 @@ const vectorSource = new VectorSource({
 
 const vectorLayer = new VectorLayer({
   source: vectorSource,
-  style,
 });
 
 const tileLayer = new TileLayer({
@@ -44,7 +45,6 @@ export const Map = () => {
       view: new View({
         center: [0, 0],
         zoom: 2,
-        projection: "EPSG:4326"
       }),
     });
   }, []);
