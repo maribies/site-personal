@@ -7,6 +7,7 @@ import { StadiaMaps, Vector as VectorSource } from 'ol/source';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
+import { Circle, Fill, Stroke, Style } from 'ol/style';
 
 import { Travel } from '../../api/Travel';
 
@@ -39,8 +40,21 @@ const vectorSource = new VectorSource({
   wrapX: false,
 });
 
+const styleFn = (feature) => {
+  const style = new Style({
+    image: new Circle({
+      radius: 2,
+      fill: new Fill({
+        color: [255, 153, 0, 1],
+      }),
+    }),
+  });
+  return style;
+}
+
 const vectorLayer = new VectorLayer({
   source: vectorSource,
+  style: styleFn
 });
 
 const tileLayer = new TileLayer({
