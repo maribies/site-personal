@@ -26,6 +26,11 @@ export const getColorValue = (color, opacity = 1, isHex) => {
   return `rgba(${colors[color].rgb?.r}, ${colors[color].rgb?.g}, ${colors[color].rgb?.b}, ${opacity})`
 }
 
+export const getRandomColor = () => {
+  const colorName = Object.keys(colors)[Math.floor(Math.random() * Object.keys(colors).length)];
+  return getColorValue(colorName);
+}
+
 export const dropShadowWrapper = styled.div`
   filter: drop-shadow(0 0 12px ${getColorValue('grey')});
 `
