@@ -7,9 +7,10 @@ import { StadiaMaps, Vector as VectorSource } from 'ol/source';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
-import { Circle, Fill, Stroke, Style } from 'ol/style';
+import { Circle, RegularShape, Fill, Stroke, Style } from 'ol/style';
 
 import { Travel } from '../../api/Travel';
+import { getRandomColor, getColorValue } from '../CssHelpers';
 
 const MapContainer = styled.div`
   position: absolute;
@@ -28,6 +29,7 @@ const countryCityFeatures = Object.values(Travel.countries).map((country) => {
 
    const cityFeature = new Feature({
      geometry: point,
+     name: city.name,
    });
    return cityFeature;
   });
@@ -41,14 +43,34 @@ const vectorSource = new VectorSource({
 });
 
 const styleFn = (feature) => {
-  const style = new Style({
+  // style defaults to a dot
+  let style = new Style({
     image: new Circle({
       radius: 2,
       fill: new Fill({
-        color: [255, 153, 0, 1],
+        color: getRandomColor(),
       }),
     }),
   });
+
+  const star = new Style({
+    geometry: feature.getGeometry(),
+    image: new RegularShape({
+      radius1: 5,
+      radius2: 10,
+      points: 5,
+      angle: Math.PI,
+      fill: new Fill({
+        color: getColorValue('purple', 0.8),
+      }),
+      stroke: new Stroke({
+        color: getColorValue('purple', 0.2),
+        width: 1,
+      }),
+    }),
+  });
+
+  style = feature.values_.name === "Porto" ? star : style;
   return style;
 }
 
