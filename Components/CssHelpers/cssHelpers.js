@@ -5,7 +5,7 @@ const colors = {
   blue: { hex: '#0078A7', rgb: { r: 0, g: 120, b: 167 } },
   yellow: { hex: '#F9AC2F', rgb: { r: 249, g: 172, b: 47 } },
   pink: { hex: '#D32E5E', rgb: { r: 211, g: 46, b: 94 } },
-  orange: { hex: '#FF7913', rbg: { r: 255, g: 121, b: 19 } },
+  orange: { hex: '#FF7913', rgb: { r: 255, g: 121, b: 19 } },
   rose: { hex: '#B76BA3', rgb: { r: 183, g: 107, b: 163 } },
   mustard: { hex: '#D2B04C', rgb: { r: 210, g: 176, b: 76 } },
   tan: { hex: '#C68F65', rgb: { r: 198, g: 143, b: 101 } },
@@ -27,7 +27,7 @@ export const getColorValue = (color, opacity = 1, isHex) => {
 }
 
 export const getRandomColor = () => {
-  const colorName = Object.keys(colors)[Math.floor(Math.random() * Object.keys(colors).length)];
+  const colorName = Object.keys(colors)[Math.floor(Math.random() * 7)];
   return getColorValue(colorName);
 }
 
