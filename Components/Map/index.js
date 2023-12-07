@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 
 import { Map as BaseMap, View } from 'ol';
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
@@ -7,6 +7,8 @@ import { StadiaMaps, Vector as VectorSource } from 'ol/source';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
+
+import { Travel } from '../../api/Travel';
 
 const MapContainer = styled.div`
   position: absolute;
@@ -16,14 +18,24 @@ const MapContainer = styled.div`
   height: 100%;
 `
 
-const point = new Point(fromLonLat([-8.61099, 41.14961]));
+// TODO: cluster by country until zoomed
+// City Features grouped by country
+const countryCityFeatures = Object.values(Travel.countries).map((country) => {
+  const cities = Object.values(country)
+  const city = cities.map(city => {
+   const point = new Point(fromLonLat([city.lng, city.lat]));
 
-const iconFeature = new Feature({
-  geometry: point,
+   const cityFeature = new Feature({
+     geometry: point,
+   });
+   return cityFeature;
+  });
+  
+  return city;
 });
 
 const vectorSource = new VectorSource({
-  features: [iconFeature],
+  features: countryCityFeatures.flat(),
   wrapX: false,
 });
 
