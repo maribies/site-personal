@@ -20,7 +20,7 @@ const MapContainer = styled.div`
   height: 100%;
 `
 
-// TODO: cluster by country until zoomed
+// TODO: cluster by country until zoomed, make dots bigger when zoomed too
 // City Features grouped by country
 const countryCityFeatures = Object.values(Travel.countries).map((country) => {
   const cities = Object.values(country)
@@ -47,9 +47,7 @@ const styleFn = (feature) => {
   let style = new Style({
     image: new Circle({
       radius: 2,
-      fill: new Fill({
-        color: getRandomColor(),
-      }),
+      fill: new Fill({ color: getRandomColor() }),
     }),
   });
 
@@ -70,7 +68,7 @@ const styleFn = (feature) => {
     }),
   });
 
-  style = feature.values_.name === "Porto" ? star : style;
+  style = feature.values_.name === "Porto" || feature.values_.name === "Pennsylvania" ? star : style;
   return style;
 }
 
