@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { H4, P } from '../Text'
 import { Link } from '../Link'
+import { FlipCard } from '../FlipCard'
 
-import { getColorValue, changingIconColors } from '../CssHelpers'
+import { getColorValue } from '../CssHelpers'
 
 const Section = styled.div`
   border-top: 1px solid ${getColorValue('purple')};
@@ -30,21 +31,15 @@ const InlineTextImg = styled.div`
   }
 `
 
-// TODO: Make clickable and flip to reveal a fun fact
-const ImageWrapper = styled.div`
-  padding: 10px;
-  width: 80%;
-  align-self: center;
-  ${changingIconColors({property: "background"})};
-
-  @media (min-width: 48rem) {
-    width: 20%;
-  }
+const ImgCard = css`
+  background-image: url("../static/images/me.jpeg");
+  background-size: cover;
+  border: solid white;
 `
 
-const Image = styled.img`
-  border: 5px solid white;
-  width: -webkit-fill-available;
+const WorldLink = styled(Link)`
+  text-decoration: underline;
+  display: inline;
 `
 
 const TextContainer = styled.div`
@@ -77,9 +72,13 @@ export const Info = () => {
           <P>I'm also a core teammate for <InlineLink href="https://quickbeam.xyz/">Quickbeam</InlineLink>, a technical education platform.</P>
           <InlineP>Always keen for new experiences, I am frequently traveling and currently based in </InlineP><StrikeP>PA,</StrikeP><StrikeP>DC,</StrikeP><StrikeP>New Zealand,</StrikeP><InlineP>Portugal.</InlineP>
         </TextContainer>
-        <ImageWrapper>
-          <Image src="../static/images/me.jpeg" />
-        </ImageWrapper>
+        <FlipCard 
+          frontCard={{ css: ImgCard }}
+          backCard={{
+            link: { href: "/world", text: "Find out" },
+            children: <InlineP>Where in the world have I been?</InlineP>
+          }}
+        />
       </InlineTextImg>
     </Section>
   )
