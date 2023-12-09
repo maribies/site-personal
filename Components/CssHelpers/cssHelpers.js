@@ -47,7 +47,7 @@ const iconColors = ({ property }) => {
   let valueFour = getColorValue('blue');
   let valueFive = getColorValue('purple');
 
-  if (property === 'border-bottom') {
+  if (property === 'border-bottom' || property === 'border' || property === 'outline') {
     valueOne = `10px solid ${getColorValue('orange')}`;
     valueTwo = `10px solid ${getColorValue('pink')}`;
     valueThree = `10px solid ${getColorValue('yellow')}`;
