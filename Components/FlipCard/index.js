@@ -9,13 +9,13 @@ import { changingIconColors } from '../CssHelpers'
 const Wrapper = styled.button`
   align-self: center;
   background: none;
+  border: none;
 `
 
 const Container = styled(a.div)`
   width: 100%;
   height: 100%;
   will-change: transform, opacity;
-  
 `
 
 const ContainerFlipped = styled(Container)`

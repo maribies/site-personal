@@ -37,11 +37,6 @@ const ImgCard = css`
   border: solid white;
 `
 
-const WorldLink = styled(Link)`
-  text-decoration: underline;
-  display: inline;
-`
-
 const TextContainer = styled.div`
   margin-bottom: 1em;
 `
