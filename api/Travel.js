@@ -186,11 +186,9 @@ const countries = {
   },
   Cambodia: {
     SiemReap: {
-      SiemReap: {
-        name: 'Siem Reap',
-        lat: 13.4,
-        lng: 103.85,
-      }
+      name: 'Siem Reap',
+      lat: 13.4,
+      lng: 103.85,
     },
   },
   Canada: {
@@ -232,26 +230,91 @@ const countries = {
     },
   },
   France: {
+    Antibes: {
+      name: 'Antibes',
+      lat: 43.55,
+      lng: 7.11667,
+    },
+    AixEnProvence: {
+      name: 'Aix-en-Provence',
+      lat: 43.53,
+      lng: 5.45,
+    },
     Bordeaux: {
       name: 'Bordeaux',
       lat: 44.85,
       lng: -0.55,
     },
-    CoteDAzur: {
-      name: 'Cote d\'Azur',
-      lat: 44.8,
-      lng: 0.6,
+    BeynacEtCazencac: {
+      name: 'Beynac-et-Cazencac',
+      lat: 44.84,
+      lng: 1.14,
     },
-    Dordgone: {
-      name: 'Dordgone',
-      lat: 44.4,
-      lng: 4.85,
+    Cannes: {
+      name: 'Cannes',
+      lat: 43.55,
+      lng: 7.01667,
+    },
+    CastelnaudLaChapelle: {
+      name: 'Castelnaud-la-Chapelle',
+      lat: 44.81,
+      lng: 1.148,
+    },
+    Domme: {
+      name: 'Domme',
+      lat: 44.80,
+      lng: 1.21,
+    },
+    Eze: {
+      name: 'Eze',
+      lat: 44.8,
+      lng: 1.33,
+    },
+    Grasse: {
+      name: 'Grasse',
+      lat: 43.65,
+      lng: 6.92,
+    },
+    LaRoqueGageac: {
+      name: 'La Roque-Gageac',
+      lat: 44.83,
+      lng: 1.19,
+    },
+    Nice: {
+      name: 'Nice',
+      lat: 43.7,
+      lng: 7.26667,
     },
     Paris: {
       name: 'Paris',
       lat: 48.856614,
       lng: 2.3522219,
     },
+    SaintEmilion: {
+      name: 'Saint-Émilion',
+      lat: 44.89,
+      lng: -0.156,
+    },
+    SarlatLaCaneda: {
+      name: 'Sarlat-la-Canéda',
+      lat: 44.88,
+      lng: 1.21,
+    },
+    SaintJeanCapFerrat: {
+      name: 'Saint-Jean-Cap-Ferrat',
+      lat: 43.695,
+      lng: 7.328,
+    },
+    SaintTropez: {
+      name: 'Saint-Tropez',
+      lat: 43.274,
+      lng: 6.638,
+    },
+    Vezac: {
+      name: 'Vézac',
+      lat: 44.83,
+      lng: 1.18,
+    }
   },
   Greece: {
     Athens: {
@@ -266,11 +329,21 @@ const countries = {
     },
   },
   Germany: {
+    Dachau: {
+      name: 'Dachau',
+      lat: 48.26667,
+      lng: 11.43333,
+    },
     Munich: {
       name: 'Munich',
       lat: 48.1351,
       lng: 11.5820,
-    }
+    },
+    Schwangau: {
+      name: 'Schwangau',
+      lat: 48.56667,
+      lng: 11.46667,
+    },
   },
   HongKong: {
     HongKong: {
