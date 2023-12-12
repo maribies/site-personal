@@ -42,11 +42,19 @@ const vectorSource = new VectorSource({
   wrapX: false,
 });
 
-const styleFn = (feature) => {
+const styleFn = (feature, resolution) => {
+  // radius of the dots increase on zoom
+  const baseRes = 16000;
+  let radius = 2;
+  let n = 2;
+  for (resolution; n <= 20 && resolution < baseRes/n; n = n * 2) {
+    radius = radius + 1;
+  }
+
   // style defaults to a dot
   let style = new Style({
     image: new Circle({
-      radius: 2,
+      radius,
       fill: new Fill({ color: getRandomColor() }),
     }),
   });
