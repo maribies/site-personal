@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSpring } from 'react-spring';
+import { useSpring } from '@react-spring/web';
 
 export const basicLoading = (status, loading) => {
   const loadingProps = useSpring({

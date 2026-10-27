@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import React, { useState } from 'react'
 import theme from '../Styles/themes'
-import {  animated } from 'react-spring'
+import {  animated } from '@react-spring/web'
 import { basicLoading } from '../Components/Loading'
 
 import { Hero, Info, Work } from '../Components'

@@ -3,7 +3,7 @@ import { Footer } from '../Components/Footer'
 import { ExperienceSection } from '../Components/ExperienceSection'
 import theme from '../Styles/themes'
 import React, { useState } from 'react'
-import {  animated } from 'react-spring'
+import {  animated } from '@react-spring/web'
 import { basicLoading } from '../Components/Loading'
 
 const Experiences = () => {
