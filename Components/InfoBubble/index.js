@@ -7,8 +7,6 @@ import {
   useSpringRef
 } from "@react-spring/web"
 
-import { changingIconColors } from '../CssHelpers'
-
 const Container = styled(animated.div)`
   margin-bottom: 1rem;
 `
@@ -31,7 +29,6 @@ const InfoBubbleBody = styled.div`
   border-radius: 3rem;
   outline: 1px solid var(--white);
   padding: 1rem;
-  ${changingIconColors({property: "border-bottom"})};
 `
 
 export const InfoBubble = ({ children, showInfo }) => {
@@ -53,7 +50,7 @@ export const InfoBubble = ({ children, showInfo }) => {
   return (
      <Container $showInfo={showInfo} style={{ ...rest }}>
       <InfoBubbleTail />
-      <InfoBubbleBody $showInfo={showInfo}>
+      <InfoBubbleBody $showInfo={showInfo} className="icon borderBottom">
         <animated.div style={{ y }} children={children} />
       </InfoBubbleBody>
     </Container>

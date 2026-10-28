@@ -42,3 +42,43 @@ body {
 a:-webkit-any-link {
   cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
 }
+
+.icon {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 10px;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  cursor: inherit;
+}
+
+.fill         { animation-name: cycleFill; }
+.background   { animation-name: cycleBackground; }
+.borderBottom { animation-name: cycleBorderBottom; }
+
+.pointer { cursor: url('/static/SVG/cursors/pointer.svg'), pointer; }
+
+@keyframes cycleFill {
+  0%   { fill: var(--orange); }
+  20%  { fill: var(--pink); }
+  40%  { fill: var(--yellow); }
+  60%  { fill: var(--blue); }
+  100% { fill: var(--purple); }
+}
+
+@keyframes cycleBackground {
+  0%   { background: var(--orange); }
+  20%  { background: var(--pink); }
+  40%  { background: var(--yellow); }
+  60%  { background: var(--blue); }
+  100% { background: var(--purple); }
+}
+
+@keyframes cycleBorderBottom {
+  0%   { border-bottom: 10px solid var(--orange); }
+  20%  { border-bottom: 10px solid var(--pink); }
+  40%  { border-bottom: 10px solid var(--yellow); }
+  60%  { border-bottom: 10px solid var(--blue); }
+  100% { border-bottom: 10px solid var(--purple); }
+}

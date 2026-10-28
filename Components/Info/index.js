@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { H4, P } from '../Text'
 import { Link } from '../Link'
 
-import { changingIconColors } from '../CssHelpers'
-
 const Section = styled.div`
   border-top: 1px solid var(--purple);
   display: flex;
@@ -35,7 +33,6 @@ const ImageWrapper = styled.div`
   padding: 10px;
   width: 80%;
   align-self: center;
-  ${changingIconColors({property: "background"})};
 
   @media (min-width: 48rem) {
     width: 20%;
@@ -77,7 +74,7 @@ export const Info = () => {
           <P>I'm also a core teammate for <InlineLink href="https://quickbeam.xyz/">Quickbeam</InlineLink>, a technical education platform.</P>
           <InlineP>Always keen for new experiences, I am frequently traveling and currently based in </InlineP><StrikeP>PA,</StrikeP><StrikeP>DC,</StrikeP><StrikeP>New Zealand,</StrikeP><InlineP>Portugal.</InlineP>
         </TextContainer>
-        <ImageWrapper>
+        <ImageWrapper className="icon background">
           <Image src="../static/images/me.jpeg" />
         </ImageWrapper>
       </InlineTextImg>
