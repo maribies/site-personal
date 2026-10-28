@@ -7,19 +7,19 @@ import {
   useSpringRef
 } from "@react-spring/web"
 
-import { getColorValue, changingIconColors } from '../CssHelpers'
+import { changingIconColors } from '../CssHelpers'
 
 const Container = styled(animated.div)`
   margin-bottom: 1rem;
 `
 const InfoBubbleTail = styled.div`
   position: relative;
-  background: ${getColorValue('grey')};
+  background: var(--grey);
   width: 3rem;
   height: 3rem;
   margin-left: 50%;
-  border-left: 1px solid ${getColorValue('white')};
-  border-top: 1px solid ${getColorValue('white')};
+  border-left: 1px solid var(--white);
+  border-top: 1px solid var(--white);
   transform: translate(0px, 1.5rem) rotate(45deg);
 
   @media (min-width: 48rem) {
@@ -29,7 +29,7 @@ const InfoBubbleTail = styled.div`
 
 const InfoBubbleBody = styled.div`
   border-radius: 3rem;
-  outline: 1px solid ${getColorValue('white')};
+  outline: 1px solid var(--white);
   padding: 1rem;
   ${changingIconColors({property: "border-bottom"})};
 `

@@ -6,18 +6,18 @@ import { Link } from '../Link'
 import { InfoBubble } from '../InfoBubble'
 import { SoccerBallAnimation } from './SoccerBallAnimation'
 
-import { getColorValue, changingIconColors } from '../CssHelpers'
+import { changingIconColors } from '../CssHelpers'
 
 
 const NavLink = styled(Link)`
   justify-content: right;
-  border-bottom: ${({ $color }) => `1px solid ${getColorValue($color)}`};
+  border-bottom: ${({ $color }) => `1px solid var(--${$color})`};
   font-family: Poppins, helvetica neue, Helvetica, sans-serif;
 
   @media (min-width: 48rem) {
     border-bottom: none;
     &:hover {
-      border-bottom: ${({ $color }) => `1px solid ${getColorValue($color)}`};
+      border-bottom: ${({ $color }) => `1px solid var(--${$color})`};
     }
   }
   animation: fadeIn 5s;

@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { P } from '../Text'
-import { getColorValue } from '../CssHelpers'
 
 const ListItem = styled.li`
-  color: ${getColorValue('white')};
+  color: var(--white);
   list-style-type: circle;
 `
 

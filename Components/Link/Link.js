@@ -1,9 +1,8 @@
-import { getColorValue } from '../CssHelpers'
 import styled from 'styled-components'
 
 export const Link = styled.a`
   text-decoration: none;
-  color: ${getColorValue('white')};
+  color: var(--white);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -12,6 +11,6 @@ export const Link = styled.a`
   cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
 
   &:clicked {
-    color: ${getColorValue('purple')}
+    color: var(--purple);
   }
 `

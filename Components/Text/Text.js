@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components'
-import { getColorValue } from '../CssHelpers'
 
 const baseStyles = css`
   font-family: 'Poppins', helvetica neue, Helvetica, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
-  color: ${getColorValue('white')};
+  color: var(--white);
 `
 
 const colorChange = css`

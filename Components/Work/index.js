@@ -5,10 +5,8 @@ import { Experiences } from '../../api/Experiences'
 import { H2Outline } from '../Text'
 import { Experience } from '../ExperienceSection/Experience'
 
-import { getColorValue } from '../CssHelpers'
-
 const Section = styled.div`
-  border-top: 1px solid ${getColorValue('yellow')};
+  border-top: 1px solid var(--yellow);
   display: flex;
   flex-direction: row;
   margin-top: 2rem;

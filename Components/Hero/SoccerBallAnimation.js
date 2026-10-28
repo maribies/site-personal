@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { getColorValue } from '../CssHelpers'
-
 const BallArc = styled.div`
   display: flex;
   width: 30%;
@@ -38,7 +36,7 @@ const BallArc3 = styled(BallArc2)`
 const SoccerBall = styled.i`
   display: ${({ $isActive }) => $isActive ? "flex" : "none"};
   align-self: center;
-  color: ${getColorValue('purple')};
+  color: var(--purple);
   transition: ${({ $isActive }) => $isActive ? "transform 5s" : ""};
   transform: ${({ $isActive }) => $isActive ? "rotate(-180deg)" : ""};
 `
@@ -46,7 +44,7 @@ const SoccerBall = styled.i`
 const SoccerBall2 = styled(SoccerBall)`
   display: flex;
   transition: ${({ $isActive }) => $isActive ? "color 3s ease-in-out 6s, transform 2s ease-in-out 5s" : ""};
-  color: ${({ $isActive }) => $isActive ? getColorValue("grey") : getColorValue("purple")};
+  color: ${({ $isActive }) => $isActive ? "var(--grey)" : "var(--purple)"};
 `
 
 const SoccerBall3 = styled(SoccerBall)`

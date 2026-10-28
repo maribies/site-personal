@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { H4, P } from '../Text'
 import { Link } from '../Link'
 
-import { getColorValue, changingIconColors } from '../CssHelpers'
+import { changingIconColors } from '../CssHelpers'
 
 const Section = styled.div`
-  border-top: 1px solid ${getColorValue('purple')};
+  border-top: 1px solid var(--purple);
   display: flex;
   flex-direction: column;
 `
@@ -56,15 +56,15 @@ const InlineP = styled(P)`
 `
 
 const StrikeP = styled(InlineP)`
-  text-decoration: line-through ${getColorValue('purple')};
+  text-decoration: line-through var(--purple);
   padding-right: .5rem;
 
   &:nth-child(2) {
-    text-decoration: line-through ${getColorValue('blue')}
+    text-decoration: line-through var(--blue);
   }
 
   &:nth-child(3) {
-    text-decoration: line-through ${getColorValue('yellow')}
+    text-decoration: line-through var(--yellow);
   }
 `
 

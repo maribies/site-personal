@@ -4,6 +4,31 @@
   box-sizing: border-box;
 }
 
+:root {
+  --purple: #5F4B8B;
+  --purple-rgb: 95 75 139;
+  --blue: #0078A7;
+  --blue-rgb: 0 120 167;
+  --yellow: #F9AC2F;
+  --yellow-rgb: 249 172 47;
+  --pink: #D32E5E;
+  --pink-rgb: 211 46 94;
+  --orange: #FF7913;
+  --orange-rgb: 255 121 19;
+  --rose: #B76BA3;
+  --rose-rgb: 183 107 163;
+  --mustard: #D2B04C;
+  --mustard-rgb: 210 176 76;
+  --tan: #C68F65;
+  --tan-rgb: 198 143 101;
+  --grey: #2E3138;
+  --grey-rgb: 46 49 56;
+  --black: #020300;
+  --black-rgb: 2 3 0;
+  --white: #FFFFFF;
+  --white-rgb: 255 255 255;
+}
+
 body {
   background-color: #2E3138;
   font-family: 'Poppins', helvetica neue, Helvetica, sans-serif;
