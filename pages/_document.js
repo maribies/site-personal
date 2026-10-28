@@ -14,7 +14,6 @@ export default function Document() {
         <meta name='theme-color' content='#5f4b8b' />
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' />
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' />
-        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100;400&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <Main />

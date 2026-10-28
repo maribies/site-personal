@@ -12,6 +12,7 @@ import { getColorValue, changingIconColors } from '../CssHelpers'
 const NavLink = styled(Link)`
   justify-content: right;
   border-bottom: ${({ $color }) => `1px solid ${getColorValue($color)}`};
+  font-family: Poppins, helvetica neue, Helvetica, sans-serif;
 
   @media (min-width: 48rem) {
     border-bottom: none;
