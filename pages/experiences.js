@@ -1,7 +1,5 @@
-import { ThemeProvider } from 'styled-components'
 import { Footer } from '../Components/Footer'
 import { ExperienceSection } from '../Components/ExperienceSection'
-import theme from '../Styles/themes'
 import React, { useState } from 'react'
 import {  animated } from '@react-spring/web'
 import { basicLoading } from '../Components/Loading'
@@ -12,7 +10,7 @@ const Experiences = () => {
   const loadingProps = basicLoading(status, loading);
 
   return (
-  <ThemeProvider theme={theme}>
+  <>
     {!!status && <>
 
       <animated.div style={loadingProps}>
@@ -21,7 +19,7 @@ const Experiences = () => {
         <Footer />
       </ animated.div>
     </>}
-  </ThemeProvider>
+  </>
 )}
 
 export default Experiences

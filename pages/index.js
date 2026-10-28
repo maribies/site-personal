@@ -1,7 +1,6 @@
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 
 import React, { useState } from 'react'
-import theme from '../Styles/themes'
 import {  animated } from '@react-spring/web'
 import { basicLoading } from '../Components/Loading'
 
@@ -25,7 +24,7 @@ const Home = () => {
   const loadingProps = basicLoading(status, loading);
 
   return(
-  <ThemeProvider theme={theme}>
+  <>
     {!!status && <>
       <Layout>
         <animated.div style={loadingProps}>
@@ -37,7 +36,7 @@ const Home = () => {
         </ animated.div>
       </Layout>
     </>}
-  </ThemeProvider>
+  </>
 )}
 
 export default Home
