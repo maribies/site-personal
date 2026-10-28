@@ -31,12 +31,55 @@
 
 body {
   background-color: #2E3138;
-  font-family: 'Poppins', helvetica neue, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  color: var(--white);
   line-height: 21px;
   overflow-x: hidden;
   cursor:  url('/static/SVG/cursors/arrow.svg'), auto;
+}
+
+h1 {
+    font-size: 3.375rem;
+    line-height: 4.375rem;
+
+    @media (min-width: 48rem) {
+        font-size: 5.063rem;
+        line-height: 6.063rem;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+
+    @media (min-width: 48rem) {
+        font-size: 3.375rem;
+        line-height: 4.375rem;
+    }
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @media (min-width: 48rem) {
+        font-size: 2.25rem;
+        line-height: 3.25rem;
+    }
+}
+
+h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 a:-webkit-any-link {
@@ -81,4 +124,9 @@ a:-webkit-any-link {
   40%  { border-bottom: 10px solid var(--yellow); }
   60%  { border-bottom: 10px solid var(--blue); }
   100% { border-bottom: 10px solid var(--purple); }
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
