@@ -1,22 +1,7 @@
-import styled from 'styled-components'
+import { useState } from 'react'
+import { animated } from '@react-spring/web'
 
-import React, { useState } from 'react'
-import {  animated } from '@react-spring/web'
-import { basicLoading } from '../Components/Loading'
-
-import { Hero, Info, Work } from '../Components'
-import { ConnectSection } from '../Components/ConnectSection'
-import { Footer } from '../Components/Footer'
-
-const Layout = styled.div`
-  padding-left: 1rem;
-  padding-right: 1rem;
-
-  @media (min-width: 48rem) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-`
+import { basicLoading, Hero, Info, Work, Layout, ConnectSection } from '../components'
 
 const Home = () => {
   const [status, loading] = useState(false)
@@ -32,7 +17,6 @@ const Home = () => {
           <Info />
           <Work />
           <ConnectSection />
-          <Footer />
         </ animated.div>
       </Layout>
     </>}

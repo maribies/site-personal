@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { P } from '../Text'
 
@@ -14,7 +13,7 @@ const Text = styled(P)`
 
 export const Footer = () => {
   return (
-    <Container>
+    <Container className="flex-wrap">
       <Text>Designed and developed by me with 💜</Text>
       <Text><i className="fa-regular fa-copyright" /> 2018 - <i className="fa fa-infinity" /></Text>
     </Container>

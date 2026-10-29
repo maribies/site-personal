@@ -1,8 +1,6 @@
-import { Footer } from '../Components/Footer'
-import { ExperienceSection } from '../Components/ExperienceSection'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {  animated } from '@react-spring/web'
-import { basicLoading } from '../Components/Loading'
+import { basicLoading, ExperienceSection, Layout } from '../components'
 
 const Experiences = () => {
   const [status, loading] = useState(false)
@@ -10,16 +8,16 @@ const Experiences = () => {
   const loadingProps = basicLoading(status, loading);
 
   return (
-  <>
-    {!!status && <>
-
-      <animated.div style={loadingProps}>
-        <ExperienceSection />
-
-        <Footer />
-      </ animated.div>
-    </>}
-  </>
-)}
+    <>
+      {!!status && 
+      <Layout>
+        <animated.div style={loadingProps}>
+          <ExperienceSection />
+        </ animated.div>
+      </Layout>
+      }
+   </>
+  )
+}
 
 export default Experiences
