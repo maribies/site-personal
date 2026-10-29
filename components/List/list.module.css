@@ -1,0 +1,4 @@
+.item {
+  color: var(--white);
+  list-style-type: circle;
+}

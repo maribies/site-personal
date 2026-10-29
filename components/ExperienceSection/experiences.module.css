@@ -1,0 +1,28 @@
+.flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scrollWord {
+    margin: 0 0.2em;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.scrollingWrapper {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+.scroller {
+  animation: scrolling 20s linear infinite;
+  position: absolute;
+}
+
+@keyframes scrolling {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}

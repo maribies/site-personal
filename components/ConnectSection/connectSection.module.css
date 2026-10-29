@@ -1,0 +1,17 @@
+.section {
+  border-top: 1px solid var(--blue);
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  
+  @media (min-width: 48rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.link {
+  padding-left: 1rem;
+  align-items: center;
+  text-decoration: none;
+}

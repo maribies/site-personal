@@ -1,4 +1,3 @@
-import { H1 } from '../Text'
 import { Experiences } from '../../api/Experiences'
 import { Experience } from './Experience'
 
@@ -9,7 +8,7 @@ export const ExperienceSection = () => {
     return (
       <div id={type} key={index}>
         <div style={{ width: '100%' }}>
-          <H1>{type?.toUpperCase()}</H1>
+          <h1>{type?.toUpperCase()}</h1>
         </div>
 
         {experiences.map((experience, index) => {

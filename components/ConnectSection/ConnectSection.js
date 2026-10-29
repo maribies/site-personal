@@ -1,51 +1,22 @@
-import styled from 'styled-components'
-
-import { P, H2Outline } from '../Text'
-import { Link } from '../Link'
+import text from '../text.module.css'
+import css from './connectSection.module.css'
 
 import { Links } from '../../api/Links'
 
-const Section = styled.div`
-  border-top: 1px solid var(--blue);
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-  
-  @media (min-width: 48rem) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-`
-
-const ContactLink = styled(Link)`
-  padding-left: 1rem;
-`
-
-const LinkInfo = styled(P)`
-  padding-left: 0.5rem;
-`
-
-const LinksContainer = styled.div`
-  display: flex;
-  justify-content: end;
-  flex-grow: 2;
-  flex-wrap: wrap;
-`
-
 export const ConnectSection = () => {
   return (
-    <Section id='connect'>
-      <H2Outline>Connect</H2Outline>
+    <div id='connect' className={css.section}>
+      <h2 className={text.outline}>Connect</h2>
 
-      <LinksContainer>
+      <div className="flex-wrap" style={{ justifyContent: 'end', flexGrow: 2 }}>
         {Links.map((item, index) => {
           return (
-            <ContactLink key={index} href={item.link} target="_blank" className={item.icon}>
-              <LinkInfo>{item.name}</LinkInfo>
-            </ContactLink>
+            <a key={index} href={item.link} target="_blank" className={`${css.link} flex-wrap`} >
+              <span className={item.icon} style={{paddingRight: '0.5rem'}} />
+              <p style={{paddingRight: '0.5rem'}}>{item.name}</p>
+            </a>
           )
         })}
-      </LinksContainer>
-    </Section>
+      </div>    </div>
   )
 }

@@ -82,8 +82,17 @@ p {
     line-height: 1.5rem;
 }
 
-a:-webkit-any-link {
+a:any-link {
   cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
+  color: var(--white);
+
+  &:visited {
+    color: var(--purple);
+  }
+
+  &:focus-visible {
+    color: var(--rose)
+  }
 }
 
 .icon {

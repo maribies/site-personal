@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { 
   useSpring,
   useChain,
@@ -7,29 +6,7 @@ import {
   useSpringRef
 } from "@react-spring/web"
 
-const Container = styled(animated.div)`
-  margin-bottom: 1rem;
-`
-const InfoBubbleTail = styled.div`
-  position: relative;
-  background: var(--grey);
-  width: 3rem;
-  height: 3rem;
-  margin-left: 50%;
-  border-left: 1px solid var(--white);
-  border-top: 1px solid var(--white);
-  transform: translate(0px, 1.5rem) rotate(45deg);
-
-  @media (min-width: 48rem) {
-    margin-left: 75%;
-  }
-`
-
-const InfoBubbleBody = styled.div`
-  border-radius: 3rem;
-  outline: 1px solid var(--white);
-  padding: 1rem;
-`
+import css from "./infobubble.module.css"
 
 export const InfoBubble = ({ children, showInfo }) => {
   const springApi = useSpringRef();
@@ -48,11 +25,11 @@ export const InfoBubble = ({ children, showInfo }) => {
   useChain(showInfo ? [springApi] : [springApi], [0, showInfo ? 0.1 : 0.6]);
 
   return (
-     <Container $showInfo={showInfo} style={{ ...rest }}>
-      <InfoBubbleTail />
-      <InfoBubbleBody $showInfo={showInfo} className="icon borderBottom">
+     <animated.div $showInfo={showInfo} style={{ marginBottom: '1rem', ...rest }}>
+      <div className={css.infoBubbleTail} />
+      <div className={`${css.infoBubbleBody} icon borderBottom`}>
         <animated.div style={{ y }} children={children} />
-      </InfoBubbleBody>
-    </Container>
+      </div>
+    </animated.div>
   )
 }

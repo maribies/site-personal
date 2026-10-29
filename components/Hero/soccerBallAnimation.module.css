@@ -1,0 +1,76 @@
+.soccer {
+  display: contents;
+}
+
+.arc {
+  display: flex;
+}
+
+.arc1 {
+  width: 30%;
+  opacity: 1;
+}
+
+.arc2 {
+  width: 20%;
+  margin-left: -32px;
+  opacity: 0;
+}
+
+.arc3 {
+  width: 10%;
+  margin-left: -32px;
+  opacity: 0;
+}
+
+.ball {
+  align-self: center;
+  color: var(--purple);
+}
+
+.ball1,
+.ball3 {
+  display: none;
+}
+
+.ball2 {
+  display: flex;
+}
+
+.soccer[data-active="true"] .arc {
+  transform-origin: 50% 50%;
+  transform: rotate(180deg);
+}
+
+.soccer[data-active="true"] .arc1 {
+  opacity: 0;
+  transition: transform-origin 5s ease-in-out, transform 5s ease-in-out, opacity 5s linear 1s;
+}
+
+.soccer[data-active="true"] .arc2 {
+  opacity: 1;
+  transition: transform-origin 2s ease-in-out 5s, transform 2s ease-in-out 5s, opacity 2s linear 5s;
+}
+
+.soccer[data-active="true"] .arc3 {
+  opacity: 1;
+  transition: transform-origin 2s ease-in-out 7s, transform 2s ease-in-out 7s, opacity 2s linear 7s;
+}
+
+.soccer[data-active="true"] .ball {
+  display: flex;
+  transform: rotate(-180deg);
+}
+
+.soccer[data-active="true"] .ball1 {
+  transition: transform 5s;
+}
+
+.soccer[data-active="true"] .ball2 {
+  color: var(--grey);
+  transition: color 3s ease-in-out 6s, transform 2s ease-in-out 5s;
+}
+
+.soccer[data-active="true"] .ball3 {
+  transition: transform 2s ease-in-out 7s;
+}

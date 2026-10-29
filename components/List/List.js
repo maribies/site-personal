@@ -1,20 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { P } from '../Text'
-
-const ListItem = styled.li`
-  color: var(--white);
-  list-style-type: circle;
-`
+import css from './list.module.css'
 
 const renderListItems = listData => {
   return listData.map((item, index) => {
     return (
-      <ListItem key={index} value={item}>
-        <P>
+      <li key={index} value={item} className={css.item}>
+        <p>
           {item}
-        </P>
-      </ListItem>
+        </p>
+      </li>
     )
   })
 }

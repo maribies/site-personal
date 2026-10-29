@@ -1,62 +1,17 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import { useState } from 'react'
 
-import { H3, P } from '../Text'
-import { Link } from '../Link'
+import css from './experiences.module.css'
 import { UnorderedListComponent as List } from '../List'
 import { InfoBubble } from '../InfoBubble'
-
-const CompanyLink = styled(Link)`
-  margin: 0;
-  text-decoration: underline;
-  display: inline;
-`
-
-const Wrapper = styled.div`
-  width: 100%;
-`
-
-const ScrollingWrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 1.5rem;
-  overflow: hidden;
-`
-
-const Scroller = styled.div`
-  animation: scrolling 20s linear infinite;
-  position: absolute;
-
-  @keyframes scrolling {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-  };
-`
-
-const FlexContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
-const ScrollWord = styled(P)`
-  margin: 0 0.2em;
-  width: 100%;
-  white-space: nowrap;
-`
-
-const More = styled(Link)`
-  position: relative;
-`
 
 export const Experience = ({ experience, index }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <Wrapper key={index}>
-      <FlexContainer>
-        <CompanyLink href={experience.companyLink}><H3>{experience.company}</H3></CompanyLink>
-        <More onClick={() => setShowInfo(!showInfo)}>
+    <div key={index} style={{width: '100%'}}>
+      <div className={css.flexContainer}>
+        <a href={experience.companyLink}><h3>{experience.company}</h3></a>
+        <a onClick={() => setShowInfo(!showInfo)}>
           <svg
           className="icon fill pointer"
           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="48" height="48">
@@ -66,23 +21,23 @@ export const Experience = ({ experience, index }) => {
               <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
             }
           </svg>
-        </More>
-      </FlexContainer>
+        </a>
+      </div>
 
-      <P>{experience.title}</P>
+      <p>{experience.title}</p>
 
       <InfoBubble showInfo={showInfo}>
         <List listData={experience.skills} />
       </InfoBubble>
 
-      <ScrollingWrapper>
-        <Scroller>
-          <FlexContainer>
-            {experience.tools && experience.tools.map(tool =>  <ScrollWord key={tool}>{tool}</ScrollWord>)}
-            {experience.tools && experience.tools.map(tool =>  <ScrollWord key={tool}>{tool}</ScrollWord>)}
-          </FlexContainer>
-        </Scroller>
-      </ScrollingWrapper>
-    </Wrapper>
+      <div className={css.scrollingWrapper}>
+        <div className={css.scroller}>
+          <div className={css.flexContainer}>
+            {experience.tools && experience.tools.map(tool =>  <p className={css.scrollWord} key={tool}>{tool}</p>)}
+            {experience.tools && experience.tools.map(tool =>  <p className={css.scrollWord} key={tool}>{tool}</p>)}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

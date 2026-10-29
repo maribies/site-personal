@@ -1,0 +1,30 @@
+.work {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+  border-top: 1px solid var(--yellow);
+
+  @media (min-width: 48rem) {
+    flex-wrap: wrap;
+  }
+}
+
+.title {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0.83em 0.83em 0.83em 0;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+
+  @media (min-width: 48rem) {
+    margin: 0.83em;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+}
