@@ -44,17 +44,26 @@
 
 .soccer[data-active="true"] .arc1 {
   opacity: 0;
-  transition: transform-origin 5s ease-in-out, transform 5s ease-in-out, opacity 5s linear 1s;
+  transition:
+    transform-origin 5s ease-in-out,
+    transform 5s ease-in-out,
+    opacity 5s linear 1s;
 }
 
 .soccer[data-active="true"] .arc2 {
   opacity: 1;
-  transition: transform-origin 2s ease-in-out 5s, transform 2s ease-in-out 5s, opacity 2s linear 5s;
+  transition:
+    transform-origin 2s ease-in-out 5s,
+    transform 2s ease-in-out 5s,
+    opacity 2s linear 5s;
 }
 
 .soccer[data-active="true"] .arc3 {
   opacity: 1;
-  transition: transform-origin 2s ease-in-out 7s, transform 2s ease-in-out 7s, opacity 2s linear 7s;
+  transition:
+    transform-origin 2s ease-in-out 7s,
+    transform 2s ease-in-out 7s,
+    opacity 2s linear 7s;
 }
 
 .soccer[data-active="true"] .ball {
@@ -68,7 +77,9 @@
 
 .soccer[data-active="true"] .ball2 {
   color: var(--grey);
-  transition: color 3s ease-in-out 6s, transform 2s ease-in-out 5s;
+  transition:
+    color 3s ease-in-out 6s,
+    transform 2s ease-in-out 5s;
 }
 
 .soccer[data-active="true"] .ball3 {

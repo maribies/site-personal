@@ -1,21 +1,15 @@
-import css from './list.module.css'
+import css from "./list.module.css";
 
-const renderListItems = listData => {
+const renderListItems = (listData) => {
   return listData.map((item, index) => {
     return (
       <li key={index} value={item} className={css.item}>
-        <p>
-          {item}
-        </p>
+        <p>{item}</p>
       </li>
-    )
-  })
-}
+    );
+  });
+};
 
-export const UnorderedListComponent = props => {
-  return (
-    <ul>
-      {renderListItems(props.listData)}
-    </ul>
-  )
-}
+export const UnorderedListComponent = (props) => {
+  return <ul>{renderListItems(props.listData)}</ul>;
+};

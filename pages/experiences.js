@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import {  animated } from '@react-spring/web'
-import { basicLoading, ExperienceSection, Layout } from '../components'
+import { useState } from "react";
+import { animated } from "@react-spring/web";
+import { useBasicLoading, ExperienceSection, Layout } from "../components";
 
 const Experiences = () => {
-  const [status, loading] = useState(false)
+  const [status, loading] = useState(false);
 
-  const loadingProps = basicLoading(status, loading);
+  const loadingProps = useBasicLoading(status, loading);
 
   return (
     <>
-      {!!status && 
-      <Layout>
-        <animated.div style={loadingProps}>
-          <ExperienceSection />
-        </ animated.div>
-      </Layout>
-      }
-   </>
-  )
-}
+      {!!status && (
+        <Layout>
+          <animated.div style={loadingProps}>
+            <ExperienceSection />
+          </animated.div>
+        </Layout>
+      )}
+    </>
+  );
+};
 
-export default Experiences
+export default Experiences;

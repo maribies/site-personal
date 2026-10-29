@@ -5,7 +5,7 @@
   margin-top: 2rem;
   border-top: 1px solid var(--yellow);
 
-  @media (min-width: 48rem) {
+  @media (width >= 48rem) {
     flex-wrap: wrap;
   }
 }
@@ -17,14 +17,13 @@
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px;
 
-  @media (min-width: 48rem) {
+  @media (width >= 48rem) {
     margin: 0.83em;
   }
 }
 
 .columns {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   width: 75%;
 }

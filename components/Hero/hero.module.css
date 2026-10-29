@@ -1,27 +1,33 @@
-.navLink {
+.nav {
   display: flex;
   justify-content: right;
-  animation: fadeIn 5s;
+  animation: fade-in 5s;
   text-decoration: none;
   border-bottom: 1px solid var(--nav-color);
 
-  @media (min-width: 48rem) {
+  @media (width >= 48rem) {
     border-bottom: none;
+
     &:hover {
       border-bottom: 1px solid var(--nav-color);
     }
   }
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .explain {
   display: flex;
   flex-direction: column;
-  width: 100%; 
+  width: 100%;
 }
 
 .balls {
@@ -32,16 +38,16 @@
   align-self: end;
 }
 
-.explainButton {
+.toggle {
   display: flex;
   align-items: center;
   background-color: transparent;
   border: none;
   color: var(--white);
-  cursor: url('/static/SVG/cursors/question.svg'), pointer;
+  cursor: url("/static/SVG/cursors/question.svg"), pointer;
   padding: 0;
 }
 
-.explainButton[data-active="true"] { 
-  cursor: url('/static/SVG/cursors/collapse.svg'), pointer; 
+.toggle[data-active="true"] {
+  cursor: url("/static/SVG/cursors/collapse.svg"), pointer;
 }
