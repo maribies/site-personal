@@ -1,4 +1,10 @@
-export const Links = [
+export type ContactLink = {
+  link: string;
+  icon: string;
+  name: string;
+};
+
+export const Links: ContactLink[] = [
   {
     link: "mailto:marissa.biesecker@gmail.com",
     icon: "fa fa-envelope",

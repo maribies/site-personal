@@ -1,4 +1,30 @@
-export const Experiences = [
+export type Preview = {
+  path: string;
+  type: "site" | "video";
+};
+
+export type Experience = {
+  icon: string;
+  iconAlt: string;
+  title: string;
+  company: string;
+  companyLink: string;
+  timeFrame: string;
+  tools?: string[];
+  skills: string[];
+  links: {
+    main: Preview;
+    second?: Preview;
+    third?: Preview;
+  };
+};
+
+export type ExperienceGroup = {
+  type: "tech" | "business";
+  experiences: Experience[];
+};
+
+export const Experiences: ExperienceGroup[] = [
   {
     type: "tech",
     experiences: [
