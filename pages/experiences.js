@@ -1,27 +1,23 @@
-import { ThemeProvider } from 'styled-components'
-import { Footer } from '../Components/Footer'
-import { ExperienceSection } from '../Components/ExperienceSection'
-import theme from '../Styles/themes'
-import React, { useState } from 'react'
-import {  animated } from 'react-spring'
-import { basicLoading } from '../Components/Loading'
+import { useState } from "react";
+import { animated } from "@react-spring/web";
+import { useBasicLoading, ExperienceSection, Layout } from "../components";
 
 const Experiences = () => {
-  const [status, loading] = useState(false)
+  const [status, loading] = useState(false);
 
-  const loadingProps = basicLoading(status, loading);
+  const loadingProps = useBasicLoading(status, loading);
 
   return (
-  <ThemeProvider theme={theme}>
-    {!!status && <>
+    <>
+      {!!status && (
+        <Layout>
+          <animated.div style={loadingProps}>
+            <ExperienceSection />
+          </animated.div>
+        </Layout>
+      )}
+    </>
+  );
+};
 
-      <animated.div style={loadingProps}>
-        <ExperienceSection />
-
-        <Footer />
-      </ animated.div>
-    </>}
-  </ThemeProvider>
-)}
-
-export default Experiences
+export default Experiences;

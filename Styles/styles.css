@@ -4,16 +4,190 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #2E3138;
-  font-family: 'Poppins', helvetica neue, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 21px;
-  overflow-x: hidden;
-  cursor:  url('/static/SVG/cursors/arrow.svg'), auto;
+:root {
+  --purple: #5f4b8b;
+  --purple-rgb: 95 75 139;
+  --blue: #0078a7;
+  --blue-rgb: 0 120 167;
+  --yellow: #f9ac2f;
+  --yellow-rgb: 249 172 47;
+  --pink: #d32e5e;
+  --pink-rgb: 211 46 94;
+  --orange: #ff7913;
+  --orange-rgb: 255 121 19;
+  --rose: #b76ba3;
+  --rose-rgb: 183 107 163;
+  --mustard: #d2b04c;
+  --mustard-rgb: 210 176 76;
+  --tan: #c68f65;
+  --tan-rgb: 198 143 101;
+  --grey: #2e3138;
+  --grey-rgb: 46 49 56;
+  --black: #020300;
+  --black-rgb: 2 3 0;
+  --white: #fff;
+  --white-rgb: 255 255 255;
 }
 
-a:-webkit-any-link {
-  cursor: url('/static/SVG/cursors/pointer.svg'), pointer;
+body {
+  background-color: #2e3138;
+  font-size: 16px;
+  font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  color: var(--white);
+  line-height: 21px;
+  overflow-x: hidden;
+  cursor: url("/static/SVG/cursors/arrow.svg"), auto;
+}
+
+h1 {
+  font-size: 3.375rem;
+  line-height: 4.375rem;
+
+  @media (width >= 48rem) {
+    font-size: 5.063rem;
+    line-height: 6.063rem;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 3.25rem;
+
+  @media (width >= 48rem) {
+    font-size: 3.375rem;
+    line-height: 4.375rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  @media (width >= 48rem) {
+    font-size: 2.25rem;
+    line-height: 3.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+a:any-link {
+  cursor: url("/static/SVG/cursors/pointer.svg"), pointer;
+  color: var(--white);
+
+  &:visited {
+    color: var(--purple);
+  }
+
+  &:focus-visible {
+    color: var(--rose);
+  }
+}
+
+.icon {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 10px;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  cursor: inherit;
+}
+
+.cycle-fill {
+  animation-name: cycle-fill;
+}
+
+.cycle-background {
+  animation-name: cycle-background;
+}
+
+.cycle-border {
+  animation-name: cycle-border-bottom;
+}
+
+.pointer {
+  cursor: url("/static/SVG/cursors/pointer.svg"), pointer;
+}
+
+@keyframes cycle-fill {
+  0% {
+    fill: var(--orange);
+  }
+
+  20% {
+    fill: var(--pink);
+  }
+
+  40% {
+    fill: var(--yellow);
+  }
+
+  60% {
+    fill: var(--blue);
+  }
+
+  100% {
+    fill: var(--purple);
+  }
+}
+
+@keyframes cycle-background {
+  0% {
+    background: var(--orange);
+  }
+
+  20% {
+    background: var(--pink);
+  }
+
+  40% {
+    background: var(--yellow);
+  }
+
+  60% {
+    background: var(--blue);
+  }
+
+  100% {
+    background: var(--purple);
+  }
+}
+
+@keyframes cycle-border-bottom {
+  0% {
+    border-bottom: 10px solid var(--orange);
+  }
+
+  20% {
+    border-bottom: 10px solid var(--pink);
+  }
+
+  40% {
+    border-bottom: 10px solid var(--yellow);
+  }
+
+  60% {
+    border-bottom: 10px solid var(--blue);
+  }
+
+  100% {
+    border-bottom: 10px solid var(--purple);
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }

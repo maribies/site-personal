@@ -1,0 +1,16 @@
+.section {
+  border-top: 1px solid var(--blue);
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  @media (width >= 48rem) {
+    flex-flow: row wrap;
+  }
+}
+
+.link {
+  padding-left: 1rem;
+  align-items: center;
+  text-decoration: none;
+}
