@@ -1,14 +1,15 @@
 import { useState } from "react";
 
+import type { Experience as ExperienceData } from "../../api/Experiences";
 import css from "./experiences.module.css";
 import { UnorderedListComponent as List } from "../List";
 import { InfoBubble } from "../InfoBubble";
 
-export const Experience = ({ experience, index }) => {
+export const Experience = ({ experience }: { experience: ExperienceData }) => {
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <div key={index} style={{ width: "100%" }}>
+    <div style={{ width: "100%" }}>
       <div className={css.row}>
         <a href={experience.companyLink}>
           <h3>{experience.company}</h3>

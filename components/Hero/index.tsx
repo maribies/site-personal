@@ -13,9 +13,7 @@ export const Hero = () => {
       <div className="flex-wrap">
         <div className="flex-wrap">
           <h1 className={text.title}>Mari</h1>
-          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>
-            ssa
-          </h1>
+          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>ssa</h1>
         </div>
         <div className="flex-wrap">
           <h1 className={text.title}>Bies</h1>

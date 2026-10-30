@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   useSpring,
   useChain,
@@ -8,7 +9,13 @@ import {
 
 import css from "./infobubble.module.css";
 
-export const InfoBubble = ({ children, showInfo }) => {
+export const InfoBubble = ({
+  children,
+  showInfo,
+}: {
+  children: ReactNode;
+  showInfo: boolean;
+}) => {
   const springApi = useSpringRef();
   const { y, ...rest } = useSpring({
     ref: springApi,
@@ -25,15 +32,10 @@ export const InfoBubble = ({ children, showInfo }) => {
   useChain(showInfo ? [springApi] : [springApi], [0, showInfo ? 0.1 : 0.6]);
 
   return (
-    <animated.div
-      $showInfo={showInfo}
-      style={{ marginBottom: "1rem", ...rest }}
-    >
+    <animated.div style={{ marginBottom: "1rem", ...rest }}>
       <div className={css.tail} />
       <div className={`${css.body} icon cycle-border`}>
-        <animated.div style={{ y }}>
-          {children}
-        </animated.div>
+        <animated.div style={{ y }}>{children}</animated.div>
       </div>
     </animated.div>
   );

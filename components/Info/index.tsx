@@ -37,7 +37,11 @@ export const Info = () => {
         </div>
         {/* TODO: Make clickable and flip to reveal a fun fact */}
         <div className={`${css.frame} icon cycle-background`}>
-          <img alt="portrait of me" className={css.image} src="../static/images/me.jpeg" />
+          <img
+            alt="portrait of me"
+            className={css.image}
+            src="../static/images/me.jpeg"
+          />
         </div>
       </div>
     </div>

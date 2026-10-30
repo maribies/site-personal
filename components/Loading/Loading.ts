@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useSpring } from "@react-spring/web";
 
-export const useBasicLoading = (status, loading) => {
+export const useBasicLoading = (
+  status: boolean,
+  loading: (value: boolean) => void,
+) => {
   const loadingProps = useSpring({
     opacity: status ? 1 : 0,
   });

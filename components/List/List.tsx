@@ -1,6 +1,6 @@
 import css from "./list.module.css";
 
-const renderListItems = (listData) => {
+const renderListItems = (listData: string[]) => {
   return listData.map((item, index) => {
     return (
       <li key={index} value={item} className={css.item}>
@@ -10,6 +10,6 @@ const renderListItems = (listData) => {
   });
 };
 
-export const UnorderedListComponent = (props) => {
+export const UnorderedListComponent = (props: { listData: string[] }) => {
   return <ul>{renderListItems(props.listData)}</ul>;
 };

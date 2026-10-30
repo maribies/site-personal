@@ -2,7 +2,7 @@ import css from "./soccerBallAnimation.module.css";
 
 const BALLS = [1, 2, 3];
 
-export const SoccerBallAnimation = ({ isActive }) => {
+export const SoccerBallAnimation = ({ isActive }: { isActive: boolean }) => {
   return (
     <div className={css.soccer} data-active={isActive}>
       {BALLS.map((n) => (
