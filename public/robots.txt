@@ -1,0 +1,15 @@
+# Allowed: search engines and AI search/assistant fetchers
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+Allow: /
+
+# Everyone else, including AI training crawlers
+User-agent: *
+Disallow: /
