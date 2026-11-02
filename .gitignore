@@ -2,9 +2,7 @@ node_modules/
 .vscode/
 
 # Builder
-.next/
-out/
+dist/
 
 # TypeScript
-next-env.d.ts
 *.tsbuildinfo

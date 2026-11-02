@@ -14,6 +14,7 @@ export const ConnectSection = () => {
               key={index}
               href={item.link}
               target="_blank"
+              rel="noreferrer"
               className={`${css.link} flex-wrap`}
             >
               <span className={item.icon} style={{ paddingRight: "0.5rem" }} />

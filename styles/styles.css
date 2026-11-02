@@ -27,6 +27,7 @@
   --black-rgb: 2 3 0;
   --white: #fff;
   --white-rgb: 255 255 255;
+  --font-dela: "Dela Gothic One", sans-serif;
 }
 
 body {
@@ -40,6 +41,10 @@ body {
   line-height: 21px;
   overflow-x: hidden;
   cursor: url("/static/SVG/cursors/arrow.svg"), auto;
+}
+
+main {
+  font-family: Poppins, sans-serif;
 }
 
 h1 {
