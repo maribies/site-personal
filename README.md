@@ -4,10 +4,11 @@ A personal website to reflect my personality and accomplishments.
 
 ## Development
 
-Developed with Next.js see documentation here: https://nextjs.org/docs/getting-started.
+Built with [Vite](https://vite.dev) and React. Pages are pre-rendered to static HTML at build time.
 
-Working locally:
-`npm run dev`
+- `npm run dev`: local dev server.
+- `npm run build`: builds and pre-renders the site into `dist/`.
+- `npm run preview`: serves the built site locally.
 
 ## Testing
 
@@ -30,6 +31,7 @@ Before merging changes to components, styles, routing or hosting, check a previe
 
 Deployed with [Vercel](https://vercel.com), connected to this GitHub repo.
 
+- Build settings (framework, build command, output directory, clean URLs) are in `vercel.json`, which overrides the Vercel project settings.
 - The production branch is set in Vercel under Settings → Git (`main` by default). Pushes to other branches create preview deployments; the Vercel bot reports their status and preview URL on the branch or pull request.
 - The Node version comes from `engines.node` in `package.json` (`24.x`), which overrides the Node version in the Vercel project settings. Keep it in sync with `.node-version` for local development.
 - `www.marissabiesecker.com` is attached to the Vercel project, with DNS pointing to Vercel.
