@@ -1,10 +1,10 @@
-import { Experiences } from "../../api/Experiences";
+import type { ExperienceDetails } from "../../api/schemas";
 
 import css from "./work.module.css";
 import { Experience } from "../ExperienceSection/Experience";
 
-export const Work = () => {
-  const tech = Experiences.find((experience) => experience.type === "tech");
+export const Work = ({ experiences }: { experiences: ExperienceDetails[] }) => {
+  const tech = experiences.find((experience) => experience.type === "tech");
 
   return (
     <div id="work" className={css.work}>

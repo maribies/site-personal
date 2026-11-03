@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="18" aria-label="White outlined code symbol whose slash is a paintbrush, under an arc of rays" viewBox="0 0 512 512">
+  <style>
+    .cursor {
+      fill: transparent;
+      stroke: white;
+      stroke-width: 10px;
+      animation: 8s infinite alternate-reverse cursor;
+    }
+
+    @keyframes cursor {
+      0% {
+        fill: #FF7913
+      }
+      20% {
+        fill: #D32E5E
+      }
+      40% {
+        fill: #F9AC2F
+      }
+      60% {
+        fill: #0078A7
+      }
+      100% {
+        fill: #5F4B8B
+      }
+    }
+  </style>
+<path class="cursor" d="m121.9 207.8-90 95a25 25 0 0 0 0 34.4l90 95a25 25 0 0 0 36.2-34.4L84.4 320l73.7-77.8a25 25 0 0 0-36.2-34.4M390.1 207.8l90 95a25 25 0 0 1 0 34.4l-90 95a25 25 0 0 1-36.2-34.4l73.7-77.8-73.7-77.8a25 25 0 0 1 36.2-34.4M297.913 144.217a18 18 0 0 1 33.829 12.312L268.63 359.164l-52.623-19.153Z"/>
+<path class="cursor" d="m214.128 339.327 56.382 20.521c-13.515 54.675-47.02 99.946-79.494 130.694-5.113-44.429-1.679-100.644 23.112-151.215M98.96 158.229 64.49 129.303M256 85V40M413.04 158.229l34.471-28.926"/>
+</svg>

@@ -40,7 +40,7 @@ export const Info = () => {
           <img
             alt="portrait of me"
             className={css.image}
-            src="../static/images/me.jpeg"
+            src="/static/images/me.jpeg"
           />
         </div>
       </div>

@@ -13,3 +13,5 @@ Allow: /
 # Everyone else, including AI training crawlers
 User-agent: *
 Disallow: /
+
+Sitemap: https://www.marissabiesecker.com/sitemap.xml
