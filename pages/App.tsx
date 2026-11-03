@@ -1,5 +1,7 @@
-import type { ReactNode } from "react";
+import { StrictMode, type ReactNode } from "react";
 
 export const App = ({ children }: { children: ReactNode }) => (
-  <main>{children}</main>
+  <StrictMode>
+    <main>{children}</main>
+  </StrictMode>
 );

@@ -9,6 +9,23 @@ Developed with Next.js see documentation here: https://nextjs.org/docs/getting-s
 Working locally:
 `npm run dev`
 
+## Testing
+
+### Automated
+
+- `npm test`: unit tests in `tests/`, run against fixture data.
+- `npm run test:build`: checks the output of `npm run build`.
+
+### By hand
+
+Before merging changes to components, styles, routing or hosting, check a preview build (`npm run build && npm run preview`, or a Vercel preview deployment):
+
+- [ ] Interactions and animations work and feel right.
+- [ ] Visuals look right on desktop and mobile.
+- [ ] Accessibility: keyboard navigation, a screen reader (VoiceOver: ⌘F5), and Lighthouse's audit.
+- [ ] Routing: each page loads, and unknown paths return a 404.
+- [ ] Link previews (after deploying): check them with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
+
 ## Deployment
 
 Deployed with [Vercel](https://vercel.com), connected to this GitHub repo.
@@ -23,7 +40,7 @@ The code is licensed under the [MIT License](LICENSE).
 
 The following are not covered by the MIT License:
 
-- **Personal content**, all rights reserved: the written content (bio and experience text in `api/` and copy in `components/`), the photo `public/static/images/me.jpeg`, and the logo `public/static/SVG/Logo.svg`.
+- **Personal content**, all rights reserved: the written content (bio and experience data in `public/api/` and copy in `components/`), the photo `public/static/images/me.jpeg`, and the logo `public/static/SVG/Logo.svg`.
 - **Company logos** in `public/static/images/` are trademarks of their respective owners.
 - **Font Awesome icons** (see Credits) remain under their own license.
 

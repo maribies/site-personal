@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import type { Experience as ExperienceData } from "../../api/Experiences";
+import type { Experience as ExperienceData } from "../../api/schemas";
 import css from "./experiences.module.css";
 import { UnorderedListComponent as List } from "../List";
 import { InfoBubble } from "../InfoBubble";

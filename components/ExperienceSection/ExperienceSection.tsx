@@ -1,8 +1,12 @@
-import { Experiences } from "../../api/Experiences";
+import type { ExperienceDetails } from "../../api/schemas";
 import { Experience } from "./Experience";
 
-export const ExperienceSection = () => {
-  const ExperiencesComponent = Experiences.map((section, index) => {
+export const ExperienceSection = ({
+  experiences: details,
+}: {
+  experiences: ExperienceDetails[];
+}) => {
+  const ExperiencesComponent = details.map((section, index) => {
     const { experiences, type } = section;
 
     return (

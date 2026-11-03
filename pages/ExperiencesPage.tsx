@@ -1,7 +1,8 @@
 import { ExperienceSection, Layout } from "../components";
+import type { PageProps } from "./routes";
 
-export const ExperiencesPage = () => (
+export const ExperiencesPage = ({ data }: PageProps) => (
   <Layout>
-    <ExperienceSection />
+    <ExperienceSection experiences={data.experiences} />
   </Layout>
 );
