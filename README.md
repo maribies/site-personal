@@ -40,7 +40,7 @@ The code is licensed under the [MIT License](LICENSE).
 
 The following are not covered by the MIT License:
 
-- **Personal content**, all rights reserved: the written content (bio and experience data in `public/api/` and copy in `components/`), the photo `public/static/images/me.jpeg`, and the logo `public/static/SVG/Logo.svg`.
+- **Personal content**, all rights reserved, including and not limited to: the written content (bio and experience data in `public/api/` and copy in `components/`), the photo `public/static/images/me.jpeg`, and the logos `public/static/SVG/logo.svg` and `public/static/SVG/staticlogo.svg`.
 - **Company logos** in `public/static/images/` are trademarks of their respective owners.
 - **Font Awesome icons** (see Credits) remain under their own license.
 

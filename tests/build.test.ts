@@ -4,7 +4,12 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import type { SiteData } from "../api/schemas";
-import { DATA_ELEMENT_ID, htmlFile, routes } from "../pages/routes";
+import {
+  canonicalUrl,
+  DATA_ELEMENT_ID,
+  htmlFile,
+  routes,
+} from "../pages/routes";
 
 const root = resolve(import.meta.dirname, "..");
 const dist = resolve(root, "dist");
@@ -34,7 +39,7 @@ const companies = data.experiences.flatMap((group) =>
   group.experiences.map((experience) => experience.company),
 );
 
-describe.each(Object.entries(routes))("dist for %s", (url, { title }) => {
+describe.each(Object.entries(routes))("dist for %s", (url, route) => {
   const html = read(resolve(dist, htmlFile(url)));
 
   it("has no unfilled placeholders", () => {
@@ -42,8 +47,17 @@ describe.each(Object.entries(routes))("dist for %s", (url, { title }) => {
     expect(html).not.toContain("<!--app-html-->");
   });
 
-  it("has the title, data and pre-rendered content", () => {
-    expect(html).toContain(`<title>${title}</title>`);
+  it("has the title, meta tags, data and pre-rendered content", () => {
+    expect(html).toContain(`<title>${route.title}</title>`);
+    expect(html).toContain(
+      `<meta property="og:title" content="${route.title}" />`,
+    );
+    expect(html).toContain(
+      `<meta name="description" content="${route.description}" />`,
+    );
+    expect(html).toContain(
+      `<link rel="canonical" href="${canonicalUrl(url)}" />`,
+    );
     expect(html).toContain(`id="${DATA_ELEMENT_ID}"`);
     expect(html).toMatch(/<div id="root">.*<main>.+<\/main><\/div>/s);
   });
@@ -59,6 +73,14 @@ describe.each(Object.entries(routes))("dist for %s", (url, { title }) => {
       expect(css, `missing .${name}`).toContain(`.${name}`);
     }
   });
+});
+
+it("sitemap.xml lists every route", () => {
+  const sitemap = read(resolve(dist, "sitemap.xml"));
+
+  for (const url of Object.keys(routes)) {
+    expect(sitemap).toContain(`<loc>${canonicalUrl(url)}</loc>`);
+  }
 });
 
 describe("pre-rendered content", () => {

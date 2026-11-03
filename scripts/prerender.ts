@@ -25,12 +25,14 @@ const vite = await createServer({
 });
 
 try {
-  const { routes, render, loadSiteData, htmlFile } = (await vite.ssrLoadModule(
-    "/pages/entry-server.tsx",
-  )) as typeof import("../pages/entry-server");
+  const { routes, render, loadSiteData, htmlFile, canonicalUrl } =
+    (await vite.ssrLoadModule(
+      "/pages/entry-server.tsx",
+    )) as typeof import("../pages/entry-server");
   const data = await loadSiteData(fetchJson);
+  const urls = Object.keys(routes);
 
-  for (const url of Object.keys(routes)) {
+  for (const url of urls) {
     const { head, html } = render(url, data);
     const file = htmlFile(url);
 
@@ -42,6 +44,18 @@ try {
     );
     console.log(`Pre-rendered ${url} → ${file}`);
   }
+
+  writeFileSync(
+    resolve(dist, "sitemap.xml"),
+    [
+      `<?xml version="1.0" encoding="UTF-8"?>`,
+      `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+      ...urls.map((url) => `  <url><loc>${canonicalUrl(url)}</loc></url>`),
+      `</urlset>`,
+      "",
+    ].join("\n"),
+  );
+  console.log("Wrote sitemap.xml");
 } finally {
   await vite.close();
 }
