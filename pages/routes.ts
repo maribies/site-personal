@@ -3,6 +3,7 @@ import type { ComponentType } from "react";
 import type { SiteData } from "../api/schemas";
 import { ExperiencesPage } from "./ExperiencesPage";
 import { HomePage } from "./HomePage";
+import { NotFoundPage } from "./NotFoundPage";
 
 export type PageProps = { data: SiteData };
 
@@ -30,6 +31,12 @@ export const routes: Record<string, Route> = {
     description: "Tech and business experiences of Marissa.",
     Page: ExperiencesPage,
   },
+};
+
+export const notFound: Route = {
+  title: "Page not found | Marissa Biesecker",
+  description: "Nothing to see here.",
+  Page: NotFoundPage,
 };
 
 export const canonicalUrl = (url: string) => new URL(url, SITE_URL).href;

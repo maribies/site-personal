@@ -32,7 +32,8 @@ try {
   const data = await loadSiteData(fetchJson);
   const urls = Object.keys(routes);
 
-  for (const url of urls) {
+  // "/404" isn't a route, so it renders the not-found page into 404.html.
+  for (const url of [...urls, "/404"]) {
     const { head, html } = render(url, data);
     const file = htmlFile(url);
 

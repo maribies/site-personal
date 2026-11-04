@@ -2,7 +2,7 @@ import { renderToString } from "react-dom/server";
 
 import type { SiteData } from "../api/schemas";
 import { App } from "./App";
-import { canonicalUrl, DATA_ELEMENT_ID, routes } from "./routes";
+import { canonicalUrl, DATA_ELEMENT_ID, notFound, routes } from "./routes";
 
 export { loadSiteData } from "../api/client";
 export { canonicalUrl, htmlFile, routes } from "./routes";
@@ -12,7 +12,7 @@ const serialize = (data: SiteData) =>
 
 // Titles and descriptions are inserted as-is, so they can't contain double quotes.
 export const render = (url: string, data: SiteData) => {
-  const { title, description, Page } = routes[url];
+  const { title, description, Page } = routes[url] ?? notFound;
   const canonical = canonicalUrl(url);
 
   return {

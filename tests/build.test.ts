@@ -8,6 +8,7 @@ import {
   canonicalUrl,
   DATA_ELEMENT_ID,
   htmlFile,
+  notFound,
   routes,
 } from "../pages/routes";
 
@@ -73,6 +74,13 @@ describe.each(Object.entries(routes))("dist for %s", (url, route) => {
       expect(css, `missing .${name}`).toContain(`.${name}`);
     }
   });
+});
+
+it("404.html has the pre-rendered not-found page", () => {
+  const html = read(resolve(dist, "404.html"));
+
+  expect(html).toContain(`<title>${notFound.title}</title>`);
+  expect(html).toMatch(/<div id="root">.*<main>.+<\/main><\/div>/s);
 });
 
 it("sitemap.xml lists every route", () => {
