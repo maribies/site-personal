@@ -2,6 +2,7 @@ import type { Experience as ExperienceData } from "../../api/schemas";
 import css from "./experiences.module.css";
 import text from "../text.module.css";
 import { UnorderedListComponent as List } from "../List";
+import { Keywords } from "./Keywords";
 
 export const Experience = ({ experience }: { experience: ExperienceData }) => {
   return (
@@ -26,6 +27,8 @@ export const Experience = ({ experience }: { experience: ExperienceData }) => {
       </div>
 
       <h4 className={`${text.outline} ${css.tight}`}>{experience.role}</h4>
+      <p>{experience.roleSummary}</p>
+      <Keywords keywords={experience.keywords} />
 
       <List listData={experience.skills} />
     </div>

@@ -5,6 +5,7 @@ import css from "./experiences.module.css";
 import text from "../text.module.css";
 import { UnorderedListComponent as List } from "../List";
 import { InfoBubble } from "../InfoBubble";
+import { KeywordList } from "./Keywords";
 
 export const ExperienceSummary = ({
   experience,
@@ -43,25 +44,23 @@ export const ExperienceSummary = ({
 
       <p>{experience.summary}</p>
       <p className={text.outline}>{experience.role}</p>
+      <p>{experience.roleSummary}</p>
 
       <InfoBubble showInfo={showInfo}>
         <List listData={experience.skills} />
       </InfoBubble>
 
       <div className={css.ticker}>
-        <div className={css.scroller}>
-          <div className={css.row}>
-            {experience.keywords.map((keyword) => (
-              <p className={css.tool} key={keyword}>
-                {keyword}
-              </p>
-            ))}
-            {experience.keywords.map((keyword) => (
-              <p className={css.tool} key={keyword}>
-                {keyword}
-              </p>
-            ))}
-          </div>
+        <div
+          className={css.scroller}
+          style={{ "--ticker-length": experience.keywords.join(" · ").length }}
+        >
+          <KeywordList keywords={experience.keywords} className={css.looped} />
+          <KeywordList
+            keywords={experience.keywords}
+            className={css.looped}
+            aria-hidden
+          />
         </div>
       </div>
     </div>
