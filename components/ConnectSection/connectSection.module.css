@@ -13,4 +13,21 @@
   padding-left: 1rem;
   align-items: center;
   text-decoration: none;
+
+  /* Outranks the global a:any-link cursor. */
+  &:any-link {
+    cursor: url("/static/SVG/cursors/heart.svg"), pointer;
+  }
+
+  > p {
+    border-bottom: 1px solid var(--pink);
+
+    @media (width >= 48rem) {
+      border-bottom: none;
+    }
+  }
+
+  &:hover > p {
+    border-bottom: 1px solid var(--pink);
+  }
 }

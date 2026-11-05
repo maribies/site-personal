@@ -91,12 +91,10 @@ a:any-link {
   cursor: url("/static/SVG/cursors/pointer.svg"), pointer;
   color: var(--white);
 
-  &:visited {
-    color: var(--purple);
-  }
-
   &:focus-visible {
     color: var(--rose);
+
+    /* TODO: focus box orange or yellow */
   }
 }
 

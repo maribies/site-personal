@@ -18,7 +18,7 @@ export const ConnectSection = ({ links }: { links: ContactLink[] }) => {
               className={`${css.link} flex-wrap`}
             >
               <span className={item.icon} style={{ paddingRight: "0.5rem" }} />
-              <p style={{ paddingRight: "0.5rem" }}>{item.name}</p>
+              <p>{item.name}</p>
             </a>
           );
         })}

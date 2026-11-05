@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import type { Experience as ExperienceData } from "../../api/schemas";
 import css from "./experiences.module.css";
+import text from "../text.module.css";
 import { UnorderedListComponent as List } from "../List";
 import { InfoBubble } from "../InfoBubble";
 
@@ -11,14 +12,15 @@ export const Experience = ({ experience }: { experience: ExperienceData }) => {
   return (
     <div style={{ width: "100%" }}>
       <div className={css.row}>
-        <a href={experience.companyLink}>
-          <h3>{experience.company}</h3>
+        <a href={experience.link}>
+          <h3>{experience.title}</h3>
         </a>
         <button
           onClick={() => setShowInfo(!showInfo)}
           style={{ background: "transparent", border: "none" }}
           aria-label={showInfo ? "Hide skills" : "Show skills"}
         >
+          {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
           <svg
             className="icon cycle-fill pointer"
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +37,8 @@ export const Experience = ({ experience }: { experience: ExperienceData }) => {
         </button>
       </div>
 
-      <p>{experience.title}</p>
+      <p>{experience.summary}</p>
+      <p className={text.outline}>{experience.role}</p>
 
       <InfoBubble showInfo={showInfo}>
         <List listData={experience.skills} />
@@ -44,18 +47,16 @@ export const Experience = ({ experience }: { experience: ExperienceData }) => {
       <div className={css.ticker}>
         <div className={css.scroller}>
           <div className={css.row}>
-            {experience.tools &&
-              experience.tools.map((tool) => (
-                <p className={css.tool} key={tool}>
-                  {tool}
-                </p>
-              ))}
-            {experience.tools &&
-              experience.tools.map((tool) => (
-                <p className={css.tool} key={tool}>
-                  {tool}
-                </p>
-              ))}
+            {experience.keywords.map((keyword) => (
+              <p className={css.tool} key={keyword}>
+                {keyword}
+              </p>
+            ))}
+            {experience.keywords.map((keyword) => (
+              <p className={css.tool} key={keyword}>
+                {keyword}
+              </p>
+            ))}
           </div>
         </div>
       </div>

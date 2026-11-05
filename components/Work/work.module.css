@@ -13,17 +13,32 @@
 .title {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  margin: 0.83em 0.83em 0.83em 0;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px;
-
-  @media (width >= 48rem) {
-    margin: 0.83em;
-  }
+  margin: 0;
 }
 
 .columns {
   display: flex;
   flex-flow: row wrap;
   width: 75%;
+}
+
+.more {
+  display: flex;
+  text-decoration: none;
+  height: fit-content;
+  margin: 0.83em 0.83em 0.83em 0;
+
+  @media (width >= 48rem) {
+    margin: 0.83em;
+  }
+
+  > .title {
+    border-bottom: 1px solid var(--pink);
+
+    @media (width >= 48rem) {
+      border-bottom: none;
+    }
+  }
 }

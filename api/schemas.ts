@@ -1,28 +1,20 @@
 import { z } from "zod";
 
-const previewSchema = z.object({
-  path: z.string(),
-  type: z.enum(["site", "video"]),
-});
-
 const experienceSchema = z.object({
   icon: z.string(),
   iconAlt: z.string(),
-  title: z.string(),
-  company: z.string(),
-  companyLink: z.string(),
+  title: z.string(), // i.e. company or project name
+  role: z.string(),
+  roleSummary: z.string(),
+  link: z.string(),
+  summary: z.string(), // project or company mission
   timeFrame: z.string(),
-  tools: z.array(z.string()).optional(),
+  keywords: z.array(z.string()), // tools, skills, frameworks, buzzwords
   skills: z.array(z.string()),
-  links: z.object({
-    main: previewSchema,
-    second: previewSchema.optional(),
-    third: previewSchema.optional(),
-  }),
 });
 
 const experienceDetailsSchema = z.object({
-  type: z.enum(["tech", "business"]),
+  type: z.enum(["work", "business"]),
   experiences: z.array(experienceSchema),
 });
 
@@ -37,7 +29,6 @@ export const siteDataSchema = z.object({
   links: z.array(contactLinkSchema),
 });
 
-export type Preview = z.infer<typeof previewSchema>;
 export type Experience = z.infer<typeof experienceSchema>;
 export type ExperienceDetails = z.infer<typeof experienceDetailsSchema>;
 export type ContactLink = z.infer<typeof contactLinkSchema>;

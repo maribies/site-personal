@@ -36,8 +36,8 @@ const data: SiteData = {
   experiences: api("experiences.json"),
   links: api("links.json"),
 };
-const companies = data.experiences.flatMap((group) =>
-  group.experiences.map((experience) => experience.company),
+const titles = data.experiences.flatMap((group) =>
+  group.experiences.map((experience) => experience.title),
 );
 
 describe.each(Object.entries(routes))("dist for %s", (url, route) => {
@@ -92,18 +92,16 @@ it("sitemap.xml lists every route", () => {
 });
 
 describe("pre-rendered content", () => {
-  it("renders every company on the experiences page", () => {
+  it("renders every experience on the experiences page", () => {
     const html = read(resolve(dist, htmlFile("/experiences")));
 
-    for (const company of companies) {
-      expect(html).toContain(`<h3>${company}</h3>`);
+    for (const title of titles) {
+      expect(html).toContain(`<h3>${title}</h3>`);
     }
   });
 });
 
 describe("bundle", () => {
-  // Strings only found in the API data. Company names are left out because
-  // page copy (e.g. Info) mentions some of them.
   const apiStrings = [
     ...data.experiences.flatMap((group) =>
       group.experiences.flatMap(({ title, skills }) => [title, ...skills]),

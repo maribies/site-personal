@@ -10,7 +10,7 @@
     "name": "@maribies"
   },
   {
-    "link": "https://github.com/maribies/",
+    "link": "https://github.com/maribies",
     "icon": "fa-brands fa-github",
     "name": "@maribies"
   },
@@ -20,8 +20,13 @@
     "name": "@marissa.biesecker"
   },
   {
-    "link": "https://www.linkedin.com/in/marissabiesecker/",
+    "link": "https://www.linkedin.com/in/marissabiesecker",
     "icon": "fa-brands fa-linkedin",
     "name": "marissabiesecker"
+  },
+  {
+    "link": "https://buymeacoffee.com/maribies",
+    "icon": "fa-solid fa-mug-hot",
+    "name": "maribies"
   }
 ]
