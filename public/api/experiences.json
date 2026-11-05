@@ -3,7 +3,7 @@
     "type": "work",
     "experiences": [
       {
-        "icon": "",
+        "icon": "/static/images/flexa.png",
         "iconAlt": "Flexa logo",
         "title": "Flexa",
         "role": "Full-Stack Engineer",
@@ -11,6 +11,7 @@
         "summary": "Next generation payments",
         "roleSummary": "Built reliable, real-time systems that move money and can't afford to break.",
         "timeFrame": "March 2024 - April 2026",
+        "location": "New York, NY, USA | Remote",
         "keywords": [
           "Golang",
           "React",
@@ -46,7 +47,7 @@
         ]
       },
       {
-        "icon": "../../static/images/redSquirrelTechnologies.jpeg",
+        "icon": "/static/images/redSquirrelTechnologies.jpeg",
         "iconAlt": "Red Squirrel Logo",
         "title": "Red Squirrel Technologies",
         "role": "Apprentice to Full-Stack Consultant",
@@ -54,6 +55,7 @@
         "summary": "Software development for mission driven organizations.",
         "roleSummary": "Full-stack consultant for organizations and early-stage startups, delivering tailored solutions from requirements through operation.",
         "timeFrame": "September 2020 - March 2024",
+        "location": "Chicago, IL, USA | Remote",
         "keywords": [
           "Consulting",
           "Greenfield product development",
@@ -96,7 +98,7 @@
         ]
       },
       {
-        "icon": "../../static/images/uphold.jpeg",
+        "icon": "/static/images/uphold.jpeg",
         "iconAlt": "Uphold Logo",
         "role": "Intern to Junior Developer",
         "title": "Uphold",
@@ -104,6 +106,7 @@
         "summary": "Buy and sell digital assets",
         "roleSummary": "Contributed to continuous development, analytics, and testing of a financial-services mobile app.",
         "timeFrame": "October 2018 - September 2020",
+        "location": "Braga, Portugal | In-person",
         "keywords": [
           "React",
           "React Native",
@@ -137,7 +140,7 @@
     "type": "business",
     "experiences": [
       {
-        "icon": "../../static/images/wdfg.png",
+        "icon": "/static/images/wdfg.png",
         "iconAlt": "WDFG",
         "role": "Assistant Buyer to Buyer and Category Manager",
         "title": "World Duty Free Group",

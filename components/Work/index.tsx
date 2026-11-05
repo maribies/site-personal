@@ -1,7 +1,7 @@
 import type { ExperienceDetails } from "../../api/schemas";
 
 import css from "./work.module.css";
-import { Experience } from "../ExperienceSection/Experience";
+import { ExperienceSummary } from "../ExperienceSection/ExperienceSummary";
 
 export const Work = ({ experiences }: { experiences: ExperienceDetails[] }) => {
   const work = experiences.find((experience) => experience.type === "work");
@@ -25,7 +25,7 @@ export const Work = ({ experiences }: { experiences: ExperienceDetails[] }) => {
       <div className={css.columns}>
         {!!work &&
           work.experiences.slice(0, 3).map((exp) => {
-            return <Experience experience={exp} key={exp.title} />;
+            return <ExperienceSummary experience={exp} key={exp.title} />;
           })}
       </div>
     </div>

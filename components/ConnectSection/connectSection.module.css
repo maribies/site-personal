@@ -1,8 +1,8 @@
 .section {
-  border-top: 1px solid var(--blue);
+  border-top: var(--rule) solid var(--blue);
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: var(--space-m);
 
   @media (width >= 48rem) {
     flex-flow: row wrap;
@@ -10,7 +10,7 @@
 }
 
 .link {
-  padding-left: 1rem;
+  padding-left: var(--space-s);
   align-items: center;
   text-decoration: none;
 
@@ -20,7 +20,7 @@
   }
 
   > p {
-    border-bottom: 1px solid var(--pink);
+    border-bottom: var(--rule) solid var(--pink);
 
     @media (width >= 48rem) {
       border-bottom: none;
@@ -28,6 +28,6 @@
   }
 
   &:hover > p {
-    border-bottom: 1px solid var(--pink);
+    border-bottom: var(--rule) solid var(--pink);
   }
 }

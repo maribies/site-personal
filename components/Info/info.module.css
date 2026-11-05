@@ -1,16 +1,10 @@
-.strike {
-  text-decoration: line-through var(--strike-color);
-  padding-right: 0.5rem;
-  display: inline;
-}
-
 .image {
-  border: 5px solid white;
+  border: 5px solid var(--white);
   width: -webkit-fill-available;
 }
 
 .frame {
-  padding: 10px;
+  padding: var(--space-xs);
   width: 80%;
   align-self: center;
 
@@ -30,7 +24,7 @@
 }
 
 .section {
-  border-top: 1px solid var(--purple);
+  border-top: var(--rule) solid var(--purple);
   display: flex;
   flex-direction: column;
 }

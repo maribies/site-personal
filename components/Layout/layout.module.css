@@ -1,10 +1,10 @@
 .layout {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--space-s);
+  padding-right: var(--space-s);
 
   @media (width >= 48rem) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
   }
 }
 

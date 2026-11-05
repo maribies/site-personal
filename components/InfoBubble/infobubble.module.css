@@ -1,12 +1,14 @@
 .tail {
+  --tail-size: 3rem;
+
   position: relative;
   background: var(--grey);
-  width: 3rem;
-  height: 3rem;
+  width: var(--tail-size);
+  height: var(--tail-size);
   margin-left: 50%;
-  border-left: 1px solid var(--white);
-  border-top: 1px solid var(--white);
-  transform: translate(0, 1.5rem) rotate(45deg);
+  border-left: var(--rule) solid var(--white);
+  border-top: var(--rule) solid var(--white);
+  transform: translate(0, calc(var(--tail-size) / 2)) rotate(45deg);
 
   @media (width >= 48rem) {
     margin-left: 75%;
@@ -15,6 +17,6 @@
 
 .body {
   border-radius: 3rem;
-  outline: 1px solid var(--white);
-  padding: 1rem;
+  outline: var(--rule) solid var(--white);
+  padding: var(--space-s);
 }

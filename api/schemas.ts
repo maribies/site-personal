@@ -11,6 +11,7 @@ const experienceSchema = z.object({
   timeFrame: z.string(),
   keywords: z.array(z.string()), // tools, skills, frameworks, buzzwords
   skills: z.array(z.string()),
+  location: z.string().optional(),
 });
 
 const experienceDetailsSchema = z.object({
