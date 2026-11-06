@@ -3,10 +3,11 @@ import css from "./experiences.module.css";
 import text from "../text.module.css";
 import { UnorderedListComponent as List } from "../List";
 import { Keywords } from "./Keywords";
+import { Collapsible } from "./Collapsible";
 
 export const Experience = ({ experience }: { experience: ExperienceData }) => {
   return (
-    <div className={css.container}>
+    <article className={css.container}>
       <div className={css.name}>
         <a href={experience.link} className={css.link}>
           <img
@@ -30,7 +31,9 @@ export const Experience = ({ experience }: { experience: ExperienceData }) => {
       <p>{experience.roleSummary}</p>
       <Keywords keywords={experience.keywords} />
 
-      <List listData={experience.skills} />
-    </div>
+      <Collapsible label="Highlights:">
+        <List listData={experience.skills} />
+      </Collapsible>
+    </article>
   );
 };

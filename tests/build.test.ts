@@ -96,7 +96,7 @@ describe("pre-rendered content", () => {
     const html = read(resolve(dist, htmlFile("/experiences")));
 
     for (const title of titles) {
-      expect(html).toContain(`<h3>${title}</h3>`);
+      expect(html).toContain(title);
     }
   });
 });

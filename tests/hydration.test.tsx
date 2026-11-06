@@ -8,6 +8,8 @@ import { render, routes } from "../pages/entry-server";
 import { notFound } from "../pages/routes";
 import { siteData } from "./fixtures";
 
+vi.stubGlobal("matchMedia", () => ({ matches: true }));
+
 // React recovers from hydration mismatches by re-rendering on the client, so
 // the page looks fine in a browser. The only signs are these errors.
 describe.each([...Object.entries(routes), ["/404", notFound] as const])(
