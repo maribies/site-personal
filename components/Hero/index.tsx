@@ -33,22 +33,29 @@ export const Hero = () => {
       <a
         href="#work"
         className={css.nav}
-        style={{ "--nav-color": `var(--blue)` }}
+        style={{ "--nav-color": `var(--yellow)` }}
       >
         Work
       </a>
       <a
+        href="#projects"
+        className={css.nav}
+        style={{ "--nav-color": `var(--orange)` }}
+      >
+        Projects
+      </a>
+      <a
         href="#connect"
         className={css.nav}
-        style={{ "--nav-color": `var(--yellow)` }}
+        style={{ "--nav-color": `var(--blue)` }}
       >
         Connect
       </a>
 
       <h2>Full-Stack Engineer</h2>
       <h4>
-        I like owning products end-to-end. I care as much about what is being
-        built as how it&apos;s being built. I&apos;m happiest turning an
+        I like owning products end-to-end. I care as much about why and what is
+        being built as how it&apos;s being built. I&apos;m happiest turning an
         ambiguous problem into something people actually want to use.
       </h4>
 

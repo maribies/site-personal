@@ -3,6 +3,23 @@ import type { SiteData } from "../api/schemas";
 export const siteData: SiteData = {
   experiences: [
     {
+      type: "projects",
+      experiences: [
+        {
+          icon: "/static/images/fun.png",
+          iconAlt: "fun project",
+          title: "A fun project for learning or personal use",
+          role: "Engineer",
+          roleSummary: "Engineered the project.",
+          link: "https://example.com/project",
+          summary: "Testing fun things",
+          timeFrame: "2026 - Present",
+          keywords: ["React", "Vite"],
+          skills: ["Built the fun test fixture"],
+        },
+      ],
+    },
+    {
       type: "work",
       experiences: [
         {

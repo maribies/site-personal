@@ -4,11 +4,11 @@ import { loadSiteData } from "../api/client";
 import { siteData } from "./fixtures";
 
 it("rejects invalid API data with the path to each problem", async () => {
-  const [work, business] = siteData.experiences;
+  const [one, two] = siteData.experiences;
   const responses: Record<string, unknown> = {
     "experiences.json": [
-      { ...work, experiences: [{ ...work.experiences[0], title: 1 }] },
-      { ...business, type: "hobby" },
+      { ...one, experiences: [{ ...one.experiences[0], title: 1 }] },
+      { ...two, type: "hobby" },
     ],
     "links.json": siteData.links,
   };

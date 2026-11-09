@@ -1,5 +1,85 @@
 [
   {
+    "type": "projects",
+    "experiences": [
+      {
+        "icon": "/static/SVG/virtual-closet.svg",
+        "iconAlt": "garment coming out of a closet",
+        "title": "AI Experimentation with Garment Segmentation",
+        "role": "ML and full-stack engineer",
+        "roleSummary": "Sole author. Designed the model-agnostic segmentation interface, ran and hand-triaged the baseline, wrote the referential data validators, and built the FastAPI + React viewer over a PostgreSQL schema.",
+        "link": "https://github.com/maribies/ai-imaging-experimentation",
+        "summary": "Fine-tuning open-source segmentation models to cut clothing out of ordinary photographs while documenting learning and reasoning as it goes.",
+        "timeFrame": "September 2026 - present",
+        "keywords": [
+          "Image segmentation",
+          "Alpha matting",
+          "Computer vision",
+          "AI model research",
+          "Model evaluation",
+          "Baseline-first methodology",
+          "Dataset curation",
+          "Hand-labeled triage",
+          "Python",
+          "PyTorch",
+          "BiRefNet",
+          "SegFormer",
+          "FastAPI",
+          "SQLAlchemy 2.0",
+          "PostgreSQL",
+          "Docker Compose",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "TanStack Query",
+          "Pytest",
+          "Uv"
+        ],
+        "skills": [
+          "Designed a model-agnostic segmentation interface returning soft alpha rather than binary masks, so adding a model is one class and one registry entry — the intermediate values are where fur, sheer fabric and open lacework live.",
+          "Established a hand-judged baseline across two pretrained models and 22 photographs before any training, to fix the number fine-tuning has to beat and identify which images are worth the cost of labeling.",
+          "Identified complementary failure modes between BiRefNet and SegFormer — and that the stronger model passed every flat-lay shot while failing every on-body shot, the actual target domain — which redirected the next round of data collection.",
+          "Replaced free-text failure notes with an eleven-term closed vocabulary, making failures countable and surfacing hanger artifacts as the single largest cause at 14 of 44 verdicts.",
+          "Built referential validators over three relational CSV tables that catch a truncated identifier three ways at once, rather than relying on duplicated columns agreeing with each other.",
+          "Modeled the dataset in PostgreSQL with nanoid primary keys, native enums for closed vocabularies and array columns for multi-valued fields, each enforced by database constraints rather than application-level checks.",
+          "Ran the test suite against PostgreSQL in Docker rather than SQLite, using transaction-per-test rollback, to close the dev/prod parity gap that hides constraint and type-coercion bugs.",
+          "Verified the suite had teeth by mutation testing — neutering one check constraint failed 28 tests, and the method exposed an earlier security test that passed with its guard deleted.",
+          "Built a local FastAPI and React/TypeScript viewer serving 24-megapixel originals downscaled and cached beside each model's cut-out and verdict.",
+          "Analyzed licensing across both model code and training data, establishing that SegFormer's NVIDIA non-commercial terms bar it from a commercial product regardless of the repository's own MIT license."
+        ]
+      },
+            {
+        "icon": "/static/images/pixelpup.png",
+        "iconAlt": "Australian shepherd pixel art watch face",
+        "title": "Pixel Pup Garmin Watchface",
+        "role": "Project Owner",
+        "roleSummary": "Designed and implemented a Garmin watchface with cute pixel dog animations",
+        "link": "https://apps.garmin.com/en-US/apps/012a1a3b-3a01-4e11-8af6-a1efaf6baf3e",
+        "summary": "An animated Garmin watchface.",
+        "timeFrame": "June 2026 - present",
+        "keywords": [
+          "Claude",
+          "Monkey C",
+          "Ideation",
+          "Design",
+          "Planning",
+          "Project management",
+          "Open source",
+          "Maintenance",
+          "Pixel art",
+          "Research"
+        ],
+        "skills": [
+          "Product direction and planning, including scope",
+          "Kicked off the project scaffolding",
+          "Carefully reviewed and tested implementation with Claude",
+          "Decided when each release happened",
+          "Researched and then developed and documented strategy for consistent pixel art"
+        ]
+      }
+    ]
+  },
+  {
     "type": "work",
     "experiences": [
       {
@@ -92,9 +172,17 @@
         "skills": [
           "Shipped web and mobile products end-to-end, working closely with UX designers on app design and user flows.",
           "Built front-ends with React, React Native, Vite, Tailwind, and Apollo; backends with Node.js, Go, Ruby on Rails, GraphQL, and REST.",
-          "Set up and maintained infrastructure with Docker, Terraform, and DigitalOcean.",
+          "Set up and maintained containerized cloud infrastructure as code.",
           "Wrote integration-first tests with Cypress and automated workflows with CLI scripting.",
-          "Served as researcher and technical instructional writer for early-stage products."
+          "Served as researcher and technical instructional writer for early-stage products.",
+          "Full-stack contributor to a wallet and social app on Polygon with Ethereum account abstraction (ERC-4337), using React Native and Node.js.",
+          "Built a greenfield web3 startup's stack end-to-end: DigitalOcean/Terraform/Docker infrastructure, a Go + GraphQL backend, and a Vite/React/Cypress/Apollo front end with MetaMask connectivity.",
+          "Developer and researcher with focused research into Solana and Rust.",
+          "Built a feature NFT project on the Flow blockchain (Flow Go SDK, Ruby on Rails, JavaScript, Infura, React).",
+          "Built internal and external web tools for a logistics startup (Ruby on Rails, PostgreSQL, JavaScript, React).",
+          "Streamlined an educational startup's web application (Ruby on Rails, PostgreSQL, JavaScript, React, SCSS).",
+          "Built a React Chrome extension as an internal data-capturing tool for a food-service-delivery startup.",
+          "Through a self-directed apprenticeship, shipped a passion project: a Python scraper (Django, BeautifulSoup) collecting product data into PostgreSQL, paired with a React Native app, deployed on Heroku."
         ]
       },
       {

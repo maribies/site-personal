@@ -28,7 +28,7 @@ export const routes: Record<string, Route> = {
   },
   "/experiences": {
     title: "Experiences | Marissa Biesecker",
-    description: "Tech and business experiences of Marissa.",
+    description: "Marissa's experiences - work, tech, business.",
     Page: ExperiencesPage,
   },
 };

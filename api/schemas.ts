@@ -14,8 +14,14 @@ const experienceSchema = z.object({
   location: z.string().optional(),
 });
 
+const experienceDetailsCategorySchema = z.enum([
+  "work",
+  "business",
+  "projects",
+]);
+
 const experienceDetailsSchema = z.object({
-  type: z.enum(["work", "business"]),
+  type: experienceDetailsCategorySchema,
   experiences: z.array(experienceSchema),
 });
 
@@ -32,5 +38,8 @@ export const siteDataSchema = z.object({
 
 export type Experience = z.infer<typeof experienceSchema>;
 export type ExperienceDetails = z.infer<typeof experienceDetailsSchema>;
+export type ExperienceDetailsCategory = z.infer<
+  typeof experienceDetailsCategorySchema
+>;
 export type ContactLink = z.infer<typeof contactLinkSchema>;
 export type SiteData = z.infer<typeof siteDataSchema>;

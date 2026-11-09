@@ -2,7 +2,7 @@ import type { ExperienceDetails } from "../../api/schemas";
 import { Experience } from "./Experience";
 import css from "./experiences.module.css";
 
-export const ExperienceSection = ({
+export const Experiences = ({
   experiences: details,
 }: {
   experiences: ExperienceDetails[];
