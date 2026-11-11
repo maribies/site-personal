@@ -23,7 +23,7 @@ export type Route = {
 export const routes: Record<string, Route> = {
   "/": {
     title: "Marissa Biesecker 🦄",
-    description: "Website of Marissa, a fullstack engineer.",
+    description: "Website of Marissa, a full-stack engineer.",
     Page: HomePage,
   },
   "/experiences": {

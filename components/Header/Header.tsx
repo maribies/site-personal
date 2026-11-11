@@ -1,4 +1,6 @@
-export const Header = () => {
+import type { ReactNode } from "react";
+
+export const Header = ({ children }: { children?: ReactNode }) => {
   return (
     <header style={{ margin: "var(--space-m) 0" }}>
       <a href="/">
@@ -9,6 +11,7 @@ export const Header = () => {
           height="48"
         />
       </a>
+      {children}
     </header>
   );
 };

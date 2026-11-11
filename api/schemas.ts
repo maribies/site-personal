@@ -18,6 +18,7 @@ const experienceDetailsCategorySchema = z.enum([
   "work",
   "business",
   "projects",
+  "education",
 ]);
 
 const experienceDetailsSchema = z.object({

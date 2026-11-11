@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: end;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-bottom: var(--rule) solid var(--nav-color);
+
+  @media (width >= 48rem) {
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: var(--rule) solid var(--nav-color);
+    }
+  }
+}
+
+.nav-box {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  gap: var(--space-xs);
+}

@@ -12,8 +12,17 @@ export const Info = () => {
           {/* TODO: Resurrect and implement the travel map and link to it. */}
           <p>
             I am also a former retail buyer, a futebol player, a marathon
-            runner, and a digital nomad. I travel frequently: 36 countries and
-            counting!
+            runner, and a digital nomad. My path has not been a traditional one.
+          </p>
+          <p>
+            Nor was it a straight line, and that&apos;s how my instincts came to
+            be. Business school and buying taught me to see a business as a
+            system, then design school taught me to start from the perspective
+            of a user, to understand their wants and needs; consulting gave me
+            the opportunity to practice both, and building payments at Flexa
+            sharpened the systems side. I have learned to develop something
+            people want and need and how to build it so the pieces hold
+            together.
           </p>
         </div>
         {/* TODO: Make clickable and flip to reveal a fun fact */}

@@ -55,8 +55,9 @@ export const Hero = () => {
       <h2>Full-Stack Engineer</h2>
       <h4>
         I like owning products end-to-end. I care as much about why and what is
-        being built as how it&apos;s being built. I&apos;m happiest turning an
-        ambiguous problem into something people actually want to use.
+        being built as how it&apos;s being built. I thoroughly enjoy finding
+        solutions to ambiguous problems and building something people actually
+        want to use.
       </h4>
 
       <div className={css.explain}>
@@ -88,8 +89,8 @@ export const Hero = () => {
         <p style={{ position: "relative", zIndex: 1 }}>
           This title was given to me by my soccer coach for my ability to play
           any position on the field. In tech, that means I&apos;m full-stack by
-          habit, with a feel for how the whole system connects, and happiest
-          owning something from research through development to production.
+          habit. I think in multiple directions. I consider the experience of a
+          user, as well as the systems that underpin it.
         </p>
       </InfoBubble>
     </>
