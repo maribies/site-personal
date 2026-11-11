@@ -1,0 +1,162 @@
+/* Journey animation: white on the site's grey, with small hits of palette
+   color. The component draws no background of its own beyond the circles,
+   so place it on --color-bg.
+
+   Layout and sizes are decided here, in CSS, so the picture is right on
+   first paint (including server-rendered HTML). The --journey-* numbers
+   are set by Journey.tsx from its configuration. */
+
+.journey {
+  --muted: #c9cbd1;
+
+  container: journey / inline-size;
+  width: 100%;
+  color: var(--color-text);
+}
+
+/* The stage: one div. The lines SVG fills it; the places and the button sit on top. */
+.stage {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  aspect-ratio: var(--journey-ratio-wide);
+
+  /* Diameter of a place's first ring: a share of the stage, with a floor in pixels. */
+  --disc: max(var(--journey-disc-wide), var(--journey-disc-min));
+}
+
+.picture {
+  position: absolute;
+  inset: 0;
+}
+
+.lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  &[data-layout="tall"] {
+    display: none;
+  }
+}
+
+.base,
+.trail {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.base {
+  stroke: var(--muted);
+  opacity: 0.35;
+}
+
+.traveller {
+  fill: var(--yellow);
+}
+
+/* A place: its rings SVG with the icon centred on top.
+   It is sized to hold every ring it will collect. */
+.place {
+  position: absolute;
+  left: var(--x-wide);
+  top: var(--y-wide);
+  translate: -50% -50%;
+  width: calc(var(--disc) + (var(--rings) - 1) * 2 * var(--journey-ring-gap));
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+
+  circle {
+    fill: none;
+    stroke-linecap: round;
+  }
+}
+
+.rings .cover {
+  fill: var(--color-bg);
+  r: calc(var(--disc) / 2 + var(--grown, 0) * var(--journey-ring-gap));
+}
+
+.ring {
+  stroke: var(--muted);
+  stroke-opacity: 0.35;
+}
+
+.icon {
+  position: relative;
+  display: grid;
+  color: var(--color-text);
+
+  --icon-size: calc(var(--disc) * var(--journey-icon-ratio));
+}
+
+/* Narrow: the tall layout. The 800px here matches TALL_BELOW in Journey.tsx. */
+@container journey (width < 800px) {
+  .stage {
+    max-width: 320px;
+    aspect-ratio: var(--journey-ratio-tall);
+
+    --disc: max(var(--journey-disc-tall), var(--journey-disc-min));
+  }
+
+  .lines[data-layout="wide"] {
+    display: none;
+  }
+
+  .lines[data-layout="tall"] {
+    display: block;
+  }
+
+  .place {
+    left: var(--x-tall);
+    top: var(--y-tall);
+  }
+}
+
+/* Play / pause: a round outlined button in the stage's bottom right corner. */
+.toggle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--color-text);
+  background: transparent;
+  border: var(--rule) solid var(--color-text);
+  border-radius: 9999px;
+
+  &:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentcolor;
+    stroke: currentcolor;
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+}

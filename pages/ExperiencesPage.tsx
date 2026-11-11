@@ -1,5 +1,5 @@
 import type { ExperienceDetailsCategory } from "../api/schemas";
-import { Experiences, Header, Layout } from "../components";
+import { Experiences, Header, Journey, Layout } from "../components";
 import type { PageProps } from "./routes";
 import css from "./experiences.module.css";
 
@@ -26,6 +26,7 @@ export const ExperiencesPage = ({ data }: PageProps) => (
         ))}
       </div>
     </Header>
+    <Journey />
     <Experiences experiences={data.experiences} />
   </Layout>
 );
