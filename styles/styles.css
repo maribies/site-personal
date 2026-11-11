@@ -130,9 +130,13 @@ a:any-link {
 
   &:focus-visible {
     color: var(--color-focus);
-
-    /* TODO: focus box orange or yellow */
   }
+}
+
+:where(:focus-visible) {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
 }
 
 .icon {

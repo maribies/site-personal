@@ -102,6 +102,11 @@
   --icon-size: calc(var(--disc) * var(--journey-icon-ratio));
 }
 
+.link {
+  display: grid;
+  border-radius: 50%;
+}
+
 /* Narrow: the tall layout. The 800px here matches TALL_BELOW in Journey.tsx. */
 @container journey (width < 800px) {
   .stage {
@@ -143,11 +148,6 @@
   &:hover {
     background: var(--color-text);
     color: var(--color-bg);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--rose);
-    outline-offset: 3px;
   }
 
   svg {

@@ -785,7 +785,7 @@ export const Journey = ({ className }: { className?: string }) => {
                   }}
                 >
                   {place.linkTarget ? (
-                    <a href={place.linkTarget}>
+                    <a href={place.linkTarget} className={css.link}>
                       <Icon name={place.icon} />
                     </a>
                   ) : (
