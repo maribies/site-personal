@@ -9,6 +9,7 @@ Built with [Vite](https://vite.dev) and React. Pages are pre-rendered to static 
 - `npm run dev`: local dev server.
 - `npm run build`: builds and pre-renders the site into `dist/`.
 - `npm run preview`: serves the built site locally.
+- `npm run hooks`: run once per clone to enable the pre-commit checks in `.githooks/`.
 
 ## Testing
 

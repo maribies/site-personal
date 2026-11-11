@@ -8,7 +8,22 @@ import { render, routes } from "../pages/entry-server";
 import { notFound } from "../pages/routes";
 import { siteData } from "./fixtures";
 
-vi.stubGlobal("matchMedia", () => ({ matches: true }));
+(
+  globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean }
+).IS_REACT_ACT_ENVIRONMENT = true;
+
+vi.stubGlobal("matchMedia", () => ({
+  matches: true,
+  addEventListener: () => {},
+  removeEventListener: () => {},
+}));
+vi.stubGlobal(
+  "ResizeObserver",
+  class {
+    observe() {}
+    disconnect() {}
+  },
+);
 
 // React recovers from hydration mismatches by re-rendering on the client, so
 // the page looks fine in a browser. The only signs are these errors.

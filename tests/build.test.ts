@@ -102,16 +102,19 @@ describe("pre-rendered content", () => {
 });
 
 describe("bundle", () => {
-  const apiStrings = [
-    ...data.experiences.flatMap((group) =>
-      group.experiences.flatMap(({ title, skills }) => [title, ...skills]),
-    ),
-    ...data.links.map(({ link }) => link),
-  ];
+  // Prose only: names and URLs can fairly appear in copy, but these sentences
+  // only reach the bundle if the API data itself was imported.
+  const apiProse = data.experiences.flatMap((group) =>
+    group.experiences.flatMap(({ summary, roleSummary, skills }) => [
+      summary,
+      roleSummary,
+      ...skills,
+    ]),
+  );
 
   it("contains no API data", () => {
     // Compare the found strings, not the bundle, so a failure doesn't print it.
-    expect(apiStrings.filter((text) => js.includes(text))).toEqual([]);
+    expect(apiProse.filter((text) => js.includes(text))).toEqual([]);
   });
 
   it("doesn't include Zod", () => {

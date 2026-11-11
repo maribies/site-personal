@@ -13,6 +13,7 @@
     "fix-css": "stylelint '**/*.css' --fix",
     "fix-lint": "eslint --fix",
     "format": "prettier --write .",
+    "hooks": "git config core.hooksPath .githooks",
     "lint": "eslint . && stylelint \"**/*.css\"",
     "prerender": "node scripts/prerender.ts",
     "preview": "vite preview",

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Checks the working tree before each commit. Enable once per clone with
+# `npm run hooks`. Fix with `npm run format`, `fix-lint`, `fix-css`.
+# Skip once with `git commit --no-verify`.
+set -e
+
+npm run --silent lint
+npx prettier --check --log-level warn .
+npm run --silent typecheck
+npm test --silent
