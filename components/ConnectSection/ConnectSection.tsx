@@ -1,7 +1,7 @@
 import text from "../text.module.css";
 import css from "./connectSection.module.css";
 
-import type { ContactLink } from "../../api/schemas";
+import type { ContactLink } from "../../lib/schemas";
 
 export const ConnectSection = ({ links }: { links: ContactLink[] }) => {
   return (

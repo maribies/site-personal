@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-import { loadSiteData } from "../api/client";
+import { loadSiteData } from "../lib/client";
 import { siteData } from "./fixtures";
 
 it("rejects invalid API data with the path to each problem", async () => {

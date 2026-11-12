@@ -1,4 +1,4 @@
-import type { ExperienceDetailsCategory } from "../api/schemas";
+import type { ExperienceDetailsCategory } from "../lib/schemas";
 import { Experiences, Header, Journey, Layout } from "../components";
 import type { PageProps } from "./routes";
 import css from "./experiences.module.css";

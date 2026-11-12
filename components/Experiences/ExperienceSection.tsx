@@ -1,7 +1,7 @@
 import type {
   ExperienceDetails,
   ExperienceDetailsCategory,
-} from "../../api/schemas";
+} from "../../lib/schemas";
 import { ExperienceSummary } from "./ExperienceSummary";
 import css from "./experiences.module.css";
 

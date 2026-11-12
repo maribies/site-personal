@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 import { render } from "../pages/entry-server";
 import { DATA_ELEMENT_ID } from "../pages/routes";
 import { siteData } from "./fixtures";
