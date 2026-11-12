@@ -1,11 +1,13 @@
 .image {
   border: 5px solid var(--white);
-  width: -webkit-fill-available;
+  display: block;
+  width: 100%;
 }
 
 .frame {
   padding: var(--space-xs);
   width: 80%;
+  flex-shrink: 0;
   align-self: center;
 
   @media (width >= 48rem) {
@@ -16,6 +18,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: var(--space-m);
 
   @media (width >= 48rem) {
     flex-direction: row;
