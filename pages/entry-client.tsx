@@ -7,15 +7,11 @@ import "../styles/styles.css";
 
 import type { SiteData } from "../api/schemas";
 import { App } from "./App";
-import { DATA_ELEMENT_ID, routes } from "./routes";
+import { DATA_ELEMENT_ID, notFound, routes } from "./routes";
 
 // "/index.html" → "/", "/experiences.html" → "/experiences"
 const path = location.pathname.replace(/(\/index)?\.html$/, "") || "/";
-const route = routes[path];
-
-if (!route) {
-  throw new Error(`No route for ${path}`);
-}
+const route = routes[path] ?? notFound;
 
 const root = document.getElementById("root")!;
 const app = (data: SiteData) => (

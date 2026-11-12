@@ -1,7 +1,8 @@
 import type { ExperienceDetails } from "../../api/schemas";
 import { Experience } from "./Experience";
+import css from "./experiences.module.css";
 
-export const ExperienceSection = ({
+export const Experiences = ({
   experiences: details,
 }: {
   experiences: ExperienceDetails[];
@@ -10,9 +11,9 @@ export const ExperienceSection = ({
     const { experiences, type } = section;
 
     return (
-      <div id={type} key={index}>
+      <div id={type} key={index} className={css.category}>
         <div style={{ width: "100%" }}>
-          <h1>{type?.toUpperCase()}</h1>
+          <h2 className={css.uppercase}>{type}</h2>
         </div>
 
         {experiences.map((experience, index) => {

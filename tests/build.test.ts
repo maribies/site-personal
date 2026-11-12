@@ -8,6 +8,7 @@ import {
   canonicalUrl,
   DATA_ELEMENT_ID,
   htmlFile,
+  notFound,
   routes,
 } from "../pages/routes";
 
@@ -35,8 +36,8 @@ const data: SiteData = {
   experiences: api("experiences.json"),
   links: api("links.json"),
 };
-const companies = data.experiences.flatMap((group) =>
-  group.experiences.map((experience) => experience.company),
+const titles = data.experiences.flatMap((group) =>
+  group.experiences.map((experience) => experience.title),
 );
 
 describe.each(Object.entries(routes))("dist for %s", (url, route) => {
@@ -75,6 +76,13 @@ describe.each(Object.entries(routes))("dist for %s", (url, route) => {
   });
 });
 
+it("404.html has the pre-rendered not-found page", () => {
+  const html = read(resolve(dist, "404.html"));
+
+  expect(html).toContain(`<title>${notFound.title}</title>`);
+  expect(html).toMatch(/<div id="root">.*<main>.+<\/main><\/div>/s);
+});
+
 it("sitemap.xml lists every route", () => {
   const sitemap = read(resolve(dist, "sitemap.xml"));
 
@@ -84,28 +92,29 @@ it("sitemap.xml lists every route", () => {
 });
 
 describe("pre-rendered content", () => {
-  it("renders every company on the experiences page", () => {
+  it("renders every experience on the experiences page", () => {
     const html = read(resolve(dist, htmlFile("/experiences")));
 
-    for (const company of companies) {
-      expect(html).toContain(`<h3>${company}</h3>`);
+    for (const title of titles) {
+      expect(html).toContain(title);
     }
   });
 });
 
 describe("bundle", () => {
-  // Strings only found in the API data. Company names are left out because
-  // page copy (e.g. Info) mentions some of them.
-  const apiStrings = [
-    ...data.experiences.flatMap((group) =>
-      group.experiences.flatMap(({ title, skills }) => [title, ...skills]),
-    ),
-    ...data.links.map(({ link }) => link),
-  ];
+  // Prose only: names and URLs can fairly appear in copy, but these sentences
+  // only reach the bundle if the API data itself was imported.
+  const apiProse = data.experiences.flatMap((group) =>
+    group.experiences.flatMap(({ summary, roleSummary, skills }) => [
+      summary,
+      roleSummary,
+      ...skills,
+    ]),
+  );
 
   it("contains no API data", () => {
     // Compare the found strings, not the bundle, so a failure doesn't print it.
-    expect(apiStrings.filter((text) => js.includes(text))).toEqual([]);
+    expect(apiProse.filter((text) => js.includes(text))).toEqual([]);
   });
 
   it("doesn't include Zod", () => {

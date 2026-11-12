@@ -9,6 +9,7 @@ Built with [Vite](https://vite.dev) and React. Pages are pre-rendered to static 
 - `npm run dev`: local dev server.
 - `npm run build`: builds and pre-renders the site into `dist/`.
 - `npm run preview`: serves the built site locally.
+- `npm run hooks`: run once per clone to enable the pre-commit checks in `.githooks/`.
 
 ## Testing
 
@@ -42,10 +43,10 @@ The code is licensed under the [MIT License](LICENSE).
 
 The following are not covered by the MIT License:
 
-- **Personal content**, all rights reserved, including and not limited to: the written content (bio and experience data in `public/api/` and copy in `components/`), the photo `public/static/images/me.jpeg`, and the logos `public/static/SVG/logo.svg` and `public/static/SVG/staticlogo.svg`.
+- **Personal content**, all rights reserved, including and not limited to: the written content (bio and experience data in `public/api/` and copy in `components/`), and the assets in `public/static/` `SVG` and `images` that are not otherwise commented and attributed to Font Awesome, for svgs, or a company logo, for images.
 - **Company logos** in `public/static/images/` are trademarks of their respective owners.
 - **Font Awesome icons** (see Credits) remain under their own license.
 
 ## Credits
 
-- Cursor icons in `public/static/SVG/cursors/` and inline icons in `components/Hero` and `components/ExperienceSection` are from [Font Awesome Free](https://fontawesome.com) 6.4.2 by Fonticons, Inc., licensed under [CC BY 4.0](https://fontawesome.com/license/free).
+- Cursor icons in `public/static/SVG/cursors/` and inline icons in some components, where commented, are from [Font Awesome Free](https://fontawesome.com) 6.4.2 by Fonticons, Inc., licensed under [CC BY 4.0](https://fontawesome.com/license/free).

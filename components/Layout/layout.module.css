@@ -1,9 +1,17 @@
 .layout {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  --gutter: var(--space-s);
+
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 
   @media (width >= 48rem) {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    --gutter: var(--space-m);
   }
+}
+
+.full {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

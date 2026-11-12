@@ -1,5 +1,5 @@
 .cycle {
-  animation-duration: 8s;
+  animation-duration: var(--cycle-duration);
   animation-name: stroke-cycle;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -7,45 +7,44 @@
 
 @keyframes stroke-cycle {
   0% {
-    -webkit-text-stroke: 1px #5f4b8b;
+    -webkit-text-stroke: var(--rule) var(--purple);
   }
 
   20% {
-    -webkit-text-stroke: 1px #0078a7;
+    -webkit-text-stroke: var(--rule) var(--blue);
   }
 
   40% {
-    -webkit-text-stroke: 1px #f9ac2f;
+    -webkit-text-stroke: var(--rule) var(--yellow);
   }
 
   60% {
-    -webkit-text-stroke: 1px #d32e5e;
+    -webkit-text-stroke: var(--rule) var(--pink);
   }
 
   100% {
-    -webkit-text-stroke: 1px #ff7913;
+    -webkit-text-stroke: var(--rule) var(--orange);
   }
 }
 
-/** Perfect Fifth **/
 .title {
   font-family: var(--font-dela);
-  font-size: 3.375rem;
-  line-height: 4.375rem;
+  font-size: var(--step-3);
+  line-height: calc(var(--step-3) + var(--leading-lg));
   margin: 0;
 
   @media (width >= 48rem) {
-    font-size: 5.063rem;
-    line-height: 6.063rem;
+    font-size: var(--step-4);
+    line-height: calc(var(--step-4) + var(--leading-lg));
   }
 
   @media (width >= 75rem) {
-    font-size: 7.594rem;
-    line-height: 8.594rem;
+    font-size: var(--step-5);
+    line-height: calc(var(--step-5) + var(--leading-lg));
   }
 }
 
 .outline {
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px;
+  -webkit-text-stroke: var(--rule);
 }

@@ -33,22 +33,31 @@ export const Hero = () => {
       <a
         href="#work"
         className={css.nav}
-        style={{ "--nav-color": `var(--blue)` }}
+        style={{ "--nav-color": `var(--yellow)` }}
       >
         Work
       </a>
       <a
+        href="#projects"
+        className={css.nav}
+        style={{ "--nav-color": `var(--orange)` }}
+      >
+        Projects
+      </a>
+      <a
         href="#connect"
         className={css.nav}
-        style={{ "--nav-color": `var(--yellow)` }}
+        style={{ "--nav-color": `var(--blue)` }}
       >
         Connect
       </a>
 
-      <h2>Creative Problem Solver</h2>
+      <h2>Full-Stack Engineer</h2>
       <h4>
-        with experience through the entire product lifecycle- where business,
-        design, user experience, and technology intersect.
+        I like owning products end-to-end. I care as much about why and what is
+        being built as how it&apos;s being built. I thoroughly enjoy finding
+        solutions to ambiguous problems and building something people actually
+        want to use.
       </h4>
 
       <div className={css.explain}>
@@ -60,6 +69,7 @@ export const Hero = () => {
           <h3 className={text.outline} style={{ marginBottom: 0 }}>
             aka Utility Player
           </h3>
+          {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
@@ -77,11 +87,10 @@ export const Hero = () => {
 
       <InfoBubble showInfo={isExplainLinkClicked}>
         <p style={{ position: "relative", zIndex: 1 }}>
-          This title was given to me by one of my youth soccer coaches for my
-          ability to play any position on the pitch, but excelling in defense. I
-          have applied a similar strategy to my career talents, being proficient
-          at technologies across the stacks and Web3, but shining on the client
-          side.
+          This title was given to me by my soccer coach for my ability to play
+          any position on the field. In tech, that means I&apos;m full-stack by
+          habit. I think in multiple directions. I consider the experience of a
+          user, as well as the systems that underpin it.
         </p>
       </InfoBubble>
     </>

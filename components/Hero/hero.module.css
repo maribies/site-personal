@@ -3,13 +3,13 @@
   justify-content: right;
   animation: fade-in 5s;
   text-decoration: none;
-  border-bottom: 1px solid var(--nav-color);
+  border-bottom: var(--rule) solid var(--nav-color);
 
   @media (width >= 48rem) {
     border-bottom: none;
 
     &:hover {
-      border-bottom: 1px solid var(--nav-color);
+      border-bottom: var(--rule) solid var(--nav-color);
     }
   }
 }
@@ -43,9 +43,14 @@
   align-items: center;
   background-color: transparent;
   border: none;
+  border-bottom: var(--rule) solid var(--pink);
   color: var(--white);
   cursor: url("/static/SVG/cursors/question.svg"), pointer;
   padding: 0;
+
+  @media (width >= 48rem) {
+    border: none;
+  }
 }
 
 .toggle[data-active="true"] {

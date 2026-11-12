@@ -1,53 +1,150 @@
 [
   {
-    "type": "tech",
+    "type": "projects",
     "experiences": [
       {
-        "icon": "../../static/images/quickbeam.png",
-        "iconAlt": "Quickbeam Logo",
-        "title": "Full Stack Developer, Researcher, Technical Instructional Writer",
-        "company": "Quickbeam",
-        "companyLink": "https://quickbeam.xyz/",
-        "timeFrame": "June 2022 - Present",
-        "tools": [
-          "React",
-          "Vite",
-          "Cypress",
-          "Tailwind",
-          "GraphQL",
-          "Apollo",
-          "Golang",
-          "Docker",
+        "icon": "/static/SVG/virtual-closet.svg",
+        "iconAlt": "garment coming out of a closet",
+        "title": "AI Experimentation with Garment Segmentation",
+        "role": "ML and full-stack engineer",
+        "roleSummary": "Sole author. Designed the model-agnostic segmentation interface, ran and hand-triaged the baseline, wrote the referential data validators, and built the FastAPI + React viewer over a PostgreSQL schema.",
+        "link": "https://github.com/maribies/ai-imaging-experimentation",
+        "summary": "Fine-tuning open-source segmentation models to cut clothing out of ordinary photographs while documenting learning and reasoning as it goes.",
+        "timeFrame": "September 2026 - present",
+        "keywords": [
+          "Image segmentation",
+          "Alpha matting",
+          "Computer vision",
+          "AI model research",
+          "Model evaluation",
+          "Baseline-first methodology",
+          "Dataset curation",
+          "Hand-labeled triage",
+          "Python",
+          "PyTorch",
+          "BiRefNet",
+          "SegFormer",
+          "FastAPI",
+          "SQLAlchemy 2.0",
           "PostgreSQL",
-          "MetaMask",
-          "Ethereum",
-          "Rust",
-          "Solana",
-          "Alchemy"
+          "Docker Compose",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "TanStack Query",
+          "Pytest",
+          "Uv"
         ],
         "skills": [
-          "Led the implementation of the frontend working closely with UX and design teams using Vite, React, Cypress, Apollo, with MetaMask and minting connectivity",
-          "Supported infrastructure in Digital Ocean, Terraform, and Docker",
-          "Aided in design and implementation of a backend server, database, and API with Go, Graphql, PostgreSQL, and Alchemy",
-          "Contributed to the curriculum with technical instructions, proofing, and editing",
-          "Helped build out a Rust compiler and IDE prototype, focused on the Solana environment",
-          "Conducted market research, competitive analysis, executive summaries of chains and protocols, technical research on tools like code editors and Integrated Development Environments (IDE)"
-        ],
-        "links": {
-          "main": {
-            "path": "https://www.quickbeam.xyz",
-            "type": "site"
-          }
-        }
+          "Designed a model-agnostic segmentation interface returning soft alpha rather than binary masks, so adding a model is one class and one registry entry — the intermediate values are where fur, sheer fabric and open lacework live.",
+          "Established a hand-judged baseline across two pretrained models and 22 photographs before any training, to fix the number fine-tuning has to beat and identify which images are worth the cost of labeling.",
+          "Identified complementary failure modes between BiRefNet and SegFormer — and that the stronger model passed every flat-lay shot while failing every on-body shot, the actual target domain — which redirected the next round of data collection.",
+          "Replaced free-text failure notes with an eleven-term closed vocabulary, making failures countable and surfacing hanger artifacts as the single largest cause at 14 of 44 verdicts.",
+          "Built referential validators over three relational CSV tables that catch a truncated identifier three ways at once, rather than relying on duplicated columns agreeing with each other.",
+          "Modeled the dataset in PostgreSQL with nanoid primary keys, native enums for closed vocabularies and array columns for multi-valued fields, each enforced by database constraints rather than application-level checks.",
+          "Ran the test suite against PostgreSQL in Docker rather than SQLite, using transaction-per-test rollback, to close the dev/prod parity gap that hides constraint and type-coercion bugs.",
+          "Verified the suite had teeth by mutation testing — neutering one check constraint failed 28 tests, and the method exposed an earlier security test that passed with its guard deleted.",
+          "Built a local FastAPI and React/TypeScript viewer serving 24-megapixel originals downscaled and cached beside each model's cut-out and verdict.",
+          "Analyzed licensing across both model code and training data, establishing that SegFormer's NVIDIA non-commercial terms bar it from a commercial product regardless of the repository's own MIT license."
+        ]
       },
       {
-        "icon": "../../static/images/redSquirrelTechnologies.jpeg",
+        "icon": "/static/images/pixelpup.png",
+        "iconAlt": "Australian shepherd pixel art watch face",
+        "title": "Pixel Pup Garmin Watchface",
+        "role": "Project Owner",
+        "roleSummary": "Designed and implemented a Garmin watchface with cute pixel dog animations",
+        "link": "https://apps.garmin.com/en-US/apps/012a1a3b-3a01-4e11-8af6-a1efaf6baf3e",
+        "summary": "An animated Garmin watchface.",
+        "timeFrame": "June 2026 - present",
+        "keywords": [
+          "Claude",
+          "Monkey C",
+          "Ideation",
+          "Design",
+          "Planning",
+          "Project management",
+          "Open source",
+          "Maintenance",
+          "Pixel art",
+          "Research"
+        ],
+        "skills": [
+          "Product direction and planning, including scope",
+          "Kicked off the project scaffolding",
+          "Carefully reviewed and tested implementation with Claude",
+          "Decided when each release happened",
+          "Researched and then developed and documented strategy for consistent pixel art"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "work",
+    "experiences": [
+      {
+        "icon": "/static/images/flexa.png",
+        "iconAlt": "Flexa logo",
+        "title": "Flexa",
+        "role": "Full-Stack Engineer",
+        "link": "https://flexa.co",
+        "summary": "Next generation payments",
+        "roleSummary": "Built reliable, real-time systems that move money and can't afford to break.",
+        "timeFrame": "March 2024 - April 2026",
+        "location": "New York, NY, USA | Remote",
+        "keywords": [
+          "Golang",
+          "React",
+          "TypeScript",
+          "Next",
+          "Tailwind",
+          "Claude",
+          "Windsurf",
+          "gRPC",
+          "REST",
+          "PostgreSQL",
+          "GCP",
+          "Docker",
+          "Prometheus",
+          "Terraform",
+          "Web3",
+          "Blockchain",
+          "Cryptocurrency",
+          "Gitlab",
+          "CI/CD"
+        ],
+        "skills": [
+          "Owned features end-to-end across the frontend, backend services, and data models through the development lifecycle.",
+          "Built and maintained client-facing single-page web apps with React, TypeScript, and Next.js.",
+          "Built and evolved backend services in Go on GCP, owning code from design to production.",
+          "Designed service-to-service communication with clear API, event, and data contracts (gRPC/Protobuf).",
+          "Built asynchronous, event-driven messaging between services using Google Cloud Pub/Sub, decoupling workflows across services.",
+          "Led data model updates, migrations, and reconciliation with safe, coordinated rollouts across services.",
+          "Researched and designed API event versioning for backward compatibility across evolving schemas.",
+          "Improved and maintained API tooling, authentication flows, and developer documentation for internal and external consumers.",
+          "Investigated and resolved production issues and system bottlenecks, improving reliability and monitoring.",
+          "Built internal scripts, scheduled jobs, and tooling to automate manual workflows and help cross-functional teams do their jobs more efficiently.",
+          "Supported production systems through extended-hours on-call, alerting, triage, and incident response.",
+          "Used AI-assisted tools (Claude, Windsurf) daily for planning, testing, and UI, reviewing carefully as the person in the loop."
+        ]
+      },
+      {
+        "icon": "/static/images/redSquirrelTechnologies.jpeg",
         "iconAlt": "Red Squirrel Logo",
-        "title": "Full Stack Developer and Consultant",
-        "company": "Red Squirrel Technologies",
-        "companyLink": "https://www.redsquirrel.com/",
-        "timeFrame": "September 2020 - Present",
-        "tools": [
+        "title": "Red Squirrel Technologies",
+        "role": "Apprentice to Full-Stack Consultant",
+        "link": "https://www.redsquirrel.com/",
+        "summary": "Software development for mission driven organizations.",
+        "roleSummary": "Full-Stack consultant for organizations and early-stage startups, delivering tailored solutions from requirements through operation.",
+        "timeFrame": "September 2020 - March 2024",
+        "location": "Chicago, IL, USA | Remote",
+        "keywords": [
+          "Consulting",
+          "Greenfield product development",
+          "Research",
+          "Prototyping",
+          "JavaScript",
+          "TypeScript",
           "React",
           "React Native",
           "Cypress",
@@ -62,30 +159,45 @@
           "CLI scripting",
           "Docker",
           "PostgreSQL",
-          "Infura"
+          "Python",
+          "Django",
+          "Rust",
+          "Chrome extensions",
+          "Web3",
+          "Infura",
+          "Polygon",
+          "Ethereum",
+          "Flow",
+          "MetaMask",
+          "Alchemy"
         ],
         "skills": [
-          "Worked closely with UX designer on app design and flows for a wallet and social mobile app focused on Polygon and the new Ethereum account abstraction (ERC-4337), using React Native and Node.js",
-          "Supported a Chrome extension in React for an internal data capturing tool for a startup in food service delivery",
-          "Implemented a feature NFT project using the Go SDK from the Flow blockchain and Ruby on Rails for the APIs, JavaScript and Infura for NFT creation, and React for the client side web app",
-          "Developed internal and external web based tools using Ruby on Rails, PostgreSQL, JavaScript, React for a logistics startup",
-          "Refactored a Ruby on Rails website for a new educational startup, PostgreSQL, JavaScript, React, SASS/SCSS"
-        ],
-        "links": {
-          "main": {
-            "path": "https://www.redsquirrel.com/case-studies",
-            "type": "site"
-          }
-        }
+          "Shipped web and mobile products end-to-end, working closely with UX designers on app design and user flows.",
+          "Built front-ends with React, React Native, Vite, Tailwind, and Apollo; backends with Node.js, Go, Ruby on Rails, GraphQL, and REST.",
+          "Set up and maintained containerized cloud infrastructure as code.",
+          "Wrote integration-first tests with Cypress and automated workflows with CLI scripting.",
+          "Served as researcher and technical instructional writer for early-stage products.",
+          "Full-Stack contributor to a wallet and social app on Polygon with Ethereum account abstraction (ERC-4337), using React Native and Node.js.",
+          "Built a greenfield web3 startup's stack end-to-end: DigitalOcean/Terraform/Docker infrastructure, a Go + GraphQL backend, and a Vite/React/Cypress/Apollo front end with MetaMask connectivity.",
+          "Developer and researcher with focused research into Solana and Rust.",
+          "Built a feature NFT project on the Flow blockchain (Flow Go SDK, Ruby on Rails, JavaScript, Infura, React).",
+          "Built internal and external web tools for a logistics startup (Ruby on Rails, PostgreSQL, JavaScript, React).",
+          "Streamlined an educational startup's web application (Ruby on Rails, PostgreSQL, JavaScript, React, SCSS).",
+          "Built a React Chrome extension as an internal data-capturing tool for a food-service-delivery startup.",
+          "Through a self-directed apprenticeship, shipped a passion project: a Python scraper (Django, BeautifulSoup) collecting product data into PostgreSQL, paired with a React Native app, deployed on Heroku."
+        ]
       },
       {
-        "icon": "../../static/images/uphold.jpeg",
+        "icon": "/static/images/uphold.jpeg",
         "iconAlt": "Uphold Logo",
-        "title": "Junior Developer",
-        "company": "Uphold",
-        "companyLink": "https://www.uphold.com",
-        "timeFrame": "January 2019 - September 2020",
-        "tools": [
+        "role": "Intern to Junior Developer",
+        "title": "Uphold",
+        "link": "https://www.uphold.com",
+        "summary": "Buy and sell digital assets",
+        "roleSummary": "Contributed to continuous development, analytics, and testing of a financial-services mobile app.",
+        "timeFrame": "October 2018 - September 2020",
+        "location": "Braga, Portugal | In-person",
+        "keywords": [
           "React",
           "React Native",
           "Detox",
@@ -99,52 +211,20 @@
           "Next.js",
           "Datadog",
           "Node.js",
-          "CLI scripting"
+          "CLI scripting",
+          "Portuguese"
         ],
         "skills": [
-          "Automated REST ask/bid requests from potential exchange API",
-          "Voice of “how to” product instructional and promotional videos",
-          "Contributor to development, analytics, and testing of mobile app",
-          "Automated +80% of end to end regression tests for core suite",
-          "Deprecated REST API in favor of GraphQL for app entry flows",
-          "Automated CLI tool for translations services API",
-          "App stabilization- bug fixing and  refactoring code",
-          "Hired from internship after developing new landing page"
-        ],
-        "links": {
-          "main": {
-            "path": "https://www.youtube.com/embed/UpvIJLUizB8",
-            "type": "video"
-          },
-          "second": {
-            "path": "https://www.youtube.com/embed/negLouj_oj0",
-            "type": "video"
-          },
-          "third": {
-            "path": "https://docs.google.com/presentation/d/e/2PACX-1vSYiWV2UtnnDzcFHhFmPLL8LNEzjaeLi3ASKZMLR2cF6qBhoyFnbV2BWqHhfbr9eeSmEoUJtX95TruS/embed?start=false&loop=false&delayms=3000",
-            "type": "site"
-          }
-        }
-      },
-      {
-        "icon": "../../static/images/oneliners.png",
-        "iconAlt": "Oneliners Icon",
-        "title": "Developer",
-        "company": "Oneliners.co",
-        "companyLink": "https://oneliners.co/",
-        "timeFrame": "Present",
-        "skills": [
-          "Entrepreneurial project with friends & colleauges- business, design, and development",
-          "Refresh business idea",
-          "Refactoring legacy code to use React",
-          "Implemented Grid & Flexbox layout for responsiveness"
-        ],
-        "links": {
-          "main": {
-            "path": "https://oneliners.co/",
-            "type": "site"
-          }
-        }
+          "Automated REST requests from a third-party API.",
+          "Automated 80%+ of end-to-end regression tests for the core suite (Jest, Detox, Cypress).",
+          "Built REST and GraphQL integrations; deprecated a REST API in favor of GraphQL for app entry flows.",
+          "Automated a CLI tool for a translations-service API.",
+          "Instrumented analytics events (Datadog) and contributed to app stabilization through bug fixing and refactoring.",
+          "Gave an internal talk, 'Knitting = Programming,' on the parallels between crochet/knitting and programming.",
+          "Developed a new landing page from a sketch design.",
+          "Technical mentor and motivational speaker for SheCodes.",
+          "Completed a summer course for intermediate level Portuguese."
+        ]
       }
     ]
   },
@@ -152,23 +232,98 @@
     "type": "business",
     "experiences": [
       {
-        "icon": "../../static/images/wdfg.png",
+        "icon": "/static/images/wdfg.png",
         "iconAlt": "WDFG",
-        "title": "Buyer",
-        "company": "World Duty Free Group",
-        "companyLink": "http://www.worlddutyfreegroup.com/",
-        "timeFrame": "Feb 2013 - July 2016",
-        "skills": [
-          "Focused on meeting a $14 million sales goal for the Adult Souvenir Apparel and Licensed categories",
-          "Developed and implemented categories’ strategic business plans, forecasts, risk management strategies, and performance reviews",
-          "Promoted from temporary assistant to assistant buyer to buyer and category manager"
+        "role": "Assistant Buyer to Buyer and Category Manager",
+        "title": "World Duty Free Group",
+        "summary": "Global travel retail",
+        "roleSummary": "Assisted management in the sunglasses, beauty, sports, and regional food and gift categories before promotion to direct management of sports and adult souvenir apparel categories.",
+        "link": "http://www.worlddutyfree.com",
+        "timeFrame": "February 2013 - July 2016",
+        "location": "Bethesda, Maryland | In-person",
+        "keywords": [
+          "Analytical thinking",
+          "Excel",
+          "SAP",
+          "Product development",
+          "Stakeholder management",
+          "Budgeting",
+          "Sales forecasting",
+          "Strategy",
+          "Risk management",
+          "Performance analysis",
+          "End-to-end ownership",
+          "Rapid growth and advancement"
         ],
-        "links": {
-          "main": {
-            "path": "https://www.youtube.com/embed/hV-8yVFvjnc",
-            "type": "video"
-          }
-        }
+        "skills": [
+          "Owned multi-million-dollar product categories end-to-end: strategy, forecasting, budgeting, and performance review.",
+          "Analyzed sales and performance data to drive category planning and decisions.",
+          "Planned, budgeted, and executed large-scale events with cross-functional teams, exceeding sales goals.",
+          "Negotiated with vendors and aligned internal and external stakeholders around shared goals."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "education",
+    "experiences": [
+      {
+        "icon": "/static/images/tnds.png",
+        "iconAlt": "TNDS logo",
+        "role": "Student",
+        "title": "The New Digital School",
+        "summary": "International digital design school",
+        "roleSummary": "Studied design, user experience, research, and front-end development; completed projects and prototypes for new ideas and local startups.",
+        "link": "https://www.thenewdigitalschool.com/",
+        "timeFrame": "January 2018 - December 2018",
+        "keywords": [
+          "Design",
+          "User experience",
+          "Prototyping",
+          "Front-end development",
+          "User research",
+          "HTML",
+          "CSS",
+          "SASS",
+          "JavaScript",
+          "Vue",
+          "React",
+          "React Native",
+          "Next.js",
+          "Styled Components",
+          "Phoenix (Elixir)",
+          "Figma",
+          "Sketch",
+          "Mind Node"
+        ],
+        "skills": [
+          "Attended masterclasses with leading industry professionals including Vitaly Friedman (Smashing Magazine), Steph Troeth (formerly Clearleft & Mailchimp), Christopher Murphy (Belfast School of Arts), Paulo Fonseca (entrepreneur and designer), and completed a host of projects for both new ideas as well as local startups.",
+          "Completed the Udacity Front End Nanodegree via the Grow with Google Challenge Scholarship (remote).",
+          "Front-end internships with Bitmaker Software and Uphold (the Uphold internship converted to a full-time offer)."
+        ],
+        "location": "Porto, Portugal | In-person"
+      },
+      {
+        "icon": "/static/images/au.png",
+        "iconAlt": "AU logo",
+        "role": "Undergraduate Student",
+        "title": "American University",
+        "summary": "Kogod School of Business",
+        "roleSummary": "Successfully completed a Bachelor of Science in Business Administration with a specialty in international business in just 3.5 years.",
+        "link": "https://american.edu/",
+        "timeFrame": "August 2008 - December 2011",
+        "keywords": [
+          "International business",
+          "French",
+          "Networking",
+          "Research"
+        ],
+        "skills": [
+          "Completed a study abroad program: SKEMA Business School in Sophia-Antipolis, France from January-May 2011.",
+          "Completed activities and fundraising as a brother member of Alpha Kappa Psi, Professional Business Fraternity.",
+          "Completed the Marine Corps Marathon in 2010, 2011, & 2012, fundraising a couple thousand dollars for the Team Fisher House nonprofit the last two years."
+        ],
+        "location": "Washington, DC | In-person"
       }
     ]
   }

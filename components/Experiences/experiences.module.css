@@ -1,0 +1,205 @@
+.tight {
+  margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.category {
+  scroll-margin-top: var(--space-l);
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+
+  > h3 {
+    align-self: baseline;
+  }
+}
+
+.logo {
+  width: var(--h3-line-height);
+  height: var(--h3-line-height);
+  margin-right: var(--space-s);
+  border-radius: 22%;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: var(--space-s);
+
+  @media (width >= 48rem) {
+    align-items: baseline;
+  }
+}
+
+.summary {
+  margin-bottom: 0;
+  flex-basis: 100%;
+
+  @media (width >= 48rem) {
+    flex-basis: auto;
+  }
+}
+
+.details {
+  margin: var(--space-s) 0;
+}
+
+.label {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ticker copies sit end to end, so every item needs a leading dot. */
+.looped {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.keywords > li + li::before,
+.looped > li:first-child::before {
+  content: "·";
+  content: "·" / "";
+  margin: 0 var(--space-xs);
+}
+
+.highlights {
+  margin-top: var(--space-s);
+
+  > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+.panel {
+  display: flow-root;
+}
+
+.container {
+  width: 100%;
+  margin-top: var(--space-m);
+}
+
+/* Summary */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ticker {
+  position: relative;
+  width: 100%;
+  height: calc(var(--step-0) + var(--leading-sm));
+  overflow: hidden;
+}
+
+.scroller {
+  display: flex;
+  width: max-content;
+
+  /* Duration scales with list length so every ticker moves at the same speed. */
+  animation: scrolling calc(var(--ticker-length) * 0.12s) linear infinite;
+  position: absolute;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Section */
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-m);
+
+  @media (width >= 48rem) {
+    flex-wrap: wrap;
+  }
+}
+
+.title {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: var(--rule);
+  margin: 0;
+}
+
+.columns {
+  display: flex;
+  flex-flow: row wrap;
+  width: 75%;
+}
+
+.more {
+  display: flex;
+  text-decoration: none;
+  height: fit-content;
+
+  > .title {
+    border-bottom: var(--rule) solid var(--pink);
+
+    @media (width >= 48rem) {
+      border-bottom: none;
+    }
+  }
+}
+
+.work {
+  border-top: var(--rule) solid var(--yellow);
+  flex-direction: row;
+
+  > .more {
+    margin: 0.83em 0.83em 0.83em 0;
+
+    @media (width >= 48rem) {
+      margin: 0.83em;
+    }
+  }
+}
+
+.projects {
+  border-top: var(--rule) solid var(--orange);
+  flex-direction: row-reverse;
+
+  > .more {
+    margin: 0.83em 0 0.83em 0.83em;
+
+    @media (width >= 48rem) {
+      margin: 0.83em;
+    }
+  }
+}
