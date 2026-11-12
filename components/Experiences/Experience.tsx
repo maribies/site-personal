@@ -1,4 +1,4 @@
-import type { Experience as ExperienceData } from "../../api/schemas";
+import type { Experience as ExperienceData } from "../../lib/schemas";
 import css from "./experiences.module.css";
 import text from "../text.module.css";
 import { UnorderedListComponent as List } from "../List";

@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { createServer } from "vite";
 
-import type { FetchJson } from "../api/client";
+import type { FetchJson } from "../lib/client";
 
 const root = resolve(import.meta.dirname, "..");
 const dist = resolve(root, "dist");

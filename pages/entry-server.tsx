@@ -1,10 +1,10 @@
 import { renderToString } from "react-dom/server";
 
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 import { App } from "./App";
 import { canonicalUrl, DATA_ELEMENT_ID, notFound, routes } from "./routes";
 
-export { loadSiteData } from "../api/client";
+export { loadSiteData } from "../lib/client";
 export { canonicalUrl, htmlFile, routes } from "./routes";
 
 const serialize = (data: SiteData) =>

@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 import {
   canonicalUrl,
   DATA_ELEMENT_ID,

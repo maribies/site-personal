@@ -1,4 +1,4 @@
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 
 export const siteData: SiteData = {
   experiences: [

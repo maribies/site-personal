@@ -5,7 +5,7 @@ import "@fontsource/poppins/latin-400.css";
 import "@fontsource/dela-gothic-one/latin-400.css";
 import "../styles/styles.css";
 
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 import { App } from "./App";
 import { DATA_ELEMENT_ID, notFound, routes } from "./routes";
 
@@ -25,7 +25,7 @@ const embeddedData = document.getElementById(DATA_ELEMENT_ID)?.textContent;
 if (embeddedData) {
   hydrateRoot(root, app(JSON.parse(embeddedData)));
 } else if (import.meta.env.DEV) {
-  import("../api/client").then(async ({ loadSiteData }) => {
+  import("../lib/client").then(async ({ loadSiteData }) => {
     const data = await loadSiteData(async (file) =>
       (await fetch(`/api/${file}`)).json(),
     );

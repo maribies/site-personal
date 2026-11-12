@@ -1,4 +1,4 @@
-import type { ExperienceDetails } from "../../api/schemas";
+import type { ExperienceDetails } from "../../lib/schemas";
 import { Experience } from "./Experience";
 import css from "./experiences.module.css";
 

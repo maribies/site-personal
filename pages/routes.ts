@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 
-import type { SiteData } from "../api/schemas";
+import type { SiteData } from "../lib/schemas";
 import { ExperiencesPage } from "./ExperiencesPage";
 import { HomePage } from "./HomePage";
 import { NotFoundPage } from "./NotFoundPage";
