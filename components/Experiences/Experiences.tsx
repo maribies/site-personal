@@ -11,7 +11,7 @@ export const Experiences = ({
     const { experiences, type } = section;
 
     return (
-      <div id={type} key={index}>
+      <div id={type} key={index} className={css.category}>
         <div style={{ width: "100%" }}>
           <h2 className={css.uppercase}>{type}</h2>
         </div>

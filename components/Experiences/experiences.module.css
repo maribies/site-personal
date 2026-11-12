@@ -10,6 +10,10 @@
   text-transform: uppercase;
 }
 
+.category {
+  scroll-margin-top: var(--space-l);
+}
+
 .link {
   display: flex;
   flex-direction: row;

@@ -1,10 +1,11 @@
 .layout {
-  padding-left: var(--space-s);
-  padding-right: var(--space-s);
+  --gutter: var(--space-s);
+
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 
   @media (width >= 48rem) {
-    padding-left: var(--space-m);
-    padding-right: var(--space-m);
+    --gutter: var(--space-m);
   }
 }
 

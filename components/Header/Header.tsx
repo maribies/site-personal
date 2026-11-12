@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
 
+import css from "./header.module.css";
+
 export const Header = ({ children }: { children?: ReactNode }) => {
   return (
-    <header style={{ margin: "var(--space-m) 0" }}>
-      <a href="/">
+    <header className={css.header}>
+      <a href="/" className={css.logo}>
         <img
           src="/static/SVG/logo.svg"
           alt="clever creative coder"
