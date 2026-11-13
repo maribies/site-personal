@@ -1,11 +1,12 @@
 import { useState } from "react";
 
+import type { HeroCopy } from "../../lib/schemas";
 import text from "../text.module.css";
 import css from "./hero.module.css";
 import { InfoBubble } from "../InfoBubble";
 import { SoccerBallAnimation } from "./SoccerBallAnimation";
 
-export const Hero = () => {
+export const Hero = ({ copy }: { copy: HeroCopy }) => {
   const [isExplainLinkClicked, setExplainLinkClicked] = useState(false);
 
   return (
@@ -52,13 +53,8 @@ export const Hero = () => {
         Connect
       </a>
 
-      <h2>Full-Stack Engineer</h2>
-      <h4>
-        I like owning products end-to-end. I care as much about why and what is
-        being built as how it&apos;s being built. I thoroughly enjoy finding
-        solutions to ambiguous problems and building something people actually
-        want to use.
-      </h4>
+      <h2>{copy.role}</h2>
+      <h4>{copy.summary}</h4>
 
       <div className={css.explain}>
         <button
@@ -67,7 +63,7 @@ export const Hero = () => {
           data-active={isExplainLinkClicked}
         >
           <h3 className={text.outline} style={{ marginBottom: 0 }}>
-            aka Utility Player
+            {copy.aka.title}
           </h3>
           {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
           <svg
@@ -86,12 +82,7 @@ export const Hero = () => {
       </div>
 
       <InfoBubble showInfo={isExplainLinkClicked}>
-        <p style={{ position: "relative", zIndex: 1 }}>
-          This title was given to me by my soccer coach for my ability to play
-          any position on the field. In tech, that means I&apos;m full-stack by
-          habit. I think in multiple directions. I consider the experience of a
-          user, as well as the systems that underpin it.
-        </p>
+        <p style={{ position: "relative", zIndex: 1 }}>{copy.aka.body}</p>
       </InfoBubble>
     </>
   );

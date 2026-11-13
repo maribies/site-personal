@@ -11,10 +11,17 @@ it("rejects invalid API data with the path to each problem", async () => {
       { ...two, type: "hobby" },
     ],
     "links.json": siteData.links,
+    "copy.json": {
+      home: {
+        ...siteData.copy.home,
+        hero: { ...siteData.copy.home.hero, aka: {} },
+      },
+    },
   };
 
   const result = loadSiteData(async (file) => responses[file]);
 
   await expect(result).rejects.toThrow("experiences[0].experiences[0].title");
   await expect(result).rejects.toThrow("experiences[1].type");
+  await expect(result).rejects.toThrow("copy.home.hero.aka.title");
 });

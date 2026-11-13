@@ -61,4 +61,17 @@ export const siteData: SiteData = {
       name: "@fixture",
     },
   ],
+  copy: {
+    home: {
+      hero: {
+        role: "Fixture Engineer",
+        summary: "I build test fixtures.",
+        aka: { title: "aka Fixture", body: "A fixture's nickname." },
+      },
+      info: {
+        title: "Hi! I'm a fixture.",
+        summary: "I exist for testing.",
+      },
+    },
+  },
 };
