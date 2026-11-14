@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { CONTACT_ICON_NAMES } from "../components/Icon/names";
+
 const experienceSchema = z.object({
   icon: z.string(),
   iconAlt: z.string(),
@@ -28,7 +30,7 @@ const experienceDetailsSchema = z.object({
 
 const contactLinkSchema = z.object({
   link: z.string(),
-  icon: z.string(),
+  icon: z.enum(CONTACT_ICON_NAMES),
   name: z.string(),
 });
 

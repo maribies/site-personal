@@ -57,7 +57,7 @@ export const siteData: SiteData = {
   links: [
     {
       link: "https://example.com/profile",
-      icon: "fa-brands fa-github",
+      icon: "github",
       name: "@fixture",
     },
   ],

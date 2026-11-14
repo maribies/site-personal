@@ -1,6 +1,7 @@
 import css from "./icon.module.css";
+import type { IconName } from "./names";
 
-export type IconName = "credential" | "globe" | "laptop" | "office";
+export type { IconName };
 
 export const Icon = ({
   name,

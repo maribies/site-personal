@@ -82,8 +82,7 @@ describe.each(Object.entries(routes))("dist for %s", (url, route) => {
   });
 
   it("only uses CSS module classes that exist in the CSS", () => {
-    // Vite's CSS module class names contain "_"; global and Font Awesome
-    // classes (e.g. "flex-wrap", "fa-brands") don't.
+    // Vite's CSS module class names contain "_"; global classes (e.g. "flex-wrap") don't.
     const moduleClasses = [...html.matchAll(/class="([^"]*)"/g)]
       .flatMap(([, classes]) => classes.split(" "))
       .filter((name) => name.includes("_"));
