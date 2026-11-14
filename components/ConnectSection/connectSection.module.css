@@ -16,7 +16,7 @@
 
   /* Outranks the global a:any-link cursor. */
   &:any-link {
-    cursor: url("/static/SVG/cursors/heart.svg"), pointer;
+    cursor: var(--cursor-heart), pointer;
   }
 
   > p {

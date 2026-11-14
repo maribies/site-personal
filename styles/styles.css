@@ -63,6 +63,11 @@
   --rule-heavy: 10px;
   --cycle-duration: 8s;
 
+  /* Cursors */
+  --cursor-question: url("./cursors/question.svg");
+  --cursor-collapse: url("./cursors/collapse.svg");
+  --cursor-heart: url("./cursors/heart.svg");
+
   @media (width >= 48rem) {
     --h3-line-height: calc(var(--step-2) + var(--leading-lg));
   }
@@ -78,7 +83,7 @@ body {
   color: var(--color-text);
   line-height: calc(var(--step-0) + var(--leading-sm));
   overflow-x: hidden;
-  cursor: url("/static/SVG/cursors/arrow.svg"), auto;
+  cursor: url("./cursors/arrow.svg"), auto;
 }
 
 main {
@@ -125,7 +130,7 @@ p {
 }
 
 a:any-link {
-  cursor: url("/static/SVG/cursors/pointer.svg"), pointer;
+  cursor: url("./cursors/pointer.svg"), pointer;
   color: var(--color-text);
 
   &:focus-visible {
@@ -162,7 +167,7 @@ a:any-link {
 }
 
 .pointer {
-  cursor: url("/static/SVG/cursors/pointer.svg"), pointer;
+  cursor: url("./cursors/pointer.svg"), pointer;
 }
 
 @keyframes cycle-fill {
