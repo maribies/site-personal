@@ -49,4 +49,4 @@ The following are not covered by the MIT License:
 
 ## Credits
 
-- Cursor icons in `public/static/SVG/cursors/` and inline icons in some components, where commented, are from [Font Awesome Free](https://fontawesome.com) 6.4.2 by Fonticons, Inc., licensed under [CC BY 4.0](https://fontawesome.com/license/free).
+- Cursor icons in `styles/cursors/` and inline icons in some components, where commented, are from [Font Awesome Free](https://fontawesome.com) 6.4.2 by Fonticons, Inc., licensed under [CC BY 4.0](https://fontawesome.com/license/free).

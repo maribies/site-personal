@@ -35,10 +35,28 @@ const api = (file: string) =>
 const data: SiteData = {
   experiences: api("experiences.json"),
   links: api("links.json"),
+  copy: api("copy.json"),
 };
 const titles = data.experiences.flatMap((group) =>
   group.experiences.map((experience) => experience.title),
 );
+const { hero, info } = data.copy.home;
+const homeCopy = [
+  hero.role,
+  hero.summary,
+  hero.aka.title,
+  hero.aka.body,
+  info.title,
+  info.summary,
+];
+
+const escapeHtml = (text: string) =>
+  text
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#x27;");
 
 describe.each(Object.entries(routes))("dist for %s", (url, route) => {
   const html = read(resolve(dist, htmlFile(url)));
@@ -64,8 +82,7 @@ describe.each(Object.entries(routes))("dist for %s", (url, route) => {
   });
 
   it("only uses CSS module classes that exist in the CSS", () => {
-    // Vite's CSS module class names contain "_"; global and Font Awesome
-    // classes (e.g. "flex-wrap", "fa-brands") don't.
+    // Vite's CSS module class names contain "_"; global classes (e.g. "flex-wrap") don't.
     const moduleClasses = [...html.matchAll(/class="([^"]*)"/g)]
       .flatMap(([, classes]) => classes.split(" "))
       .filter((name) => name.includes("_"));
@@ -92,6 +109,14 @@ it("sitemap.xml lists every route", () => {
 });
 
 describe("pre-rendered content", () => {
+  it("renders the hero and info copy on the home page", () => {
+    const html = read(resolve(dist, htmlFile("/")));
+
+    for (const text of homeCopy) {
+      expect(html).toContain(escapeHtml(text));
+    }
+  });
+
   it("renders every experience on the experiences page", () => {
     const html = read(resolve(dist, htmlFile("/experiences")));
 
@@ -104,13 +129,18 @@ describe("pre-rendered content", () => {
 describe("bundle", () => {
   // Prose only: names and URLs can fairly appear in copy, but these sentences
   // only reach the bundle if the API data itself was imported.
-  const apiProse = data.experiences.flatMap((group) =>
-    group.experiences.flatMap(({ summary, roleSummary, skills }) => [
-      summary,
-      roleSummary,
-      ...skills,
-    ]),
-  );
+  const apiProse = [
+    ...data.experiences.flatMap((group) =>
+      group.experiences.flatMap(({ summary, roleSummary, skills }) => [
+        summary,
+        roleSummary,
+        ...skills,
+      ]),
+    ),
+    hero.summary,
+    hero.aka.body,
+    info.summary,
+  ];
 
   it("contains no API data", () => {
     // Compare the found strings, not the bundle, so a failure doesn't print it.

@@ -1,3 +1,4 @@
+import { Icon } from "../Icon";
 import text from "../text.module.css";
 import css from "./connectSection.module.css";
 
@@ -17,7 +18,7 @@ export const ConnectSection = ({ links }: { links: ContactLink[] }) => {
               rel="noreferrer"
               className={`${css.link} flex-wrap`}
             >
-              <span className={item.icon} style={{ paddingRight: "0.5rem" }} />
+              <Icon name={item.icon} className={css.icon} />
               <p>{item.name}</p>
             </a>
           );

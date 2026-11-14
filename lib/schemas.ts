@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { CONTACT_ICON_NAMES } from "../components/Icon/names";
+
 const experienceSchema = z.object({
   icon: z.string(),
   iconAlt: z.string(),
@@ -28,13 +30,29 @@ const experienceDetailsSchema = z.object({
 
 const contactLinkSchema = z.object({
   link: z.string(),
-  icon: z.string(),
+  icon: z.enum(CONTACT_ICON_NAMES),
   name: z.string(),
+});
+
+const heroCopySchema = z.object({
+  role: z.string(),
+  summary: z.string(),
+  aka: z.object({ title: z.string(), body: z.string() }),
+});
+
+const infoCopySchema = z.object({
+  title: z.string(),
+  summary: z.string(),
+});
+
+const copySchema = z.object({
+  home: z.object({ hero: heroCopySchema, info: infoCopySchema }),
 });
 
 export const siteDataSchema = z.object({
   experiences: z.array(experienceDetailsSchema),
   links: z.array(contactLinkSchema),
+  copy: copySchema,
 });
 
 export type Experience = z.infer<typeof experienceSchema>;
@@ -43,4 +61,6 @@ export type ExperienceDetailsCategory = z.infer<
   typeof experienceDetailsCategorySchema
 >;
 export type ContactLink = z.infer<typeof contactLinkSchema>;
+export type HeroCopy = z.infer<typeof heroCopySchema>;
+export type InfoCopy = z.infer<typeof infoCopySchema>;
 export type SiteData = z.infer<typeof siteDataSchema>;

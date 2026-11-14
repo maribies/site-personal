@@ -16,7 +16,7 @@
 
   /* Outranks the global a:any-link cursor. */
   &:any-link {
-    cursor: url("/static/SVG/cursors/heart.svg"), pointer;
+    cursor: var(--cursor-heart), pointer;
   }
 
   > p {
@@ -30,4 +30,10 @@
   &:hover > p {
     border-bottom: var(--rule) solid var(--pink);
   }
+}
+
+.icon {
+  --icon-size: 1em;
+
+  margin-right: 0.5rem;
 }

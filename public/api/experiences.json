@@ -6,7 +6,7 @@
         "icon": "/static/SVG/virtual-closet.svg",
         "iconAlt": "garment coming out of a closet",
         "title": "AI Experimentation with Garment Segmentation",
-        "role": "ML and full-stack engineer",
+        "role": "ML and Full-Stack engineer",
         "roleSummary": "Sole author. Designed the model-agnostic segmentation interface, ran and hand-triaged the baseline, wrote the referential data validators, and built the FastAPI + React viewer over a PostgreSQL schema.",
         "link": "https://github.com/maribies/ai-imaging-experimentation",
         "summary": "Fine-tuning open-source segmentation models to cut clothing out of ordinary photographs while documenting learning and reasoning as it goes.",
@@ -53,7 +53,7 @@
         "iconAlt": "Australian shepherd pixel art watch face",
         "title": "Pixel Pup Garmin Watchface",
         "role": "Project Owner",
-        "roleSummary": "Designed and implemented a Garmin watchface with cute pixel dog animations",
+        "roleSummary": "Designed and implemented a Garmin watchface with cute pixel dog animations.",
         "link": "https://apps.garmin.com/en-US/apps/012a1a3b-3a01-4e11-8af6-a1efaf6baf3e",
         "summary": "An animated Garmin watchface.",
         "timeFrame": "June 2026 - present",
@@ -70,11 +70,11 @@
           "Research"
         ],
         "skills": [
-          "Product direction and planning, including scope",
-          "Kicked off the project scaffolding",
-          "Carefully reviewed and tested implementation with Claude",
-          "Decided when each release happened",
-          "Researched and then developed and documented strategy for consistent pixel art"
+          "Product direction and planning, including scope.",
+          "Kicked off the project scaffolding.",
+          "Carefully reviewed and tested implementation with Claude.",
+          "Decided when each release happened.",
+          "Researched, developed, and documented strategy for consistent pixel art."
         ]
       }
     ]
@@ -89,50 +89,61 @@
         "role": "Full-Stack Engineer",
         "link": "https://flexa.co",
         "summary": "Next generation payments",
-        "roleSummary": "Built reliable, real-time systems that move money and can't afford to break.",
+        "roleSummary": "Full-stack engineer on a small engineering team, building reliable, real-time systems that move money and can’t afford to break. Worked across dozens of Go microservices on GCP, a Turborepo monorepo of React, TypeScript, and Next.js frontends, and the data models underneath.",
         "timeFrame": "March 2024 - April 2026",
         "location": "New York, NY, USA | Remote",
         "keywords": [
           "Golang",
           "React",
           "TypeScript",
-          "Next",
+          "GCP",
+          "Microservices",
+          "Next.js",
           "Tailwind",
           "Claude",
           "Windsurf",
           "gRPC",
+          "Pub/Sub",
+          "Protobuf",
           "REST",
           "PostgreSQL",
-          "GCP",
           "Docker",
+          "Kubernetes",
           "Prometheus",
           "Terraform",
+          "CI/CD",
           "Web3",
           "Blockchain",
           "Cryptocurrency",
-          "Gitlab",
-          "CI/CD"
+          "GitLab",
+          "Payments"
         ],
         "skills": [
-          "Owned features end-to-end across the frontend, backend services, and data models through the development lifecycle.",
-          "Built and maintained client-facing single-page web apps with React, TypeScript, and Next.js.",
-          "Built and evolved backend services in Go on GCP, owning code from design to production.",
-          "Designed service-to-service communication with clear API, event, and data contracts (gRPC/Protobuf).",
-          "Built asynchronous, event-driven messaging between services using Google Cloud Pub/Sub, decoupling workflows across services.",
-          "Led data model updates, migrations, and reconciliation with safe, coordinated rollouts across services.",
+          "Built an internal compliance and audit tool end-to-end (KYC identity verification, sanctions-list handling, event-driven account updates); earned excellent feedback from NYDFS.",
+          "Owned features from design through testing and production, across frontend, Go (Golang) backend services, and data models.",
+          "Designed service-to-service communication with clear API, event, and data contracts (gRPC/Protobuf) and asynchronous messaging via Google Cloud Pub/Sub.",
+          "Led and contributed to data model migrations and reconciliation, with safe, coordinated rollouts across PostgreSQL schemas, service models, events, and API contracts.",
           "Researched and designed API event versioning for backward compatibility across evolving schemas.",
+          "Evolved payment integrations that fund in-store purchases from customer account balances, with reconciliation, balance monitoring for partial payments, and account-level enforcement against abuse.",
+          "Designed, built, and maintained third-party API integrations end-to-end (backend microservices and frontend SDKs), and evaluated and migrated to replacement providers.",
+          "Built a minimal reproduction of a third-party custodial wallet provider signing bug, isolating it from all app and transfer variables to prove the signing was at fault; the provider fixed it immediately.",
+          "Debugged crypto refund failures: responded to alerts, manually corrected records to issue refunds as an interim fix, then root-caused it to a monitoring bug in how batched transactions were handled across certain networks.",
+          "Took regular week-long on-call rotations with extended-hours monitoring, using Kubernetes (GKE) and Google Cloud Logs Explorer to inspect pods, query logs, triage, and resolve incidents.",
+          "Used AI-assisted tools (Claude, Windsurf) daily for planning, testing, reviewing, and coding, as the person in the loop.",
+          "Built, collaborated on, and maintained single-page apps for wallet payments, donations, and promotions.",
           "Improved and maintained API tooling, authentication flows, and developer documentation for internal and external consumers.",
-          "Investigated and resolved production issues and system bottlenecks, improving reliability and monitoring.",
           "Built internal scripts, scheduled jobs, and tooling to automate manual workflows and help cross-functional teams do their jobs more efficiently.",
-          "Supported production systems through extended-hours on-call, alerting, triage, and incident response.",
-          "Used AI-assisted tools (Claude, Windsurf) daily for planning, testing, and UI, reviewing carefully as the person in the loop."
+          "Championed moving frontend static assets to a Google Cloud Storage CDN for faster, cached delivery, then added and served assets through it.",
+          "Maintained a service-side cache through a service version migration, and configured Next.js caching and cookie handling on the frontend.",
+          "Added blockchain testnet support across multiple backend services.",
+          "Added CI/CD templates to new services for automated builds, testing, and deployment."
         ]
       },
       {
         "icon": "/static/images/redSquirrelTechnologies.jpeg",
         "iconAlt": "Red Squirrel Logo",
         "title": "Red Squirrel Technologies",
-        "role": "Apprentice to Full-Stack Consultant",
+        "role": "Apprentice to Full-Stack Engineer & Consultant",
         "link": "https://www.redsquirrel.com/",
         "summary": "Software development for mission driven organizations.",
         "roleSummary": "Full-Stack consultant for organizations and early-stage startups, delivering tailored solutions from requirements through operation.",
@@ -172,19 +183,14 @@
           "Alchemy"
         ],
         "skills": [
-          "Shipped web and mobile products end-to-end, working closely with UX designers on app design and user flows.",
-          "Built front-ends with React, React Native, Vite, Tailwind, and Apollo; backends with Node.js, Go, Ruby on Rails, GraphQL, and REST.",
-          "Set up and maintained containerized cloud infrastructure as code.",
-          "Wrote integration-first tests with Cypress and automated workflows with CLI scripting.",
-          "Served as researcher and technical instructional writer for early-stage products.",
-          "Full-Stack contributor to a wallet and social app on Polygon with Ethereum account abstraction (ERC-4337), using React Native and Node.js.",
-          "Built a greenfield web3 startup's stack end-to-end: DigitalOcean/Terraform/Docker infrastructure, a Go + GraphQL backend, and a Vite/React/Cypress/Apollo front end with MetaMask connectivity.",
-          "Developer and researcher with focused research into Solana and Rust.",
-          "Built a feature NFT project on the Flow blockchain (Flow Go SDK, Ruby on Rails, JavaScript, Infura, React).",
-          "Built internal and external web tools for a logistics startup (Ruby on Rails, PostgreSQL, JavaScript, React).",
-          "Streamlined an educational startup's web application (Ruby on Rails, PostgreSQL, JavaScript, React, SCSS).",
-          "Built a React Chrome extension as an internal data-capturing tool for a food-service-delivery startup.",
-          "Through a self-directed apprenticeship, shipped a passion project: a Python scraper (Django, BeautifulSoup) collecting product data into PostgreSQL, paired with a React Native app, deployed on Heroku."
+          "Flexa (Dec 2023 to Mar 2024): Embedded with the payments engineering team as a consultant. Added Ethereum Sepolia testnet support across numerous backend services with the deprecation of Goerli, giving the team a secure and stable environment for testing new features on Ethereum in its Capacity and payments products. Joined full-time in March 2024.",
+          "Quickbeam, web3 technical-education platform (2022 to 2023): Built the stack end-to-end: a React, Vite, and Tailwind frontend with Apollo GraphQL and Cypress integration tests, Go, GraphQL, and PostgreSQL backend services, and Docker, Terraform, and DigitalOcean infrastructure. Integrated Ethereum and Solana via Alchemy with MetaMask connectivity. Researched chains, protocols, and developer tools, and wrote some of the technical instructional content.",
+          "Wallet and social app: Full-stack contributor on a Polygon app using Ethereum account abstraction (ERC-4337) and Alchemy, built in React Native with Node.js microservices.",
+          "NFT project on Flow: Kicked off a greenfield NFT project, working closely with a UX designer on app design and flows. Built the React and TypeScript front end and contributed to the Ruby on Rails, GraphQL, and Flow Go SDK backend services, deployed on Render, with NFT assets stored on IPFS via Infura before minting to Flow.",
+          "Logistics startup: Assisted on an Airtable to PostgreSQL database migration, and built internal and external UI dashboards and updated the client side to keep pace with the migration (Ruby on Rails, React).",
+          "Education startup: Helped stabilize an inherited web application: paired on upgrading Ruby and Rails to supported versions and removing unused dependencies, then fixed bugs, reskinned the UI with a new design, and built new features across the React front end and Ruby on Rails backend (PostgreSQL, SCSS).",
+          "Food-service-delivery startup: Built a React Chrome extension for internal data capture.",
+          "Apprenticeship project: Shipped a Python scraper (Django, BeautifulSoup) collecting product data into PostgreSQL, paired with a React Native app."
         ]
       },
       {
@@ -194,8 +200,8 @@
         "title": "Uphold",
         "link": "https://www.uphold.com",
         "summary": "Buy and sell digital assets",
-        "roleSummary": "Contributed to continuous development, analytics, and testing of a financial-services mobile app.",
-        "timeFrame": "October 2018 - September 2020",
+        "roleSummary": "Contributed to continuous development, analytics, and testing of the mobile app at a crypto custodial wallet platform as it expanded focus into trading (React Native, Redux, Styled Components, Node.js). Joined as an intern and converted to a full-time offer.",
+        "timeFrame": "January 2019 - September 2020",
         "location": "Braga, Portugal | In-person",
         "keywords": [
           "React",
@@ -203,7 +209,7 @@
           "Detox",
           "Jest",
           "Cypress",
-          "Styled Components",
+          "Styled-Components",
           "REST",
           "GraphQL",
           "i18next",
@@ -215,15 +221,14 @@
           "Portuguese"
         ],
         "skills": [
-          "Automated REST requests from a third-party API.",
-          "Automated 80%+ of end-to-end regression tests for the core suite (Jest, Detox, Cypress).",
+          "Started as a front-end intern working in React, Next.js, i18next translations, and styled-components, before converting to a full-time offer on the mobile team, working in React Native (October 2018 - December 2018).",
+          "Automated 80%+ of end-to-end regression tests for the core suite (Jest, Detox, Cypress, EarlGrey).",
           "Built REST and GraphQL integrations; deprecated a REST API in favor of GraphQL for app entry flows.",
           "Automated a CLI tool for a translations-service API.",
           "Instrumented analytics events (Datadog) and contributed to app stabilization through bug fixing and refactoring.",
+          "Automated REST requests from a third-party API.",
           "Gave an internal talk, 'Knitting = Programming,' on the parallels between crochet/knitting and programming.",
-          "Developed a new landing page from a sketch design.",
-          "Technical mentor and motivational speaker for SheCodes.",
-          "Completed a summer course for intermediate level Portuguese."
+          "Technical mentor and motivational speaker for SheCodes."
         ]
       }
     ]
@@ -233,14 +238,14 @@
     "experiences": [
       {
         "icon": "/static/images/wdfg.png",
-        "iconAlt": "WDFG",
+        "iconAlt": "WDFG logo",
         "role": "Assistant Buyer to Buyer and Category Manager",
         "title": "World Duty Free Group",
         "summary": "Global travel retail",
         "roleSummary": "Assisted management in the sunglasses, beauty, sports, and regional food and gift categories before promotion to direct management of sports and adult souvenir apparel categories.",
         "link": "http://www.worlddutyfree.com",
         "timeFrame": "February 2013 - July 2016",
-        "location": "Bethesda, Maryland | In-person",
+        "location": "Bethesda, Maryland, USA | In-person",
         "keywords": [
           "Analytical thinking",
           "Excel",
@@ -284,7 +289,7 @@
           "User research",
           "HTML",
           "CSS",
-          "SASS",
+          "Sass",
           "JavaScript",
           "Vue",
           "React",
@@ -294,10 +299,10 @@
           "Phoenix (Elixir)",
           "Figma",
           "Sketch",
-          "Mind Node"
+          "MindNode"
         ],
         "skills": [
-          "Attended masterclasses with leading industry professionals including Vitaly Friedman (Smashing Magazine), Steph Troeth (formerly Clearleft & Mailchimp), Christopher Murphy (Belfast School of Arts), Paulo Fonseca (entrepreneur and designer), and completed a host of projects for both new ideas as well as local startups.",
+          "Attended masterclasses with leading industry professionals including Vitaly Friedman (Smashing Magazine), Steph Troeth (formerly Clearleft & Mailchimp), Christopher Murphy (Belfast School of Art), Paulo Fonseca (entrepreneur and designer).",
           "Completed the Udacity Front End Nanodegree via the Grow with Google Challenge Scholarship (remote).",
           "Front-end internships with Bitmaker Software and Uphold (the Uphold internship converted to a full-time offer)."
         ],
@@ -319,11 +324,11 @@
           "Research"
         ],
         "skills": [
-          "Completed a study abroad program: SKEMA Business School in Sophia-Antipolis, France from January-May 2011.",
+          "Completed a study abroad program: SKEMA Business School in Sophia-Antipolis, France, January-May 2011.",
           "Completed activities and fundraising as a brother member of Alpha Kappa Psi, Professional Business Fraternity.",
-          "Completed the Marine Corps Marathon in 2010, 2011, & 2012, fundraising a couple thousand dollars for the Team Fisher House nonprofit the last two years."
+          "Completed the Marine Corps Marathon in 2010, 2011, & 2012, raising a couple thousand dollars for the Team Fisher House nonprofit the last two years."
         ],
-        "location": "Washington, DC | In-person"
+        "location": "Washington, DC, USA | In-person"
       }
     ]
   }

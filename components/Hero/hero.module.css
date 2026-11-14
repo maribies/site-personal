@@ -45,7 +45,7 @@
   border: none;
   border-bottom: var(--rule) solid var(--pink);
   color: var(--white);
-  cursor: url("/static/SVG/cursors/question.svg"), pointer;
+  cursor: var(--cursor-question), pointer;
   padding: 0;
 
   @media (width >= 48rem) {
@@ -54,5 +54,5 @@
 }
 
 .toggle[data-active="true"] {
-  cursor: url("/static/SVG/cursors/collapse.svg"), pointer;
+  cursor: var(--cursor-collapse), pointer;
 }

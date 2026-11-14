@@ -57,8 +57,21 @@ export const siteData: SiteData = {
   links: [
     {
       link: "https://example.com/profile",
-      icon: "fa-brands fa-github",
+      icon: "github",
       name: "@fixture",
     },
   ],
+  copy: {
+    home: {
+      hero: {
+        role: "Fixture Engineer",
+        summary: "I build test fixtures.",
+        aka: { title: "aka Fixture", body: "A fixture's nickname." },
+      },
+      info: {
+        title: "Hi! I'm a fixture.",
+        summary: "I exist for testing.",
+      },
+    },
+  },
 };
