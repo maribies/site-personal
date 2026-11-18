@@ -25,3 +25,34 @@
 .logo {
   display: flex;
 }
+
+.nav-box {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: var(--space-xs) var(--space-s);
+}
+
+/* Underline is a background so it can grow left to right without shifting layout. */
+.nav {
+  padding-bottom: var(--rule);
+  text-decoration: none;
+  text-transform: capitalize;
+  background: linear-gradient(var(--nav-color), var(--nav-color)) left bottom /
+    100% var(--rule) no-repeat;
+
+  @media (width >= 48rem) {
+    background-size: 0% var(--rule);
+    transition: background-size 0.3s ease-out;
+
+    &:hover,
+    &:focus-visible {
+      background-size: 100% var(--rule);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

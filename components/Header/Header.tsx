@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
-
 import css from "./header.module.css";
 
-export const Header = ({ children }: { children?: ReactNode }) => {
+export type NavLink = { href: string; label: string; color: string };
+
+export const Header = ({ links = [] }: { links?: NavLink[] }) => {
   return (
     <header className={css.header}>
       <a href="/" className={css.logo}>
@@ -13,7 +13,20 @@ export const Header = ({ children }: { children?: ReactNode }) => {
           height="48"
         />
       </a>
-      {children}
+      {links.length > 0 && (
+        <nav className={css["nav-box"]}>
+          {links.map(({ href, label, color }) => (
+            <a
+              key={href}
+              href={href}
+              className={css.nav}
+              style={{ "--nav-color": color }}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      )}
     </header>
   );
 };
