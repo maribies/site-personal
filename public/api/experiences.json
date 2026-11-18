@@ -3,6 +3,29 @@
     "type": "projects",
     "experiences": [
       {
+        "icon": "/static/SVG/browser-bot.svg",
+        "iconAlt": "bot in a browser",
+        "title": "Browser Bot",
+        "role": "Engineer and Product Owner",
+        "roleSummary": "Sole author. Planned and designed with Claude assisting in summarizing and organizing documents and research, which was then reviewed and tweaked. Code is written by hand, using Claude as a reviewer and rubber duck that can only provide hints when asked.",
+        "link": "https://github.com/maribies/browser-bot",
+        "summary": "A small chatbot for this portfolio site that runs entirely in the visitor's browser and answers only from the supplied content. Open source.",
+        "timeFrame": "November 2026 - present",
+        "skills": [
+          "Started with a feasibility test before building anything else: can an embedding model and a small generative model load in the browser and answer usefully from my content, and if not, why not.",
+          "Loaded a quantized sentence embedding model (all-MiniLM-L6-v2) in a Web Worker with Transformers.js, pinned to a model revision, and recorded cold and cached load times of about 2 seconds and under 1 second.",
+          "Designed the eventual pipeline so plain code answers known questions first and an opt-in generative model only summarizes retrieved content, with zero hosting cost and no data collection as hard constraints."
+        ],
+        "keywords": [
+          "TypeScript",
+          "React",
+          "Transformers.js",
+          "Web Workers",
+          "Semantic search",
+          "Machine learning"
+        ]
+      },
+      {
         "icon": "/static/SVG/virtual-closet.svg",
         "iconAlt": "garment coming out of a closet",
         "title": "AI Experimentation with Garment Segmentation",
