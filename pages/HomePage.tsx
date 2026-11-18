@@ -7,6 +7,7 @@ import {
   ConnectSection,
 } from "../components";
 import type { NavLink } from "../components";
+import text from "../components/text.module.css";
 import type { PageProps } from "./routes";
 
 const navLinks: NavLink[] = [
@@ -19,7 +20,17 @@ const navLinks: NavLink[] = [
 
 export const HomePage = ({ data }: PageProps) => (
   <Layout>
-    <Header links={navLinks} />
+    <div className="flex-wrap">
+      <div className="flex-wrap">
+        <h1 className={text.title}>Mari</h1>
+        <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>ssa</h1>
+      </div>
+      <div className="flex-wrap">
+        <h1 className={text.title}>Bies</h1>
+        <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>ecker</h1>
+      </div>
+    </div>
+    <Header links={navLinks} logoWhenStuck />
     <Hero copy={data.copy.home.hero} />
     <Info copy={data.copy.home.info} />
     <ExperienceSection experiences={data.experiences} category="work" />

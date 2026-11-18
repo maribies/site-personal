@@ -11,19 +11,6 @@ export const Hero = ({ copy }: { copy: HeroCopy }) => {
 
   return (
     <>
-      <div className="flex-wrap">
-        <div className="flex-wrap">
-          <h1 className={text.title}>Mari</h1>
-          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>ssa</h1>
-        </div>
-        <div className="flex-wrap">
-          <h1 className={text.title}>Bies</h1>
-          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>
-            ecker
-          </h1>
-        </div>
-      </div>
-
       <h2>{copy.role}</h2>
       <h4>{copy.summary}</h4>
 

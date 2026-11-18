@@ -24,6 +24,13 @@ vi.stubGlobal(
     disconnect() {}
   },
 );
+vi.stubGlobal(
+  "IntersectionObserver",
+  class {
+    observe() {}
+    disconnect() {}
+  },
+);
 
 // React recovers from hydration mismatches by re-rendering on the client, so
 // the page looks fine in a browser. The only signs are these errors.
