@@ -3,6 +3,29 @@
     "type": "projects",
     "experiences": [
       {
+        "icon": "/static/SVG/browser-bot.svg",
+        "iconAlt": "bot in a browser",
+        "title": "Browser Bot",
+        "role": "Engineer and Product Owner",
+        "roleSummary": "Sole author. Planned and designed with Claude assisting in summarizing and organizing documents and research, which was then reviewed and tweaked. Code is written by hand, using Claude as a reviewer and rubber duck that can only provide hints when asked.",
+        "link": "https://github.com/maribies/browser-bot",
+        "summary": "A small chatbot for this portfolio site that runs entirely in the visitor's browser and answers only from the supplied content. Open source.",
+        "timeFrame": "November 2026 - present",
+        "skills": [
+          "Started with a feasibility test before building anything else: can an embedding model and a small generative model load in the browser and answer usefully from my content, and if not, why not.",
+          "Loaded a quantized sentence embedding model (all-MiniLM-L6-v2) in a Web Worker with Transformers.js, pinned to a model revision, and recorded cold and cached load times of about 2 seconds and under 1 second.",
+          "Designed the eventual pipeline so plain code answers known questions first and an opt-in generative model only summarizes retrieved content, with zero hosting cost and no data collection as hard constraints."
+        ],
+        "keywords": [
+          "TypeScript",
+          "React",
+          "Transformers.js",
+          "Web Workers",
+          "Semantic search",
+          "Machine learning"
+        ]
+      },
+      {
         "icon": "/static/SVG/virtual-closet.svg",
         "iconAlt": "garment coming out of a closet",
         "title": "AI Experimentation with Garment Segmentation",
@@ -89,7 +112,7 @@
         "role": "Full-Stack Engineer",
         "link": "https://flexa.co",
         "summary": "Next generation payments",
-        "roleSummary": "Full-stack engineer on a small engineering team, building reliable, real-time systems that move money and can’t afford to break. Worked across dozens of Go microservices on GCP, a Turborepo monorepo of React, TypeScript, and Next.js frontends, and the data models underneath.",
+        "roleSummary": "Full-stack software engineer on a small engineering team, building reliable, real-time systems that move money and can’t afford to break. Worked across dozens of event-driven, distributed Go microservices on GCP, a Turborepo monorepo of SSR React, TypeScript, and Next.js frontends, and the data models underneath. Joined full-time after first working with the team as a consultant through Red Squirrel starting in December 2023.",
         "timeFrame": "March 2024 - April 2026",
         "location": "New York, NY, USA | Remote",
         "keywords": [
@@ -116,7 +139,8 @@
           "Blockchain",
           "Cryptocurrency",
           "GitLab",
-          "Payments"
+          "Payments",
+          "Storybook"
         ],
         "skills": [
           "Built an internal compliance and audit tool end-to-end (KYC identity verification, sanctions-list handling, event-driven account updates); earned excellent feedback from NYDFS.",
@@ -129,14 +153,19 @@
           "Built a minimal reproduction of a third-party custodial wallet provider signing bug, isolating it from all app and transfer variables to prove the signing was at fault; the provider fixed it immediately.",
           "Debugged crypto refund failures: responded to alerts, manually corrected records to issue refunds as an interim fix, then root-caused it to a monitoring bug in how batched transactions were handled across certain networks.",
           "Took regular week-long on-call rotations with extended-hours monitoring, using Kubernetes (GKE) and Google Cloud Logs Explorer to inspect pods, query logs, triage, and resolve incidents.",
+          "Maintained and debugged quoting and trading integrations with exchanges while on-call, and managed monitoring of available currency pairs.",
           "Used AI-assisted tools (Claude, Windsurf) daily for planning, testing, reviewing, and coding, as the person in the loop.",
           "Built, collaborated on, and maintained single-page apps for wallet payments, donations, and promotions.",
+          "Developed server-rendered Next.js apps in React and TypeScript, using SSR, API routes, and middleware.",
+          "Introduced Storybook to frontend projects for building and reviewing reusable components.",
+          "Onboarded the incoming frontend lead and new hires, pairing with them on unfamiliar services, flows, and on-call processes.",
           "Improved and maintained API tooling, authentication flows, and developer documentation for internal and external consumers.",
           "Built internal scripts, scheduled jobs, and tooling to automate manual workflows and help cross-functional teams do their jobs more efficiently.",
           "Championed moving frontend static assets to a Google Cloud Storage CDN for faster, cached delivery, then added and served assets through it.",
           "Maintained a service-side cache through a service version migration, and configured Next.js caching and cookie handling on the frontend.",
           "Added blockchain testnet support across multiple backend services.",
-          "Added CI/CD templates to new services for automated builds, testing, and deployment."
+          "Added CI/CD templates to new services for automated builds, testing, and deployment.",
+          "Maintained and reviewed gas-handling code in the relevant services, including additions for the Solana integration."
         ]
       },
       {
@@ -183,8 +212,8 @@
           "Alchemy"
         ],
         "skills": [
-          "Flexa (Dec 2023 to Mar 2024): Embedded with the payments engineering team as a consultant. Added Ethereum Sepolia testnet support across numerous backend services with the deprecation of Goerli, giving the team a secure and stable environment for testing new features on Ethereum in its Capacity and payments products. Joined full-time in March 2024.",
-          "Quickbeam, web3 technical-education platform (2022 to 2023): Built the stack end-to-end: a React, Vite, and Tailwind frontend with Apollo GraphQL and Cypress integration tests, Go, GraphQL, and PostgreSQL backend services, and Docker, Terraform, and DigitalOcean infrastructure. Integrated Ethereum and Solana via Alchemy with MetaMask connectivity. Researched chains, protocols, and developer tools, and wrote some of the technical instructional content.",
+          "Flexa (Dec 2023 to Mar 2024): Embedded with the payments engineering team as a consultant. Added Ethereum Sepolia testnet support across numerous backend services with the deprecation of Goerli, redeployed the smart contracts, coordinated the multi-sig transactions, and updated the dApp, giving the team a secure and stable environment for testing new features on Ethereum in its Capacity and payments products. Joined full-time in March 2024.",
+          "Quickbeam, web3 technical-education platform (2022 to 2023): Built the stack end-to-end: a React, Vite, and Tailwind frontend with Apollo GraphQL and Cypress integration tests, Go, GraphQL, and PostgreSQL backend services, and Docker, Terraform, and DigitalOcean infrastructure. Integrated Ethereum and Solana via Alchemy with MetaMask connectivity. Researched chains, protocols, and developer tools, wrote some of the technical instructional content, and mentored a junior frontend engineer who joined the project.",
           "Wallet and social app: Full-stack contributor on a Polygon app using Ethereum account abstraction (ERC-4337) and Alchemy, built in React Native with Node.js microservices.",
           "NFT project on Flow: Kicked off a greenfield NFT project, working closely with a UX designer on app design and flows. Built the React and TypeScript front end and contributed to the Ruby on Rails, GraphQL, and Flow Go SDK backend services, deployed on Render, with NFT assets stored on IPFS via Infura before minting to Flow.",
           "Logistics startup: Assisted on an Airtable to PostgreSQL database migration, and built internal and external UI dashboards and updated the client side to keep pace with the migration (Ruby on Rails, React).",

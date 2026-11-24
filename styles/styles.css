@@ -73,6 +73,11 @@
   }
 }
 
+/* Keep anchor targets and focused elements clear of the sticky header. */
+html {
+  scroll-padding-top: var(--space-l);
+}
+
 body {
   background-color: var(--color-bg);
   font-size: var(--step-0);

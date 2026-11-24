@@ -1,6 +1,7 @@
 export { ConnectSection } from "./ConnectSection";
 export { Experiences, ExperienceSection } from "./Experiences";
 export { Header } from "./Header";
+export type { NavLink } from "./Header";
 export { Hero } from "./Hero";
 export { Icon } from "./Icon";
 export { Info } from "./Info";

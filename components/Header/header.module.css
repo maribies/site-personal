@@ -25,3 +25,66 @@
 .logo {
   display: flex;
 }
+
+/* The logo keeps its space so the header height doesn't jump when it sticks. */
+.logo-when-stuck {
+  top: -1px;
+
+  /* Sits close under the name; margin has no effect once stuck. */
+  margin-top: 0;
+
+  & .logo {
+    transition:
+      opacity 0.3s ease-out,
+      visibility 0.3s;
+  }
+
+  &[data-stuck="false"] .logo {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    & .logo {
+      transition: none;
+    }
+  }
+}
+
+.nav-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: end;
+  gap: var(--space-xs);
+}
+
+.nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: var(--space-xs) var(--space-s);
+}
+
+/* Underline is a background so it can grow left to right without shifting layout. */
+.nav {
+  padding-bottom: var(--rule);
+  text-decoration: none;
+  text-transform: capitalize;
+  background: linear-gradient(var(--nav-color), var(--nav-color)) left bottom /
+    100% var(--rule) no-repeat;
+
+  @media (width >= 48rem) {
+    background-size: 0% var(--rule);
+    transition: background-size 0.3s ease-out;
+
+    &:hover,
+    &:focus-visible {
+      background-size: 100% var(--rule);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

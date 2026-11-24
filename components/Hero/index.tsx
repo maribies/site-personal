@@ -11,48 +11,6 @@ export const Hero = ({ copy }: { copy: HeroCopy }) => {
 
   return (
     <>
-      <div className="flex-wrap">
-        <div className="flex-wrap">
-          <h1 className={text.title}>Mari</h1>
-          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>ssa</h1>
-        </div>
-        <div className="flex-wrap">
-          <h1 className={text.title}>Bies</h1>
-          <h1 className={`${text.title} ${text.outline} ${text.cycle}`}>
-            ecker
-          </h1>
-        </div>
-      </div>
-
-      <a
-        href="#info"
-        className={css.nav}
-        style={{ "--nav-color": `var(--purple)` }}
-      >
-        Info
-      </a>
-      <a
-        href="#work"
-        className={css.nav}
-        style={{ "--nav-color": `var(--yellow)` }}
-      >
-        Work
-      </a>
-      <a
-        href="#projects"
-        className={css.nav}
-        style={{ "--nav-color": `var(--orange)` }}
-      >
-        Projects
-      </a>
-      <a
-        href="#connect"
-        className={css.nav}
-        style={{ "--nav-color": `var(--blue)` }}
-      >
-        Connect
-      </a>
-
       <h2>{copy.role}</h2>
       <h4>{copy.summary}</h4>
 
